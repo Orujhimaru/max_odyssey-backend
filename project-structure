@@ -1,0 +1,12 @@
+sat-tracker/
+├── cmd/
+│   └── main.go
+├── internal/
+│   ├── models/
+│   │   └── models.go
+│   └── database/
+│       └── database.go
+├── migrations/
+│   └── 001_initial_schema.sql
+├── go.mod
+└── docker-compose.yml 
