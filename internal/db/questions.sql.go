@@ -7,33 +7,52 @@ package db
 
 import (
 	"context"
+	"database/sql"
+
+	"github.com/lib/pq"
 )
 
 const getQuestions = `-- name: GetQuestions :many
-SELECT id, subject_id, question_text, correct_answer, difficulty_level, explanation, created_at, topic, subtopic, solve_rate 
+SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
+       created_at, topic, subtopic, solve_rate, choices
 FROM questions
 `
 
-func (q *Queries) GetQuestions(ctx context.Context) ([]Question, error) {
+type GetQuestionsRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	CorrectAnswerIndex sql.NullInt32
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	CreatedAt          sql.NullTime
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+}
+
+func (q *Queries) GetQuestions(ctx context.Context) ([]GetQuestionsRow, error) {
 	rows, err := q.db.QueryContext(ctx, getQuestions)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	var items []Question
+	var items []GetQuestionsRow
 	for rows.Next() {
-		var i Question
+		var i GetQuestionsRow
 		if err := rows.Scan(
 			&i.ID,
 			&i.SubjectID,
 			&i.QuestionText,
-			&i.CorrectAnswer,
+			&i.CorrectAnswerIndex,
 			&i.DifficultyLevel,
 			&i.Explanation,
 			&i.CreatedAt,
 			&i.Topic,
 			&i.Subtopic,
 			&i.SolveRate,
+			pq.Array(&i.Choices),
 		); err != nil {
 			return nil, err
 		}

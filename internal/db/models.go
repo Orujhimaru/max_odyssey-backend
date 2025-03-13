@@ -8,29 +8,17 @@ import (
 	"database/sql"
 )
 
-type AnswerChoice struct {
-	ID         int32
-	QuestionID sql.NullInt32
-	ChoiceText string
-	IsCorrect  sql.NullBool
-	CreatedAt  sql.NullTime
-}
-
 type Question struct {
-	ID              int32
-	SubjectID       sql.NullInt32
-	QuestionText    string
-	CorrectAnswer   string
-	DifficultyLevel sql.NullInt32
-	Explanation     sql.NullString
-	CreatedAt       sql.NullTime
-	Topic           sql.NullString
-	Subtopic        sql.NullString
-	SolveRate       sql.NullInt32
-}
-
-type Subject struct {
-	ID        int32
-	Name      string
-	CreatedAt sql.NullTime
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	CorrectAnswer      string
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	CreatedAt          sql.NullTime
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	CorrectAnswerIndex sql.NullInt32
 }
