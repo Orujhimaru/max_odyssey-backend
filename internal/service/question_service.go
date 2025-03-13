@@ -29,6 +29,8 @@ func (s *QuestionService) GetQuestions() ([]models.Question, error) {
 			ID:              int(q.ID),
 			SubjectID:       int(q.SubjectID.Int32),
 			QuestionText:    q.QuestionText,
+			Topic:           q.Topic.String,
+			Subtopic:        q.Subtopic.String,
 			CorrectAnswer:   q.CorrectAnswer,
 			DifficultyLevel: int(q.DifficultyLevel.Int32),
 			Explanation:     q.Explanation.String,

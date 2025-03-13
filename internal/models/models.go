@@ -17,6 +17,8 @@ type Question struct {
 	Explanation     string         `json:"explanation"`
 	CreatedAt       time.Time      `json:"created_at"`
 	Choices         []AnswerChoice `json:"choices,omitempty"`
+	Topic           string         `json:"topic"`
+	Subtopic        string         `json:"subtopic"`
 }
 
 type AnswerChoice struct {

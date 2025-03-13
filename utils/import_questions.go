@@ -22,6 +22,7 @@ type JSONQuestion struct {
 	Choices       []string `json:"choices"`
 	CorrectAnswer string   `json:"correctAnswer"`
 	Explanation   string   `json:"explanation"`
+	SolveRate     int      `json:"solveRate"`
 }
 
 // This function reads questions.json, and adds the questions to our database.
@@ -53,8 +54,8 @@ func ImportQuestions() {
 
 	// Prepare statements
 	insertQuestion, err := tx.Prepare(`
-		INSERT INTO questions (subject_id, question_text, correct_answer, difficulty_level, explanation)
-		VALUES ($1, $2, $3, $4, $5)
+		INSERT INTO questions (subject_id, question_text, correct_answer, difficulty_level, explanation, topic, subtopic, solve_rate)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
 		RETURNING id`)
 	if err != nil {
 		tx.Rollback()
@@ -71,11 +72,11 @@ func ImportQuestions() {
 
 	// Insert questions
 	for _, q := range questions {
-		// Map difficulty to level (1-5)
+		// Map difficulty to level (0-2)
 		difficultyLevel := map[string]int{
-			"Easy":   1,
-			"Medium": 3,
-			"Hard":   5,
+			"Easy":   0,
+			"Medium": 1,
+			"Hard":   2,
 		}[q.Difficulty]
 
 		// Map type to subject_id
@@ -98,6 +99,9 @@ func ImportQuestions() {
 			q.CorrectAnswer,
 			difficultyLevel,
 			q.Explanation,
+			q.Topic,
+			q.Subtopic,
+			q.SolveRate,
 		).Scan(&questionID)
 		if err != nil {
 			tx.Rollback()

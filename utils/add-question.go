@@ -12,7 +12,7 @@ import (
 )
 
 // Wit this function, using terminal, we can add questions  one by one
-func main() {
+func AddQuestion() {
 	connStr := "host=localhost port=5431 user=satapp password=satapp123 dbname=sat_tracker sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {

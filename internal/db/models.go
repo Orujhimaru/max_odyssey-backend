@@ -24,6 +24,8 @@ type Question struct {
 	DifficultyLevel sql.NullInt32
 	Explanation     sql.NullString
 	CreatedAt       sql.NullTime
+	Topic           sql.NullString
+	Subtopic        sql.NullString
 }
 
 type Subject struct {

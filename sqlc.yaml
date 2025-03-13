@@ -1,6 +1,8 @@
 version: "2"
 sql:
-  - schema: "sql/schema/001_initial_schema.sql"
+  - schema:
+      - "sql/schema/001_initial_schema.sql"
+      - "sql/schema/002_add_topic_subtopic.sql"
     queries: "sql/queries/questions.sql"
     engine: "postgresql"
     gen:
