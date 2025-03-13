@@ -5,6 +5,7 @@ import (
 	"max-odyssey-backend/internal/database"
 	"max-odyssey-backend/internal/db"
 	"max-odyssey-backend/internal/handler"
+	"max-odyssey-backend/internal/middleware"
 	"max-odyssey-backend/internal/service"
 	"net/http"
 
@@ -31,6 +32,7 @@ func main() {
 	questionHandler := handler.NewQuestionHandler(questionService)
 
 	r := chi.NewRouter()
+	r.Use(middleware.Cors)
 	r.Get("/maxsat/practice", questionHandler.GetQuestions)
 
 	log.Println("Server running on :8080")
