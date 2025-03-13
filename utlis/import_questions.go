@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"database/sql"
@@ -24,7 +24,8 @@ type JSONQuestion struct {
 	Explanation   string   `json:"explanation"`
 }
 
-func main() {
+// This function reads questions.json, and adds the questions to our database.
+func ImportQuestions() {
 	// Connect to database
 	connStr := "host=localhost port=5431 user=satapp password=satapp123 dbname=sat_tracker sslmode=disable"
 	db, err := sql.Open("postgres", connStr)
