@@ -19,6 +19,7 @@ type Question struct {
 	Choices         []AnswerChoice `json:"choices,omitempty"`
 	Topic           string         `json:"topic"`
 	Subtopic        string         `json:"subtopic"`
+	SolveRate       int            `json:"solve_rate"`
 }
 
 type AnswerChoice struct {

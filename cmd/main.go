@@ -35,6 +35,7 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Cors)
 	r.Get("/questions", questionHandler.GetQuestions)
+	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
 
 	log.Println("Server running on :8080")
 	http.ListenAndServe(":8080", r)

@@ -35,6 +35,7 @@ func (s *QuestionService) GetQuestions() ([]models.Question, error) {
 			DifficultyLevel: int(q.DifficultyLevel.Int32),
 			Explanation:     q.Explanation.String,
 			CreatedAt:       q.CreatedAt.Time,
+			SolveRate:       int(q.SolveRate.Int32),
 			Choices:         []models.AnswerChoice{}, // Empty slice for now
 		}
 	}

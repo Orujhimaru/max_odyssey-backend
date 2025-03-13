@@ -26,6 +26,7 @@ type Question struct {
 	CreatedAt       sql.NullTime
 	Topic           sql.NullString
 	Subtopic        sql.NullString
+	SolveRate       sql.NullInt32
 }
 
 type Subject struct {

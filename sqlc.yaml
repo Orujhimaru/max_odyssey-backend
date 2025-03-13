@@ -3,6 +3,7 @@ sql:
   - schema:
       - "sql/schema/001_initial_schema.sql"
       - "sql/schema/002_add_topic_subtopic.sql"
+      - "sql/schema/003_add_solve_rate.sql"
     queries: "sql/queries/questions.sql"
     engine: "postgresql"
     gen:
