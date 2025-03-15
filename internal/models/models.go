@@ -2,11 +2,6 @@ package models
 
 import "time"
 
-type Subject struct {
-	ID        int       `json:"id"`
-	Name      string    `json:"name"`
-	CreatedAt time.Time `json:"created_at"`
-}
 
 type Question struct {
 	ID                 int       `json:"id"`
@@ -22,10 +17,4 @@ type Question struct {
 	CreatedAt          time.Time `json:"created_at"`
 }
 
-type AnswerChoice struct {
-	ID         int       `json:"id"`
-	QuestionID int       `json:"question_id"`
-	ChoiceText string    `json:"choice_text"`
-	IsCorrect  bool      `json:"is_correct"`
-	CreatedAt  time.Time `json:"created_at"`
-}
+

@@ -36,7 +36,8 @@ func main() {
 	r.Use(middleware.Cors)
 	r.Get("/questions", questionHandler.GetQuestions)
 	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
-
+	// docker exec -i max_odyssey-backend-postgres-1 psql -U satapp -d sat_tracker < sql/schema/004_add_choices_array.sql
+	// running migrations
 	log.Println("Server running on :8080")
 	http.ListenAndServe(":8080", r)
 }

@@ -1,6 +1,6 @@
 CREATE TABLE questions (
     id SERIAL PRIMARY KEY,
-    subject_id INTEGER REFERENCES subjects(id),
+    subject_id INTEGER,
     question_text TEXT NOT NULL,
     correct_answer TEXT NOT NULL,
     difficulty_level INTEGER CHECK (difficulty_level >= 0 AND difficulty_level <= 2),

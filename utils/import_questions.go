@@ -8,7 +8,7 @@ import (
 	"log"
 	"strings"
 
-	_ "github.com/lib/pq"
+	"github.com/lib/pq"
 )
 
 type JSONQuestion struct {
@@ -52,19 +52,14 @@ func ImportQuestions() {
 		log.Fatal(err)
 	}
 
-	// Prepare statements
+	// Prepare statement
 	insertQuestion, err := tx.Prepare(`
-		INSERT INTO questions (subject_id, question_text, correct_answer, difficulty_level, explanation, topic, subtopic, solve_rate)
-		VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+		INSERT INTO questions (
+			subject_id, question_text, difficulty_level, explanation, 
+			topic, subtopic, solve_rate, choices, correct_answer_index
+		)
+		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
 		RETURNING id`)
-	if err != nil {
-		tx.Rollback()
-		log.Fatal(err)
-	}
-
-	insertChoice, err := tx.Prepare(`
-		INSERT INTO answer_choices (question_id, choice_text, is_correct)
-		VALUES ($1, $2, $3)`)
 	if err != nil {
 		tx.Rollback()
 		log.Fatal(err)
@@ -91,31 +86,35 @@ func ImportQuestions() {
 			questionText = fmt.Sprintf("Passage:\n%s\n\nQuestion:\n%s", q.Passage, q.Question)
 		}
 
+		// Convert letter answer (A, B, C, D) to index (0, 1, 2, 3)
+		correctAnswerIndex := map[string]int{
+			"A": 0,
+			"B": 1,
+			"C": 2,
+			"D": 3,
+		}[q.CorrectAnswer]
+
 		// Insert question
 		var questionID int
 		err := insertQuestion.QueryRow(
 			subjectID,
 			questionText,
-			q.CorrectAnswer,
 			difficultyLevel,
 			q.Explanation,
 			q.Topic,
 			q.Subtopic,
 			q.SolveRate,
+			pq.Array(q.Choices),
+			correctAnswerIndex,
 		).Scan(&questionID)
 		if err != nil {
+			if strings.Contains(err.Error(), "unique_question") {
+				// Skip duplicate question
+				fmt.Printf("Skipping duplicate question: %s\n", q.Question)
+				continue
+			}
 			tx.Rollback()
 			log.Fatal(err)
-		}
-
-		// Insert choices
-		for _, choice := range q.Choices {
-			isCorrect := strings.HasPrefix(choice, q.CorrectAnswer+")")
-			_, err = insertChoice.Exec(questionID, choice, isCorrect)
-			if err != nil {
-				tx.Rollback()
-				log.Fatal(err)
-			}
 		}
 	}
 
