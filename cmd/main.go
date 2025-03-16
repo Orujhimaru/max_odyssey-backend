@@ -53,6 +53,7 @@ func main() {
 
 	// Public routes
 	r.Get("/questions", questionHandler.GetQuestions)
+	r.Get("/questions/{id}", questionHandler.GetQuestion)
 	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
 	// docker exec -i max_odyssey-backend-postgres-1 psql -U satapp -d sat_tracker < sql/schema/004_add_choices_array.sql
 	// running migrations
