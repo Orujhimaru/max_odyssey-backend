@@ -51,9 +51,11 @@ func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Cors)
 
-	// Public routes
-	r.Get("/questions", questionHandler.GetQuestions)
+	// Public routes - order matters!
+	r.Get("/questions/filtered", questionHandler.GetFilteredQuestions)
 	r.Get("/questions/{id}", questionHandler.GetQuestion)
+	r.Get("/questions", questionHandler.GetQuestions)
+	// r.Get("/test-direct-query", questionHandler.TestDirectQuery)
 	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
 	// docker exec -i max_odyssey-backend-postgres-1 psql -U satapp -d sat_tracker < sql/schema/004_add_choices_array.sql
 	// running migrations

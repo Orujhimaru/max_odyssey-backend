@@ -12,6 +12,90 @@ import (
 	"github.com/lib/pq"
 )
 
+const getFilteredQuestions = `-- name: GetFilteredQuestions :many
+SELECT 
+  id, subject_id, question_text, correct_answer_index, 
+  difficulty_level, explanation, topic, subtopic, solve_rate, choices,
+  COUNT(*) OVER() AS total_count
+FROM questions
+WHERE 
+  subject_id = $1 AND 
+  ($2 = -1 OR difficulty_level = $2) AND
+  ($3 = '' OR topic = $3) AND
+  ($4 = '' OR subtopic = $4)
+ORDER BY 
+  CASE WHEN $5 = 'asc' THEN solve_rate END ASC,
+  CASE WHEN $5 = 'desc' THEN solve_rate END DESC
+LIMIT $6 OFFSET $7
+`
+
+type GetFilteredQuestionsParams struct {
+	SubjectID int
+	Column2   interface{}
+	Column3   interface{}
+	Column4   interface{}
+	Column5   interface{}
+	Limit     int32
+	Offset    int32
+}
+
+type GetFilteredQuestionsRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	CorrectAnswerIndex sql.NullInt32
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	TotalCount         int64
+}
+
+func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuestionsParams) ([]GetFilteredQuestionsRow, error) {
+	rows, err := q.db.QueryContext(ctx, getFilteredQuestions,
+		arg.SubjectID,
+		arg.Column2,
+		arg.Column3,
+		arg.Column4,
+		arg.Column5,
+		arg.Limit,
+		arg.Offset,
+	)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []GetFilteredQuestionsRow
+	for rows.Next() {
+		var i GetFilteredQuestionsRow
+		if err := rows.Scan(
+			&i.ID,
+			&i.SubjectID,
+			&i.QuestionText,
+			&i.CorrectAnswerIndex,
+			&i.DifficultyLevel,
+			&i.Explanation,
+			&i.Topic,
+			&i.Subtopic,
+			&i.SolveRate,
+			pq.Array(&i.Choices),
+			&i.TotalCount,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
 const getQuestion = `-- name: GetQuestion :one
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
        created_at, topic, subtopic, solve_rate, choices
