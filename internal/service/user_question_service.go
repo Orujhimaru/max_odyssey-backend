@@ -107,3 +107,49 @@ func (s *UserQuestionService) GetQuestionsByDifficulty(ascending bool) ([]models
 	// For now, we'll just return an empty slice
 	return []models.Question{}, nil
 }
+
+// ToggleSolved toggles the solved status of a question for a user
+func (s *UserQuestionService) ToggleSolved(userID, questionID int64) error {
+	// First, check if the question exists
+	log.Printf("Checking if question %d exists", questionID)
+	_, err := s.db.GetQuestion(context.Background(), int32(questionID))
+	if err != nil {
+		log.Printf("Error checking question: %v", err)
+		return err
+	}
+
+	// Now check if a user_question record exists
+	log.Printf("Checking if user_question record exists for user %d and question %d", userID, questionID)
+	_, err = s.db.GetUserQuestionByIDs(context.Background(), db.GetUserQuestionByIDsParams{
+		UserID:     int32(userID),
+		QuestionID: int32(questionID),
+	})
+
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// Record doesn't exist, create a new one with is_solved=true
+			log.Printf("Creating new user_question record with solved=true")
+			_, err = s.db.CreateUserQuestion(context.Background(), db.CreateUserQuestionParams{
+				UserID:       int32(userID),
+				QuestionID:   int32(questionID),
+				IsSolved:     sql.NullBool{Bool: true, Valid: true},
+				IsBookmarked: sql.NullBool{Bool: false, Valid: true},
+				TimeTaken:    sql.NullInt32{Valid: false},
+			})
+			return err
+		}
+		log.Printf("Error checking user_question: %v", err)
+		return err
+	}
+
+	// Record exists, toggle the solved status
+	log.Printf("Toggling solved status for existing record")
+	_, err = s.db.ToggleSolved(context.Background(), db.ToggleSolvedParams{
+		UserID:     int32(userID),
+		QuestionID: int32(questionID),
+	})
+	if err != nil {
+		log.Printf("Error toggling solved status: %v", err)
+	}
+	return err
+}

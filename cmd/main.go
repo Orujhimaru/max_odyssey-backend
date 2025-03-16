@@ -96,6 +96,7 @@ func main() {
 		// User question routes
 		r.Get("/bookmarks", userQuestionHandler.GetBookmarkedQuestions)
 		r.Post("/bookmark", userQuestionHandler.ToggleBookmark)
+		r.Post("/solved", userQuestionHandler.ToggleSolved)
 
 		// Add more protected routes here
 	})

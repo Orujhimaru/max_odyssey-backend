@@ -61,4 +61,10 @@ SET
     is_solved = TRUE,
     time_taken = $3
 WHERE user_id = $1 AND question_id = $2
+RETURNING *;
+
+-- name: ToggleSolved :one
+UPDATE user_questions
+SET is_solved = NOT is_solved
+WHERE user_id = $1 AND question_id = $2
 RETURNING *; 

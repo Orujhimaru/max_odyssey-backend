@@ -270,3 +270,30 @@ func (q *Queries) ToggleBookmark(ctx context.Context, arg ToggleBookmarkParams) 
 	)
 	return i, err
 }
+
+const toggleSolved = `-- name: ToggleSolved :one
+UPDATE user_questions
+SET is_solved = NOT is_solved
+WHERE user_id = $1 AND question_id = $2
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at
+`
+
+type ToggleSolvedParams struct {
+	UserID     int32
+	QuestionID int32
+}
+
+func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (UserQuestion, error) {
+	row := q.db.QueryRowContext(ctx, toggleSolved, arg.UserID, arg.QuestionID)
+	var i UserQuestion
+	err := row.Scan(
+		&i.ID,
+		&i.UserID,
+		&i.QuestionID,
+		&i.IsSolved,
+		&i.IsBookmarked,
+		&i.TimeTaken,
+		&i.CreatedAt,
+	)
+	return i, err
+}
