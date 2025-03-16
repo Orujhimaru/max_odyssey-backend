@@ -12,6 +12,46 @@ import (
 	"github.com/lib/pq"
 )
 
+const getQuestion = `-- name: GetQuestion :one
+SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
+       created_at, topic, subtopic, solve_rate, choices
+FROM questions 
+WHERE id = $1
+`
+
+type GetQuestionRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	CorrectAnswerIndex sql.NullInt32
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	CreatedAt          sql.NullTime
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+}
+
+func (q *Queries) GetQuestion(ctx context.Context, id int32) (GetQuestionRow, error) {
+	row := q.db.QueryRowContext(ctx, getQuestion, id)
+	var i GetQuestionRow
+	err := row.Scan(
+		&i.ID,
+		&i.SubjectID,
+		&i.QuestionText,
+		&i.CorrectAnswerIndex,
+		&i.DifficultyLevel,
+		&i.Explanation,
+		&i.CreatedAt,
+		&i.Topic,
+		&i.Subtopic,
+		&i.SolveRate,
+		pq.Array(&i.Choices),
+	)
+	return i, err
+}
+
 const getQuestions = `-- name: GetQuestions :many
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
        created_at, topic, subtopic, solve_rate, choices

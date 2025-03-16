@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"database/sql"
+	"log"
 	"max-odyssey-backend/internal/db"
 	"max-odyssey-backend/internal/models"
 )
@@ -46,10 +47,47 @@ func (s *UserQuestionService) GetBookmarkedQuestions(userID int64) ([]models.Que
 
 // ToggleBookmark toggles the bookmark status of a question for a user
 func (s *UserQuestionService) ToggleBookmark(userID, questionID int64) error {
-	_, err := s.db.ToggleBookmark(context.Background(), db.ToggleBookmarkParams{
+	// First, check if the question exists
+	log.Printf("Checking if question %d exists", questionID)
+	_, err := s.db.GetQuestion(context.Background(), int32(questionID))
+	if err != nil {
+		log.Printf("Error checking question: %v", err)
+		return err
+	}
+
+	// Now check if a user_question record exists
+	log.Printf("Checking if user_question record exists for user %d and question %d", userID, questionID)
+	_, err = s.db.GetUserQuestionByIDs(context.Background(), db.GetUserQuestionByIDsParams{
 		UserID:     int32(userID),
 		QuestionID: int32(questionID),
 	})
+
+	if err != nil {
+		if err == sql.ErrNoRows {
+			// Record doesn't exist, create a new one with is_bookmarked=true
+			log.Printf("Creating new user_question record with bookmark=true")
+			_, err = s.db.CreateUserQuestion(context.Background(), db.CreateUserQuestionParams{
+				UserID:       int32(userID),
+				QuestionID:   int32(questionID),
+				IsSolved:     sql.NullBool{Bool: false, Valid: true},
+				IsBookmarked: sql.NullBool{Bool: true, Valid: true},
+				TimeTaken:    sql.NullInt32{Valid: false},
+			})
+			return err
+		}
+		log.Printf("Error checking user_question: %v", err)
+		return err
+	}
+
+	// Record exists, toggle the bookmark
+	log.Printf("Toggling bookmark for existing record")
+	_, err = s.db.ToggleBookmark(context.Background(), db.ToggleBookmarkParams{
+		UserID:     int32(userID),
+		QuestionID: int32(questionID),
+	})
+	if err != nil {
+		log.Printf("Error toggling bookmark: %v", err)
+	}
 	return err
 }
 
