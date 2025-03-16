@@ -6,7 +6,52 @@ package db
 
 import (
 	"database/sql"
+	"database/sql/driver"
+	"fmt"
 )
+
+type UserRole string
+
+const (
+	UserRoleFree  UserRole = "free"
+	UserRolePaid  UserRole = "paid"
+	UserRoleAdmin UserRole = "admin"
+)
+
+func (e *UserRole) Scan(src interface{}) error {
+	switch s := src.(type) {
+	case []byte:
+		*e = UserRole(s)
+	case string:
+		*e = UserRole(s)
+	default:
+		return fmt.Errorf("unsupported scan type for UserRole: %T", src)
+	}
+	return nil
+}
+
+type NullUserRole struct {
+	UserRole UserRole
+	Valid    bool // Valid is true if UserRole is not NULL
+}
+
+// Scan implements the Scanner interface.
+func (ns *NullUserRole) Scan(value interface{}) error {
+	if value == nil {
+		ns.UserRole, ns.Valid = "", false
+		return nil
+	}
+	ns.Valid = true
+	return ns.UserRole.Scan(value)
+}
+
+// Value implements the driver Valuer interface.
+func (ns NullUserRole) Value() (driver.Value, error) {
+	if !ns.Valid {
+		return nil, nil
+	}
+	return string(ns.UserRole), nil
+}
 
 type Question struct {
 	ID                 int32
@@ -21,4 +66,25 @@ type Question struct {
 	SolveRate          sql.NullInt32
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
+}
+
+type User struct {
+	ID                   int32
+	Username             string
+	Role                 UserRole
+	AvatarUrl            sql.NullString
+	TargetScore          sql.NullInt32
+	PredictedTotalScore  sql.NullInt32
+	TotalQuestionsSolved sql.NullInt32
+	CreatedAt            sql.NullTime
+}
+
+type UserQuestion struct {
+	ID           int32
+	UserID       int32
+	QuestionID   int32
+	IsSolved     sql.NullBool
+	IsBookmarked sql.NullBool
+	TimeTaken    sql.NullInt32
+	CreatedAt    sql.NullTime
 }

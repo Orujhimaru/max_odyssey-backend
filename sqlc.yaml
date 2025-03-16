@@ -8,9 +8,11 @@ sql:
       - "sql/schema/005_update_schema.sql"
       - "sql/schema/006_add_unique_constraint.sql"
       - "sql/schema/007_create_users_table.sql"
+      - "sql/schema/009_create_user_questions.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"
+      - "sql/queries/user_questions.sql"
     engine: "postgresql"
     gen:
       go:
