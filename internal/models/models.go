@@ -2,7 +2,7 @@ package models
 
 import "time"
 
-
+// Question represents a question in the system
 type Question struct {
 	ID                 int       `json:"id"`
 	SubjectID          int       `json:"subject_id"`
@@ -17,4 +17,36 @@ type Question struct {
 	CreatedAt          time.Time `json:"created_at"`
 }
 
+// User represents a user in the system
+type User struct {
+	ID                   int       `json:"id"`
+	Username             string    `json:"username"`
+	Role                 string    `json:"role"`
+	AvatarURL            string    `json:"avatar_url"`
+	TargetScore          int       `json:"target_score"`
+	PredictedTotalScore  int       `json:"predicted_total_score"`
+	TotalQuestionsSolved int       `json:"total_questions_solved"`
+	CreatedAt            time.Time `json:"created_at"`
+}
 
+// UserQuestion represents a user's interaction with a question
+type UserQuestion struct {
+	ID           int       `json:"id"`
+	UserID       int       `json:"user_id"`
+	QuestionID   int       `json:"question_id"`
+	IsSolved     bool      `json:"is_solved"`
+	IsBookmarked bool      `json:"is_bookmarked"`
+	TimeTaken    int       `json:"time_taken"`
+	CreatedAt    time.Time `json:"created_at"`
+}
+
+// LoginRequest represents a login request
+type LoginRequest struct {
+	Username string `json:"username"`
+}
+
+// LoginResponse represents a login response
+type LoginResponse struct {
+	Token string `json:"token"`
+	User  User   `json:"user"`
+}

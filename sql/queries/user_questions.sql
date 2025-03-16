@@ -3,12 +3,36 @@ SELECT * FROM user_questions
 WHERE user_id = $1 AND question_id = $2;
 
 -- name: GetUserBookmarkedQuestions :many
-SELECT q.* FROM questions q
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at
+FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE;
 
 -- name: GetUserSolvedQuestions :many
-SELECT q.* FROM questions q
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at
+FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_solved = TRUE;
 

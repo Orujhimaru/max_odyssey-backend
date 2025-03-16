@@ -56,33 +56,58 @@ func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestion
 }
 
 const getUserBookmarkedQuestions = `-- name: GetUserBookmarkedQuestions :many
-SELECT q.id, q.subject_id, q.question_text, q.correct_answer, q.difficulty_level, q.explanation, q.created_at, q.topic, q.subtopic, q.solve_rate, q.choices, q.correct_answer_index FROM questions q
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at
+FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
 `
 
-func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, userID int32) ([]Question, error) {
+type GetUserBookmarkedQuestionsRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	CorrectAnswerIndex sql.NullInt32
+	CreatedAt          sql.NullTime
+}
+
+func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsRow, error) {
 	rows, err := q.db.QueryContext(ctx, getUserBookmarkedQuestions, userID)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	var items []Question
+	var items []GetUserBookmarkedQuestionsRow
 	for rows.Next() {
-		var i Question
+		var i GetUserBookmarkedQuestionsRow
 		if err := rows.Scan(
 			&i.ID,
 			&i.SubjectID,
 			&i.QuestionText,
-			&i.CorrectAnswer,
 			&i.DifficultyLevel,
 			&i.Explanation,
-			&i.CreatedAt,
 			&i.Topic,
 			&i.Subtopic,
 			&i.SolveRate,
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
+			&i.CreatedAt,
 		); err != nil {
 			return nil, err
 		}
@@ -123,33 +148,58 @@ func (q *Queries) GetUserQuestionByIDs(ctx context.Context, arg GetUserQuestionB
 }
 
 const getUserSolvedQuestions = `-- name: GetUserSolvedQuestions :many
-SELECT q.id, q.subject_id, q.question_text, q.correct_answer, q.difficulty_level, q.explanation, q.created_at, q.topic, q.subtopic, q.solve_rate, q.choices, q.correct_answer_index FROM questions q
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at
+FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_solved = TRUE
 `
 
-func (q *Queries) GetUserSolvedQuestions(ctx context.Context, userID int32) ([]Question, error) {
+type GetUserSolvedQuestionsRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	CorrectAnswerIndex sql.NullInt32
+	CreatedAt          sql.NullTime
+}
+
+func (q *Queries) GetUserSolvedQuestions(ctx context.Context, userID int32) ([]GetUserSolvedQuestionsRow, error) {
 	rows, err := q.db.QueryContext(ctx, getUserSolvedQuestions, userID)
 	if err != nil {
 		return nil, err
 	}
 	defer rows.Close()
-	var items []Question
+	var items []GetUserSolvedQuestionsRow
 	for rows.Next() {
-		var i Question
+		var i GetUserSolvedQuestionsRow
 		if err := rows.Scan(
 			&i.ID,
 			&i.SubjectID,
 			&i.QuestionText,
-			&i.CorrectAnswer,
 			&i.DifficultyLevel,
 			&i.Explanation,
-			&i.CreatedAt,
 			&i.Topic,
 			&i.Subtopic,
 			&i.SolveRate,
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
+			&i.CreatedAt,
 		); err != nil {
 			return nil, err
 		}
