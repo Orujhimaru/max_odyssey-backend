@@ -9,10 +9,14 @@ sql:
       - "sql/schema/006_add_unique_constraint.sql"
       - "sql/schema/007_create_users_table.sql"
       - "sql/schema/009_create_user_questions.sql"
+      - "sql/schema/010_add_solve_rate_index.sql"
+      - "sql/schema/011_add_filter_indexes.sql"
+      - "sql/schema/012_create_users_skills.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"
       - "sql/queries/user_questions.sql"
+      - "sql/queries/users_skills.sql"
     engine: "postgresql"
     gen:
       go:

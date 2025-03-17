@@ -50,3 +50,13 @@ type LoginResponse struct {
 	Token string `json:"token"`
 	User  User   `json:"user"`
 }
+
+// UserSkill represents a user's skill level
+type UserSkill struct {
+	ID         int       `json:"id"`
+	UserID     int       `json:"user_id"`
+	SkillName  string    `json:"skill_name"`
+	SkillScore float64   `json:"skill_score"`
+	CreatedAt  time.Time `json:"created_at"`
+	UpdatedAt  time.Time `json:"updated_at"`
+}

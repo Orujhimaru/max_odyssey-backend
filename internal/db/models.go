@@ -88,3 +88,12 @@ type UserQuestion struct {
 	TimeTaken    sql.NullInt32
 	CreatedAt    sql.NullTime
 }
+
+type UsersSkill struct {
+	ID         int32
+	UserID     int32
+	SkillName  string
+	SkillScore float32
+	CreatedAt  sql.NullTime
+	UpdatedAt  sql.NullTime
+}

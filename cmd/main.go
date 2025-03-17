@@ -35,6 +35,7 @@ func main() {
 	questionService := service.NewQuestionService(queries)
 	// userService := service.NewUserService(queries)  // Comment out or remove this line
 	userQuestionService := service.NewUserQuestionService(queries)
+	userSkillService := service.NewUserSkillService(queries)
 
 	// JWT configuration
 	jwtSecret := "your-secret-key" // In production, use environment variable
@@ -44,6 +45,7 @@ func main() {
 	// Initialize handlers
 	questionHandler := handler.NewQuestionHandler(questionService)
 	userQuestionHandler := handler.NewUserQuestionHandler(userQuestionService)
+	userSkillHandler := handler.NewUserSkillHandler(userSkillService)
 
 	// Create auth middleware
 	authMiddleware := middleware.Auth(authService)
@@ -100,6 +102,11 @@ func main() {
 		r.Get("/bookmarks", userQuestionHandler.GetBookmarkedQuestions)
 		r.Post("/bookmark", userQuestionHandler.ToggleBookmark)
 		r.Post("/solved", userQuestionHandler.ToggleSolved)
+
+		// User skill routes
+		r.Get("/skills", userSkillHandler.GetUserSkills)
+		r.Post("/skills", userSkillHandler.CreateOrUpdateUserSkill)
+		r.Delete("/skills", userSkillHandler.DeleteUserSkill)
 
 		// Add more protected routes here
 	})
