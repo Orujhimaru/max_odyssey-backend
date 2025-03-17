@@ -19,30 +19,84 @@ func NewUserQuestionService(db *db.Queries) *UserQuestionService {
 }
 
 // GetBookmarkedQuestions gets all bookmarked questions for a user
-func (s *UserQuestionService) GetBookmarkedQuestions(userID int64) ([]models.Question, error) {
-	dbQuestions, err := s.db.GetUserBookmarkedQuestions(context.Background(), int32(userID))
-	if err != nil {
-		return nil, err
+func (s *UserQuestionService) GetBookmarkedQuestions(userID int64, sortDir string) ([]models.Question, int, error) {
+	// Set default sort direction if not provided
+	if sortDir == "" {
+		sortDir = "asc"
 	}
 
-	questions := make([]models.Question, len(dbQuestions))
-	for i, q := range dbQuestions {
-		questions[i] = models.Question{
-			ID:                 int(q.ID),
-			SubjectID:          int(q.SubjectID.Int32),
-			QuestionText:       q.QuestionText,
-			Topic:              q.Topic.String,
-			Subtopic:           q.Subtopic.String,
-			CorrectAnswerIndex: int(q.CorrectAnswerIndex.Int32),
-			DifficultyLevel:    int(q.DifficultyLevel.Int32),
-			Explanation:        q.Explanation.String,
-			CreatedAt:          q.CreatedAt.Time,
-			SolveRate:          int(q.SolveRate.Int32),
-			Choices:            []string{}, // You'll need to convert the array
+	// Get bookmarked questions from database
+	var totalCount int
+	var questions []models.Question
+
+	// Call the appropriate function based on sort direction
+	if sortDir == "desc" {
+		log.Printf("QUERY PARAMS: GetUserBookmarkedQuestionsDesc - userID=%d", userID)
+		dbQuestions, err := s.db.GetUserBookmarkedQuestionsDesc(context.Background(), int32(userID))
+		if err != nil {
+			log.Printf("QUERY ERROR: %v", err)
+			return nil, 0, err
+		}
+
+		// Extract total count from first row
+		if len(dbQuestions) > 0 {
+			totalCount = int(dbQuestions[0].TotalCount)
+		} else {
+			totalCount = 0
+		}
+
+		// Convert to models
+		questions = make([]models.Question, len(dbQuestions))
+		for i, q := range dbQuestions {
+			questions[i] = models.Question{
+				ID:                 int(q.ID),
+				SubjectID:          int(q.SubjectID.Int32),
+				QuestionText:       q.QuestionText,
+				Topic:              q.Topic.String,
+				Subtopic:           q.Subtopic.String,
+				CorrectAnswerIndex: int(q.CorrectAnswerIndex.Int32),
+				DifficultyLevel:    int(q.DifficultyLevel.Int32),
+				Explanation:        q.Explanation.String,
+				CreatedAt:          q.CreatedAt.Time,
+				SolveRate:          int(q.SolveRate.Int32),
+				Choices:            q.Choices,
+			}
+		}
+	} else {
+		log.Printf("QUERY PARAMS: GetUserBookmarkedQuestionsAsc - userID=%d", userID)
+		dbQuestions, err := s.db.GetUserBookmarkedQuestionsAsc(context.Background(), int32(userID))
+		if err != nil {
+			log.Printf("QUERY ERROR: %v", err)
+			return nil, 0, err
+		}
+
+		// Extract total count from first row
+		if len(dbQuestions) > 0 {
+			totalCount = int(dbQuestions[0].TotalCount)
+		} else {
+			totalCount = 0
+		}
+
+		// Convert to models
+		questions = make([]models.Question, len(dbQuestions))
+		for i, q := range dbQuestions {
+			questions[i] = models.Question{
+				ID:                 int(q.ID),
+				SubjectID:          int(q.SubjectID.Int32),
+				QuestionText:       q.QuestionText,
+				Topic:              q.Topic.String,
+				Subtopic:           q.Subtopic.String,
+				CorrectAnswerIndex: int(q.CorrectAnswerIndex.Int32),
+				DifficultyLevel:    int(q.DifficultyLevel.Int32),
+				Explanation:        q.Explanation.String,
+				CreatedAt:          q.CreatedAt.Time,
+				SolveRate:          int(q.SolveRate.Int32),
+				Choices:            q.Choices,
+			}
 		}
 	}
 
-	return questions, nil
+	return questions, totalCount, nil
 }
 
 // ToggleBookmark toggles the bookmark status of a question for a user

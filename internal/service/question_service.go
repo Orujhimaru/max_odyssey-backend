@@ -107,6 +107,11 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 	offset := (filters.PageNumber - 1) * filters.PageSize
 
 	// Prepare parameters with special values for "no filter"
+	subjectIDParam := int32(filters.SubjectID)
+	if filters.SubjectID <= 0 {
+		subjectIDParam = -1 // Special value for "no filter"
+	}
+
 	difficultyParam := int32(filters.DifficultyLevel)
 	if filters.DifficultyLevel < 0 || filters.DifficultyLevel > 2 {
 		difficultyParam = -1 // Special value for "no filter"
@@ -115,7 +120,7 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 	// Log the parameters
 	log.Printf("Executing GetFilteredQuestions with filters: %+v", filters)
 	log.Printf("SQL Parameters - SubjectID: %d, DifficultyLevel: %d, Topic: %s, Subtopic: %s, SortDir: %s, PageSize: %d, PageOffset: %d",
-		filters.SubjectID,
+		subjectIDParam,
 		difficultyParam,
 		filters.Topic,
 		filters.Subtopic,
@@ -125,13 +130,13 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 
 	// Get questions with total count
 	dbQuestions, err := s.db.GetFilteredQuestions(ctx, db.GetFilteredQuestionsParams{
-		SubjectID: filters.SubjectID,
-		Column2:   difficultyParam,
-		Column3:   filters.Topic,
-		Column4:   filters.Subtopic,
-		Column5:   filters.SortDir,
-		Limit:     int32(filters.PageSize),
-		Offset:    int32(offset),
+		Column1: subjectIDParam, // Use the parameter with special value
+		Column2: difficultyParam,
+		Column3: filters.Topic,
+		Column4: filters.Subtopic,
+		Column5: filters.SortDir,
+		Limit:   int32(filters.PageSize),
+		Offset:  int32(offset),
 	})
 	if err != nil {
 		return nil, 0, err

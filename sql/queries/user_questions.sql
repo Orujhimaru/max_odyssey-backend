@@ -14,10 +14,16 @@ SELECT
   q.solve_rate,
   q.choices,
   q.correct_answer_index,
-  q.created_at
+  q.created_at,
+  COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
-WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE;
+WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY 
+  CASE 
+    WHEN $2 = 'desc' THEN q.solve_rate * -1  -- Multiply by -1 for descending
+    ELSE q.solve_rate
+  END;
 
 -- name: GetUserSolvedQuestions :many
 SELECT 
@@ -67,4 +73,42 @@ RETURNING *;
 UPDATE user_questions
 SET is_solved = NOT is_solved
 WHERE user_id = $1 AND question_id = $2
-RETURNING *; 
+RETURNING *;
+
+-- name: GetUserBookmarkedQuestionsAsc :many
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at,
+  COUNT(*) OVER() AS total_count
+FROM questions q
+JOIN user_questions uq ON q.id = uq.question_id
+WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY q.solve_rate ASC;
+
+-- name: GetUserBookmarkedQuestionsDesc :many
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at,
+  COUNT(*) OVER() AS total_count
+FROM questions q
+JOIN user_questions uq ON q.id = uq.question_id
+WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY q.solve_rate DESC; 

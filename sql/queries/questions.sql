@@ -16,7 +16,7 @@ SELECT
   COUNT(*) OVER() AS total_count
 FROM questions
 WHERE 
-  subject_id = $1 AND 
+  ($1 = -1 OR subject_id = $1) AND 
   ($2 = -1 OR difficulty_level = $2) AND
   ($3 = '' OR topic = $3) AND
   ($4 = '' OR subtopic = $4)

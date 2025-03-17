@@ -67,11 +67,22 @@ SELECT
   q.solve_rate,
   q.choices,
   q.correct_answer_index,
-  q.created_at
+  q.created_at,
+  COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY 
+  CASE 
+    WHEN $2 = 'desc' THEN q.solve_rate * -1  -- Multiply by -1 for descending
+    ELSE q.solve_rate
+  END
 `
+
+type GetUserBookmarkedQuestionsParams struct {
+	UserID  int32
+	Column2 interface{}
+}
 
 type GetUserBookmarkedQuestionsRow struct {
 	ID                 int32
@@ -85,10 +96,11 @@ type GetUserBookmarkedQuestionsRow struct {
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
 	CreatedAt          sql.NullTime
+	TotalCount         int64
 }
 
-func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsRow, error) {
-	rows, err := q.db.QueryContext(ctx, getUserBookmarkedQuestions, userID)
+func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, arg GetUserBookmarkedQuestionsParams) ([]GetUserBookmarkedQuestionsRow, error) {
+	rows, err := q.db.QueryContext(ctx, getUserBookmarkedQuestions, arg.UserID, arg.Column2)
 	if err != nil {
 		return nil, err
 	}
@@ -108,6 +120,149 @@ func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, userID int32) 
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
+			&i.TotalCount,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getUserBookmarkedQuestionsAsc = `-- name: GetUserBookmarkedQuestionsAsc :many
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at,
+  COUNT(*) OVER() AS total_count
+FROM questions q
+JOIN user_questions uq ON q.id = uq.question_id
+WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY q.solve_rate ASC
+`
+
+type GetUserBookmarkedQuestionsAscRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	CorrectAnswerIndex sql.NullInt32
+	CreatedAt          sql.NullTime
+	TotalCount         int64
+}
+
+func (q *Queries) GetUserBookmarkedQuestionsAsc(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsAscRow, error) {
+	rows, err := q.db.QueryContext(ctx, getUserBookmarkedQuestionsAsc, userID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []GetUserBookmarkedQuestionsAscRow
+	for rows.Next() {
+		var i GetUserBookmarkedQuestionsAscRow
+		if err := rows.Scan(
+			&i.ID,
+			&i.SubjectID,
+			&i.QuestionText,
+			&i.DifficultyLevel,
+			&i.Explanation,
+			&i.Topic,
+			&i.Subtopic,
+			&i.SolveRate,
+			pq.Array(&i.Choices),
+			&i.CorrectAnswerIndex,
+			&i.CreatedAt,
+			&i.TotalCount,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
+}
+
+const getUserBookmarkedQuestionsDesc = `-- name: GetUserBookmarkedQuestionsDesc :many
+SELECT 
+  q.id,
+  q.subject_id,
+  q.question_text,
+  q.difficulty_level,
+  q.explanation,
+  q.topic,
+  q.subtopic,
+  q.solve_rate,
+  q.choices,
+  q.correct_answer_index,
+  q.created_at,
+  COUNT(*) OVER() AS total_count
+FROM questions q
+JOIN user_questions uq ON q.id = uq.question_id
+WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
+ORDER BY q.solve_rate DESC
+`
+
+type GetUserBookmarkedQuestionsDescRow struct {
+	ID                 int32
+	SubjectID          sql.NullInt32
+	QuestionText       string
+	DifficultyLevel    sql.NullInt32
+	Explanation        sql.NullString
+	Topic              sql.NullString
+	Subtopic           sql.NullString
+	SolveRate          sql.NullInt32
+	Choices            []string
+	CorrectAnswerIndex sql.NullInt32
+	CreatedAt          sql.NullTime
+	TotalCount         int64
+}
+
+func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsDescRow, error) {
+	rows, err := q.db.QueryContext(ctx, getUserBookmarkedQuestionsDesc, userID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []GetUserBookmarkedQuestionsDescRow
+	for rows.Next() {
+		var i GetUserBookmarkedQuestionsDescRow
+		if err := rows.Scan(
+			&i.ID,
+			&i.SubjectID,
+			&i.QuestionText,
+			&i.DifficultyLevel,
+			&i.Explanation,
+			&i.Topic,
+			&i.Subtopic,
+			&i.SolveRate,
+			pq.Array(&i.Choices),
+			&i.CorrectAnswerIndex,
+			&i.CreatedAt,
+			&i.TotalCount,
 		); err != nil {
 			return nil, err
 		}

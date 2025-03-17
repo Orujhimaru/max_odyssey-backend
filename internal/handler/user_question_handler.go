@@ -27,10 +27,17 @@ func (h *UserQuestionHandler) GetBookmarkedQuestions(w http.ResponseWriter, r *h
 		return
 	}
 
-	log.Printf("Getting bookmarks for user: %s (ID: %d)", user.Username, user.ID)
+	// Get sort direction from query parameters
+	sortDir := r.URL.Query().Get("sort_dir")
+	// log.Println(sortDir, "oruj")
+	if sortDir != "asc" && sortDir != "desc" {
+		sortDir = "asc" // Default to ascending if not specified or invalid
+	}
+
+	log.Printf("Getting bookmarks for user: %s (ID: %d) with sort_dir: %s", user.Username, user.ID, sortDir)
 
 	// Get bookmarked questions
-	questions, err := h.service.GetBookmarkedQuestions(int64(user.ID))
+	questions, totalCount, err := h.service.GetBookmarkedQuestions(int64(user.ID), sortDir)
 	if err != nil {
 		log.Printf("Error getting bookmarks: %v", err)
 		utils.RespondWithError(w, http.StatusInternalServerError, "Failed to fetch bookmarked questions", err)
@@ -39,7 +46,11 @@ func (h *UserQuestionHandler) GetBookmarkedQuestions(w http.ResponseWriter, r *h
 
 	log.Printf("Found %d bookmarked questions", len(questions))
 	utils.RespondWithJSON(w, http.StatusOK, map[string]interface{}{
-		"questions": questions,
+		"questions":   questions,
+		"total_count": totalCount,
+		"sorting": map[string]string{
+			"sort_dir": sortDir,
+		},
 	})
 }
 

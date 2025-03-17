@@ -19,7 +19,7 @@ SELECT
   COUNT(*) OVER() AS total_count
 FROM questions
 WHERE 
-  subject_id = $1 AND 
+  ($1 = -1 OR subject_id = $1) AND 
   ($2 = -1 OR difficulty_level = $2) AND
   ($3 = '' OR topic = $3) AND
   ($4 = '' OR subtopic = $4)
@@ -30,13 +30,13 @@ LIMIT $6 OFFSET $7
 `
 
 type GetFilteredQuestionsParams struct {
-	SubjectID int
-	Column2   interface{}
-	Column3   interface{}
-	Column4   interface{}
-	Column5   interface{}
-	Limit     int32
-	Offset    int32
+	Column1 interface{}
+	Column2 interface{}
+	Column3 interface{}
+	Column4 interface{}
+	Column5 interface{}
+	Limit   int32
+	Offset  int32
 }
 
 type GetFilteredQuestionsRow struct {
@@ -55,7 +55,7 @@ type GetFilteredQuestionsRow struct {
 
 func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuestionsParams) ([]GetFilteredQuestionsRow, error) {
 	rows, err := q.db.QueryContext(ctx, getFilteredQuestions,
-		arg.SubjectID,
+		arg.Column1,
 		arg.Column2,
 		arg.Column3,
 		arg.Column4,
