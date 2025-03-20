@@ -1,0 +1,549 @@
+[
+  {
+    "id": 1,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Hard",
+    "solveRate": 85,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, both Sykes in Text 1 and the scholars in Text 2 would most likely agree with which statement?",
+    "passage": "Text 1 \\n In 1916, H. Dugdale Sykes disputed claims that The Two Noble Kinsmen was coauthored by William Shakespeare and John Fletcher. Sykes felt Fletcher’s contributions to the play were obvious—Fletcher had a distinct style in his other plays, so much so that lines with that style were considered sufficient evidence of Fletcher’s authorship. But for the lines not deemed to be by Fletcher, Sykes felt that their depiction of women indicated that their author was not Shakespeare but Philip Massinger. \\nText 2 \\nScholars have accepted The Two Noble Kinsmen as coauthored by Shakespeare since the 1970s: it appears in all major one-volume editions of Shakespeare’s complete works. Though scholars disagree about who wrote what exactly, it is generally held that on the basis of style, Shakespeare wrote all of the first act and most of the last, while John Fletcher authored most of the three middle acts.",
+    "choices": [
+      "A) John Fletcher’s writing has a unique, readily identifiable style.",
+      "B) The women characters in John Fletcher’s plays are similar to the women characters in Philip Massinger’s plays.",
+      "C) The Two Noble Kinsmen belongs in one-volume compilations of Shakespeare’s complete plays.",
+      "D) Philip Massinger’s style in the first and last acts of The Two Noble Kinsmen is an homage to Shakespeare’s style."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. Text 1 states that Sykes felt Fletcher’s contributions to the play were obvious because he had a distinct style in his other plays. Text 2 states that scholars generally agree “on the basis of style” that Fletcher wrote most of the three middle acts. Both texts imply that Fletcher’s writing has a unique, readily identifiable style that can be used to distinguish his work from others. Choice B is incorrect. While Text 1 refers to the women in Massinger plays, neither text compares the women of Fletcher’s plays to the women of Massinger’s plays. Text 2 doesn’t mention Massinger at all. Choice C is incorrect. Text 1 states that Sykes disputed that Shakespeare coauthored the play, and implied that it was coauthored by Fletcher and Massinger instead. Sykes, therefore, would disagree that The Two Noble Kinsmen belongs in a Shakespeare compilation. Choice D is incorrect. Text 1 doesn’t suggest that Massinger was inspired by Shakespeare, and Text 2 doesn’t mention Massinger at all."
+  },
+  {
+    "id": 2,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Easy",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, how would Singh and Roy (Text 2) most likely respond to the research discussed in Text 1?",
+    "passage": "Text 1 \\n Public policy researcher Anthony Fowler studied the history of elections in Australia, a country that requires citizens to vote. Fowler argues that requiring citizens to vote leads to a significant increase in voters who would otherwise not have the time or motivation to vote. Thus, election results in countries that require citizens to vote better reflect the preferences of the country as a whole.     \\nText 2 \\n Governments in democratic countries function better when more people vote. However, forcing people to vote may have negative consequences. Shane P. Singh and Jason Roy studied what happens when a country requires its citizens to vote. They found that when people feel forced to vote, they tend to spend less time looking for information about their choices when voting. As a result, votes from these voters may not reflect their actual preferences.    ",
+    "choices": [
+      "A) Only countries of a certain population size should implement mandatory voting. ",
+      "B) People who are forced to vote are likely to become politically engaged in other ways, such as volunteering or running for office.",
+      "C) Requiring people to vote does not necessarily lead to election outcomes that better represent the preferences of the country as a whole.",
+      "D) Countries that require voting must also make the process of voting easier for their citizens."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice C is the best answer. Text 1 claims that mandatory voting results in elections that \"better reflect the preferences of the country.\" Singh and Roy disagree. They claim that more voters doesn’t equal more quality votes—instead, they argue that forced voting may lead to less-informed votes that \"may not reflect [voters’] actual preferences.\"Choice A is incorrect. Neither text mentions the population size of countries that require voting, or how that might affect election outcomes. Choice B is incorrect. Neither text discusses the effects of mandatory voting on other forms of political engagement. Choice D is incorrect. Neither text discusses the ease or difficulty of the voting process in countries that require voting."
+  },
+  {
+    "id": 3,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Hard",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, how would the author of Text 2 most likely respond to the assertion in the underlined portion of Text 1?",
+    "passage": "Text 1 \\n  Growth in the use of novel nanohybrids—materials created from the conjugation of multiple distinct nanomaterials, such as iron oxide and gold nanomaterials conjugated for use in magnetic imaging—has outpaced studies of nanohybrids’ environmental risks. Unfortunately, risk evaluations based on nanohybrids’ constituents are not reliable: conjugation may alter constituents’ physiochemical properties such that innocuous nanomaterials form a nanohybrid that is anything but.   \\nText 2 \\n The potential for enhanced toxicity of nanohybrids relative to the toxicity of constituent nanomaterials has drawn deserved attention, but the effects of nanomaterial conjugation vary by case. For instance, it was recently shown that a nanohybrid of silicon dioxide and zinc oxide preserved the desired optical transparency of zinc oxide nanoparticles while mitigating the nanoparticles’ potential to damage DNA.    ",
+    "choices": [
+      "A) By concurring that the risk described in Text 1 should be evaluated but emphasizing that the risk is more than offset by the potential benefits of nanomaterial conjugation",
+      "B) By arguing that the situation described in Text 1 may not be representative but conceding that the effects of nanomaterial conjugation are harder to predict than researchers had expected",
+      "C) By denying that the circumstance described in Text 1 is likely to occur but acknowledging that many aspects of nanomaterial conjugation are still poorly understood",
+      "D) By agreeing that the possibility described in Text 1 is a cause for concern but pointing out that nanomaterial conjugation does not inevitably produce that result"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. The author of Text 2 acknowledges that nanohybrids may be more toxic than their constituent parts, but also provides an example of a nanohybrid that has reduced toxicity compared to its components: silicon dioxide and zinc oxide together have all the benefits of zinc oxide nanoparticles without any of the DNA harm zinc oxide has on its own. Choice A is incorrect. While the author of Text 2 gives an example of a nanohybrid that isn’t as toxic as its constituent parts, they don’t argue that the benefit outweighs the risk. They merely argue that “the effects of nanomaterial conjugation vary by case.” Choice B is incorrect. The author of Text 2 states that the effects of nanomaterial conjugation “vary by case,” and that the attention that their potential toxicity has drawn is warranted. If the situation in Text 1 weren’t representative, then there would be less attention to the potential danger of these materials. Furthermore, neither passage suggests that researchers had expected that they could predict the effects of nanomaterial conjugation. Choice C is incorrect. The author of Text 2 agrees that the potential toxicity of nanohybrids “has drawn deserved attention,” so they aren’t denying the problem."
+  },
+  {
+    "id": 2,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Hard",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, how would Chris Brierley (Text 2) most likely respond to the discussion in Text 1?",
+    "passage": "Text 1 \\n Africa’s Sahara region—once a lush ecosystem—began to dry out about 8,000 years ago. A change in Earth’s orbit that affected climate has been posited as a cause of desertification, but archaeologist David Wright also attributes the shift to Neolithic peoples. He cites their adoption of pastoralism as a factor in the region drying out: the pastoralists’ livestock depleted vegetation, prompting the events that created the Sahara Desert. \\n \\nText 2 \\n Research by Chris Brierley et al. challenges the idea that Neolithic peoples contributed to the Sahara’s desertification. Using a climate-vegetation model, the team concluded that the end of the region’s humid period occurred 500 years earlier than previously assumed. The timing suggests that Neolithic peoples didn’t exacerbate aridity in the region but, in fact, may have helped delay environmental changes with practices (e.g., selective grazing) that preserved vegetation.",
+    "choices": [
+      "A) By pointing out that given the revised timeline for the end of the Sahara’s humid period, the Neolithic peoples’ mode of subsistence likely didn’t cause the region’s desertification.",
+      "B) By claiming that pastoralism was only one of many behaviors the Neolithic peoples took part in that may have contributed to the Sahara’s changing climate.",
+      "C) By insisting that pastoralism can have both beneficial and deleterious effects on a region’s vegetation and climate.",
+      "D) By asserting that more research needs to be conducted into factors that likely contributed to the desertification of the Sahara region."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. Brierley et al.’s research directly challenges Wright’s claim that pastoralism turned the Sahara into a desert, suggesting that, in a Sahara that turned arid 500 years earlier than previously thought, pastoral practices may have actually “preserved vegetation” rather than depleting it.\n\nChoice B is incorrect. Brierley et al.’s research actually disputes the idea that any Neolithic peoples’ behaviors, including pastoralism, could have contributed to the Sahara’s changing climate. In fact, their research implies that the Neolithic peoples’ practices did not “exacerbate aridity” (i.e., make things worse), but may have slowed environmental changes. Choice C is incorrect. Brierley et al.’s research does not acknowledge that pastoralism can have deleterious (i.e., negative) effects on a region’s vegetation and climate. It only describes one possible beneficial effect: preserving vegetation through practices like selective grazing. Choice D is incorrect. Brierley et al.’s research does not call for more research into factors that likely contributed to the desertification of the Sahara region."
+  },
+  {
+    "id": 1,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Hard",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, if Ishii and O’Mahony (Text 1) and Jünger et al. (Text 2) were aware of the findings of both experiments, they would most likely agree with which statement?",
+    "passage": "Text 1 \\n Soy sauce, made from fermented soybeans, is noted for its umami flavor. Umami—one of the five basic tastes along with sweet, bitter, salty, and sour—was formally classified when its taste receptors were discovered in the 2000s. In 2007, to define the pure umami flavor, scientists Rie Ishii and Michael O’Mahony used broths made from shiitake mushrooms and kombu seaweed, and two panels of Japanese and US judges closely agreed on a description of the taste. \\n \\nText 2 \\n A 2022 experiment by Manon Jünger et al. led to a greater understanding of soy sauce’s flavor profile. The team initially presented a mixture of compounds with low molecular weights to taste testers who found it was not as salty or bitter as real soy sauce. Further analysis of soy sauce identified proteins, including dipeptides, that enhanced umami flavor and also contributed to saltiness. The team then made a mix of 50 chemical compounds that re-created soy sauce’s flavor.",
+    "choices": [
+      "A) On average, the diets of people in the United States tend to have fewer foods that contain certain dipeptides than the diets of people in Japan have.",
+      "B) Chemical compounds that activate both the umami and salty taste receptors tend to have a higher molecular weight than those that only activate umami taste receptors.",
+      "C) Fermentation introduces proteins responsible for the increase of umami flavor in soy sauce, and those proteins also increase the perception of saltiness.",
+      "D) The broths in the 2007 experiment most likely did not have a substantial amount of the dipeptides that played a key part in the 2022 experiment."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. Ishii and O’Mahony were trying to isolate the pure umami flavor, while Jünger was trying to recreate soy sauce, which has a mix of flavors that includes umami. Accordingly, the broths from Text 1 are not described as having any soy sauce in them—just 'shiitake mushrooms and kombu seaweed.' So they probably don’t have as much of the dipeptides described in Text 2, which were found to be a key part of soy sauce’s umami-ness and its saltiness.\n\nChoice A is incorrect. Neither text supports this. Neither text gets into the diets of people in the United States, nor the diets of people in Japan. Choice B is incorrect. Neither text supports this. Text 2 does talk about the molecular weights of chemical compounds, but there isn’t enough information provided about molecular weights in Text 1 to make an inference about what the scientists in Text 1 would say. Choice C is incorrect. Neither text supports this. Text 1 briefly mentions that soy sauce is 'made from fermented soybeans,' but it never claims that fermentation is responsible for its flavor in any way. And Text 2 never mentions fermentation at all."
+  },
+  {
+    "id": 1409,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Easy",
+    "solveRate": 85,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, both authors would most likely agree with which statement?",
+    "passage": "Text 1 \\n Dance choreographer Alvin Ailey’s deep admiration for jazz music can most clearly be felt in the rhythms and beats his works were set to. Ailey collaborated with some of the greatest jazz legends, like Charles Mingus, Charlie Parker, and perhaps his favorite, Duke Ellington. With his choice of music, Ailey helped bring jazz to life for his audiences. \\n \\nText 2 \\n Jazz is present throughout Ailey’s work, but it’s most visible in Ailey’s approach to choreography. Ailey often incorporated improvisation, a signature characteristic of jazz music, in his work. When managing his dance company, Ailey rarely forced his dancers to an exact set of specific moves. Instead, he encouraged his dancers to let their own skills and experiences shape their performances, as jazz musicians do.",
+    "choices": [
+      "A) Dancers who worked with Ailey greatly appreciated his supportive approach as a choreographer.",
+      "B) Ailey’s work was strongly influenced by jazz.",
+      "C) Audiences were mostly unfamiliar with the jazz music in Ailey’s works.",
+      "D) Ailey blended multiple genres of music together when choreographing dance pieces."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. Author 1 states that Ailey had a “deep admiration for jazz music” and that he “helped bring jazz to life for his audiences.” Author 2 states that “Jazz is present throughout Ailey’s work.” While the authors name different aspects of Ailey’s work as the most influenced by jazz, they agree that jazz was a strong influence.\n\nChoice A is incorrect. This isn’t something that either text claims. Neither text mentions how Ailey’s dancers felt about his approach as a choreographer, so we have no evidence that either author would agree with this. Choice C is incorrect. This isn’t something that either text claims. Neither text mentions how familiar audiences were with any aspect of Ailey’s works, so we have no evidence that either author would agree with this. Choice D is incorrect. This isn’t something that either text claims. Neither text mentions any genre of music other than jazz, so we have no evidence that either author would agree with this."
+  },
+  {
+    "id": 1410,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Medium",
+    "solveRate": 50,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, Fierer's team and the author of Text 2 would most likely agree with which statement about microbes?",
+    "passage": "Text 1 \\n Microbes are tiny organisms in the soil, water, and air all around us. They thrive even in very harsh conditions. That’s why Noah Fierer and colleagues were surprised when soil samples they collected from an extremely cold, dry area in Antarctica didn’t seem to contain any life. The finding doesn’t prove that there are no microbes in that area, but the team says it does suggest that the environment severely restricts microbes’ survival. \\n \\nText 2 \\n Microbes are found in virtually every environment on Earth. So it’s unlikely they would be completely absent from Fierer's team’s study site, no matter how extreme the environment is. There were probably so few organisms in the samples that current technology couldn’t detect them. But since a spoonful of typical soil elsewhere might contain billions of microbes, the presence of so few in the Antarctic soil samples would show how challenging the conditions are.",
+    "choices": [
+      "A) Most microbes are better able to survive in environments with extremely dry conditions than in environments with harsh temperatures.",
+      "B) A much higher number of microbes would probably be found if another sample of soil were taken from the Antarctic study site.",
+      "C) Microbes are likely difficult to detect in the soil at the Antarctic study site because they tend to be smaller than microbes found in typical soil elsewhere.",
+      "D) Most microbes are probably unable to withstand the soil conditions at the Antarctic study site."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer because it presents a statement about microbes with which Fierer's team (Text 1) and the author of Text 2 would most likely agree. Text 1 states that microbes usually thrive in very harsh conditions, and so Fierer's team was surprised when samples collected from an extremely cold and dry area of Antarctica didn’t appear to contain any life. Fierer's team says that though this doesn’t conclusively prove there are no microbes in the area, it suggests that microbes would have a notably difficult time surviving in the environment. The author of Text 2 says it’s unlikely that there would be no microbes at all in the Antarctic study site from which Fierer's team retrieved soil samples and that there may have been hard-to-detect microbes in the samples. However, the presence of only a few microbes in the Antarctic samples rat"
+  },
+  {
+    "id": 1412,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Cross-Text Connections",
+    "difficulty": "Easy",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the texts, what would Lisa Trever (Text 2) most likely say about the interpretation presented in the underlined portion of Text 1?",
+    "passage": "Text 1:\\n Historians studying pre-Inca Peru have looked to ceramic vessels to understand daily life among the Moche people. These mold-made sculptures present plants, animals, and human faces in precise ways—vessels representing human faces are so detailed that scholars have interpreted facial markings to represent scars and other skin irregularities. Some historians have even used these objects to identify potential skin diseases that may have afflicted people at the time. \\n Text 2:\\n Art historian and archaeologist Lisa Trever has argued that the interpretation of Moche “portrait” vessels as hyper-realistic portrayals of identifiable people may inadvertently disregard the creativity of the objects’ creators. Moche ceramic vessels, Trever argues, are artworks in which sculptors could free their imagination, using realistic objects and people around them as inspiration to explore more abstract concepts.",
+    "choices": [
+      "A) Depictions of human faces are significantly more realistic than depictions of plants and other animals are.",
+      "B) It is likely that some depictions of human faces with extensive markings are intended to portray the same historical individual.",
+      "C) Some vessels may have been damaged during their excavation and thus provide little insight into Moche culture.",
+      "D) Markings on depictions of human faces are not necessarily intended to portray particular details about the physical appearance of individuals."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. Trever thinks that the 'hyper-realistic portrayal of identifiable people' interpretation ignores the sculptors’ imagination and creativity. We can infer that Trever thinks the facial markings on the sculptures may not have represented real skin blemishes on real people.\\n\\nChoice A is incorrect. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. Neither text compares the depictions of human faces to the depictions of plants or animals, so we have no basis to draw this conclusion.\\n\\nChoice B is incorrect. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. There’s nothing in either text about multiple depictions representing the same person, so we have no basis to draw this conclusion.\\n\\nChoice C is incorrect. The text gives us no reason to think that Trever would respond to the underlined interpretation in this way. Neither text mentions the state of the vessels (damaged or intact), so we have no basis to draw this conclusion."
+  },
+
+  {
+    "id": 2,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Hard",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the function of the underlined question in the text as a whole?",
+    "passage": "“How lifelike are they?” Many computer animators prioritize this question as they strive to create ever more realistic environments and lighting. Generally, while characters in computer-animated films appear highly exaggerated, environments and lighting are carefully engineered to mimic reality. But some animators, such as Pixar’s Sanjay Patel, are focused on a different question. Rather than asking first whether the environments and lighting they’re creating are convincingly lifelike, Patel and others are asking whether these elements reflect their films’ unique stories.",
+    "choices": [
+      "A) It reflects a primary goal that many computer animators have for certain components of the animations they produce.",
+      "B) It represents a concern of computer animators who are more interested in creating unique backgrounds and lighting effects than realistic ones.",
+      "C) It conveys the uncertainty among many computer animators about how to create realistic animations using current technology.",
+      "D) It illustrates a reaction that audiences typically have to the appearance of characters created by computer animators."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer because it most accurately describes the function of the underlined question in the text as a whole. The text begins with the underlined question, “How lifelike are they?” The text then explains that many computer animators pose this question about the environments and lighting that they create for animated films, striving for realistic animation of those components even if the characters themselves aren’t portrayed in realistic terms. The focus of the text then shifts to describe how some animators strive to create environments and lighting that reflect the film’s unique stories rather than making them appear realistic. Therefore, the function of the underlined question is to reflect a primary goal that many computer animators have for certain components of the animations they produce. Choice B is incorrect because, as the text makes clear, the underlined question is one posed by computer animators who wish to create realistic backgrounds and lighting effects, not by those who, instead, wish to create effects that reflect films’ unique stories and aren’t necessarily realistic; this latter group of animators is discussed later in the text. Choice C is incorrect. As the text explains, many computer animators strive for realistic environments and lighting, while others do not; this difference of approach relates to whether these components should be realistic, not to how realism can be achieved using current technology, and the text never suggests that animators are uncertain how to achieve it. Choice D is incorrect because the underlined question pertains to the perspective of computer animators, not the audience, and the text never considers audience’s reactions to characters in animated films."
+  },
+
+  {
+    "id": 1375,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Hard",
+    "solveRate": 65,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "What choice best describes the main purpose of the text?",
+    "passage": "The field of study called affective neuroscience seeks instinctive, physiological causes for feelings such as pleasure or displeasure. Because these sensations are linked to a chemical component (for example, the release of the neurotransmitter dopamine in the brain when one receives or expects a reward), they can be said to have a partly physiological basis. These processes have been described in mammals, but Jingnan Huang and his colleagues have recently observed that some behaviors of honeybees (such as foraging) are also motivated by a dopamine-based signaling process.",
+    "choices": [
+      "A) It describes an experimental method of measuring the strength of physiological responses in humans.",
+      "B) It illustrates processes by which certain insects can express how they are feeling.",
+      "C) It summarizes a finding suggesting that some mechanisms in the brains of certain insects resemble mechanisms in mammalian brains.",
+      "D) It presents research showing that certain insects and mammals behave similarly when there is a possibility of a reward for their actions."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer because it most accurately describes the main purpose of the text, which is to summarize a finding suggesting that some mechanisms in the brains of certain insects resemble mechanisms in mammalian brains. The text begins by explaining that feelings such as pleasure and displeasure are linked to chemical processes in the brain, such as the release of dopamine when one receives a reward. The text then indicates that such processes have been seen in mammals but that researchers have recently observed similar processes involving dopamine in honeybees. Taken together, this information serves to sum up the discovery that some mechanisms in the brains of certain insects may resemble mechanisms linked to feelings such as pleasure and displeasure in mammals.\n\nChoice A is incorrect because the text doesn’t describe any experiments or experimental methods. Instead, the text describes a phenomenon that has been observed in mammals and then presents the recent observations of Huang and colleagues that this phenomenon is also seen in honeybees. Choice B is incorrect because there’s nothing in the text to suggest that certain insects can express how they’re feeling through particular processes. The text does indicate that certain honeybee behaviors such as foraging are linked to dopamine, but it doesn’t suggest that these behaviors enable honeybees to communicate feelings or sensations. Choice D is incorrect because the text presents research showing that certain honeybee behaviors such as foraging are linked to dopamine and therefore may be motivated by similar mechanisms to those in mammalian brains, not that honeybees and mammals behave similarly when there is the possibility of reward for their actions."
+  },
+  {
+    "id": 1379,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Easy",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "passage": "The following text is from Srimati Svarna Kumari Devi’s 1894 novel *The Fatal Garland* (translated by A. Christina Albers in 1910). Shakti is walking near a riverbank that she visited frequently during her childhood.\n\nShe crossed the woods she knew so well. **The trees seemed to extend their branches like welcoming arms.** They greeted her as an old friend. Soon she reached the river-side.",
+    "choices": [
+      "A) It suggests that Shakti feels uncomfortable near the river.",
+      "B) It indicates that Shakti has lost her sense of direction in the woods.",
+      "C) It emphasizes Shakti’s sense of belonging in the landscape.",
+      "D) It conveys Shakti’s appreciation for her long-term friendships."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer because it most accurately describes how the underlined sentence functions in the text as a whole. The first sentence of the text states that Shakti knows the woods she is walking in well. The next sentence, which is underlined, emphasizes Shakti’s familiarity with, and sense of security within, the woods by describing how the tree branches are friendly and “welcoming,” as they are depicted as extending open arms to her. The remainder of the text also shows that Shakti is comfortable and content in the woods by describing her as “an old friend” of the trees. Thus, the function of the underlined portion is to emphasize Shakti’s sense of belonging in the wooded landscape that she visits.\n\nChoice A is incorrect because the text and underlined portion suggest that Shakti is comfortable, not uncomfortable, in her surroundings: the trees around her are described as welcoming and reassuring. Moreover, the underlined portion discusses Shakti’s feelings in the forest, not the river, since she hasn’t reached the river yet. Choice B is incorrect because the text and underlined portion emphasize Shakti’s familiarity with the woods. The trees are inviting, and she feels like “an old friend” to the woods, so she isn’t lost or confused there. Choice D is incorrect because the third sentence uses the phrase “as an old friend” figuratively in reference to Shakti’s sense of familiarity with the landscape, not in reference to her long-standing friendships with other people, and the text and underlined portion never discuss her feelings about such friendships."
+  },
+  {
+    "id": 1381,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Medium",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best states the main purpose of the text?",
+    "passage": "Early in the Great Migration of 1910–1970, which involved the mass migration of Black people from the southern to the northern United States, political activist and *Chicago Defender* writer Fannie Barrier Williams was instrumental in helping other Black women establish themselves in the North. Many women hoped for better employment opportunities in the North because, in the South, they faced much competition for domestic employment and men tended to get agricultural work. To aid with this transition, Barrier Williams helped secure job placement in the North for many women before they even began their journey.",
+    "choices": [
+      "A) To introduce and illustrate Barrier Williams’s integral role in supporting other Black women as their circumstances changed during part of the Great Migration",
+      "B) To establish that Barrier Williams used her professional connections to arrange employment for other Black women, including jobs with the *Chicago Defender*",
+      "C) To demonstrate that the factors that motivated the start of the Great Migration were different for Black women than they were for Black men",
+      "D) To provide an overview of the employment challenges faced by Black women in the agricultural and domestic spheres in the southern United States"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer because it most accurately describes the text’s purpose, which is to discuss the important role Barrier Williams played in supporting many other Black women as they relocated to the northern United States during the early years of the Great Migration. After introducing Barrier Williams, the text describes how she helped find jobs for other Black women, who in many cases relocated in search of better employment prospects than the South could offer at the time. The text indicates that by doing so, she eased these women’s transition as their circumstances changed.\n\nChoice B is incorrect. Although the text mentions Barrier Williams’s work as a political activist and writer for the *Chicago Defender*, it doesn’t discuss any professional connections she made in these roles or indicate that she used any such connections in her work to secure employment for other Black women. Choice C is incorrect. Although the text discusses a factor that caused many women to relocate during the Great Migration, their difficulty finding employment in the South, the text doesn’t indicate that this factor motivated the start of the Great Migration. Moreover, the text doesn’t discuss the factors that motivated Black men to migrate. Choice D is incorrect. Although the text mentions the difficult employment prospects for Black women in the domestic and agricultural sectors in the South during the Great Migration, the text’s main purpose isn’t to provide an overview of the employment challenges Black women faced in these sectors. Rather, it provides this information to show that Barrier Williams played a crucial role in supporting many Black women who relocated to the North by helping them achieve one of their main goals, securing a job."
+  },
+  {
+    "id": 1385,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Hard",
+    "solveRate": 10,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best states the main purpose of the text?",
+    "passage": "Studying late nineteenth- and early twentieth-century artifacts from an agricultural and domestic site in Texas, archaeologist Ayana O. Flewellen found that Black women employed as farm workers utilized hook-and-eye closures to fasten their clothes at the waist, giving themselves a silhouette similar to the one that was popular in contemporary fashion and typically achieved through more restrictive garments such as corsets. Flewellen argues that this sartorial practice shows that these women balanced hegemonic ideals of femininity with the requirements of their physically demanding occupation.",
+    "choices": [
+      "A) To describe an unexpected discovery that altered a researcher’s view of how rapidly fashions among Black female farmworkers in late nineteenth- and early twentieth-century Texas changed during the period",
+      "B) To discuss research that investigated the ways in which Black female farmworkers in late nineteenth- and early twentieth-century Texas used fashion practices to resist traditional gender ideals",
+      "C) To evaluate a scholarly work that offers explanations for the impact of urban fashion ideals on Black female farmworkers in late nineteenth- and early twentieth-century Texas",
+      "D) To summarize the findings of a study that explored factors influencing a fashion practice among Black female farmworkers in late nineteenth- and early twentieth-century Texas"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. The text provides an overview of a scholarly work discussing the fashion practices of Black female farmworkers in late 19th- and early 20th-century Texas, and how these practices were influenced by both the fashion ideals of the time and the demands of farmwork.\n\nChoice A is incorrect. The text never discusses the rate of fashion change among Black female farmworkers. The text also never categorizes Flewellen’s findings as 'unexpected.' Choice B is incorrect. The text actually explains that Black female farmworkers were trying to achieve traditional feminine ideals, not resist them. Choice C is incorrect. The text doesn’t evaluate a scholarly work but rather simply describes it. Furthermore, the text is focused on 'agricultural and domestic' fashion, not urban fashion as this choice suggests."
+  },
+  {
+    "id": 1386,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Hard",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the function of the second sentence in the overall structure of the text?",
+    "passage": "Astronomers are confident that the star Betelgeuse will eventually consume all the helium in its core and explode in a supernova. **They are much less confident, however, about when this will happen, since that depends on internal characteristics of Betelgeuse that are largely unknown.** Astrophysicist Sarafina El-Badry Nance and colleagues recently investigated whether acoustic waves in the star could be used to determine internal stellar states but concluded that this method could not sufficiently reveal Betelgeuse’s internal characteristics to allow its evolutionary state to be firmly fixed.",
+    "choices": [
+      "A) It describes a serious limitation of the method used by Nance and colleagues.",
+      "B) It presents the central finding reported by Nance and colleagues.",
+      "C) It identifies the problem that Nance and colleagues attempted to solve but did not.",
+      "D) It explains how the work of Nance and colleagues was received by others in the field."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer because it best describes how the second sentence functions in the text as a whole. The first sentence establishes something astronomers believe with some certainty: that Betelgeuse will explode in a supernova. The second sentence then introduces a problem: astronomers aren’t certain when Betelgeuse will explode because they don’t have enough information about the star’s internal characteristics. Finally, the third sentence indicates that researcher Sarafina El-Badry Nance and colleagues investigated a possible method of obtaining the necessary information about Betelgeuse’s internal characteristics, though they found that the method wouldn’t be sufficient. Thus, the function of the second sentence is to identify the problem that Nance and colleagues attempted to solve but didn’t.\n\nChoice A is incorrect because the second sentence introduces the general problem Nance and colleagues hoped to solve, not a serious limitation of how Nance and colleagues tried to solve it. It is the third sentence that introduces Nance and colleagues, but no serious limitation of their approach to studying a method of determining internal stellar states is described. Choice B is incorrect because the second sentence introduces the general problem Nance and colleagues hoped to solve, not the central finding they ultimately reported. It is the third sentence that presents Nance and colleagues’ conclusion that a potential method for determining internal stellar states would be insufficient. Choice D is incorrect because the second sentence doesn’t indicate how other astronomers or astrophysicists responded to the work done by Nance and colleagues; the text doesn’t address this information at all."
+  },
+  {
+    "id": 1387,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Medium",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the function of the underlined sentence in the text as a whole?",
+    "passage": "Archeological excavation of Market Street Chinatown, a nineteenth-century Chinese American community in San Jose, California, provided the first evidence that Asian food products were imported to the United States in the 1800s: bones from a freshwater fish species native to Southeast Asia. **Jinshanzhuang—Hong Kong-based import/export firms—likely coordinated the fish’s transport from Chinese-operated fisheries in Vietnam and Malaysia to North American markets.** This route reveals the (often overlooked) multinational dimensions of the trade networks linking Chinese diaspora communities.",
+    "choices": [
+      "A) It explains why efforts to determine the country of origin of the items mentioned in the previous sentence remain inconclusive.",
+      "B) It provides information that helps support a claim about a discovery’s significance that is presented in the following sentence.",
+      "C) It traces the steps that were taken to locate and recover the objects that are described in the previous sentence.",
+      "D) It outlines a hypothesis that additional evidence discussed in the following sentence casts some doubt on."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. The underlined sentence provides information about import/export firms, showing how Chinese communities across the world were connected by trade routes.\n\nChoice A is incorrect. The underlined sentence never suggests that the countries of origin of the fish are in question—in fact, it tells us exactly where they came from. Choice C is incorrect. The passage never describes the steps taken to discover the fish bones described in the previous sentence. Choice D is incorrect. The underlined sentence doesn’t outline a hypothesis but instead provides evidence. And the following sentence agrees with the underlined sentence, so we could eliminate this choice just for saying that the following sentence \"casts some doubt on\" the underlined one—partly wrong is all wrong."
+  },
+  {
+    "id": 1399,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Medium",
+    "solveRate": 12,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the overall structure of the text?",
+    "passage": "Using NASA’s powerful James Webb Space Telescope (JWST), Mercedes López-Morales and colleagues measured the wavelengths of light traveling through the atmosphere of WASP-39b, an exoplanet, or planet outside our solar system. Different molecules absorb different wavelengths of light, and the wavelength measurements showed the presence of carbon dioxide (CO₂) in WASP-39b’s atmosphere. This finding not only offers the first decisive evidence of CO₂ in the atmosphere of an exoplanet but also illustrates the potential for future scientific breakthroughs held by the JWST.",
+    "choices": [
+      "A) It discusses a method used by some researchers, then states why an alternative method is superior to it.",
+      "B) It describes how researchers made a scientific discovery, then explains the importance of that discovery.",
+      "C) It outlines the steps taken in a scientific study, then presents a hypothesis based on that study.",
+      "D) It examines how a group of scientists reached a conclusion, then shows how other scientists have challenged that conclusion."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. The text begins by describing how the researchers used the JWST to detect CO₂ in WASP-39b’s atmosphere. Then the text discusses the significance of this finding, both as the first evidence of CO₂ in an exoplanet’s atmosphere and as an illustration of the JWST’s potential for making new discoveries in general.\n\nChoice A is incorrect. The text doesn’t compare two different methods, but rather focuses on one study that used the JWST. Choice C is incorrect. The text doesn’t present a hypothesis, but rather reports on the findings of a study. Choice D is incorrect. The text doesn’t mention any scientists challenging the conclusion reached by López-Morales and colleagues."
+  },
+  {
+    "id": 1400,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Easy",
+    "solveRate": 11,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best states the function of the underlined portion in the text as a whole?",
+    "passage": "Researchers have found a nearly 164,000-year-old molar from a member of the archaic human species known as Denisovans in a cave in Laos, suggesting that Denisovans lived in a wider range of environments than indicated by earlier evidence. **Before the discovery, Denisovans were thought to have lived only at high altitudes in relatively cold climates in what are now Russia and China**, but the discovery of the tooth in Laos suggests that they may have lived at low altitudes in relatively warm climates in Southeast Asia as well.",
+    "choices": [
+      "A) It dismisses as untrue the research presented in the previous sentence.",
+      "B) It defines a term used in the description that follows in the rest of the sentence.",
+      "C) It emphasizes the main goal of the research introduced in the previous sentence.",
+      "D) It provides context that clarifies the significance of the information that follows in the rest of the sentence."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. The text describes how a new discovery expands our understanding of Denisovans. The underlined portion describes what we used to believe about Denisovans, which helps the reader understand the significance of the discovery of the molar: it suggests that they lived in more places than we’d previously thought.\n\nChoice A is incorrect. The underlined portion doesn’t do this. Instead, it explains what we used to believe about Denisovans before the discovery—it doesn’t dismiss the new discovery as false. Choice B is incorrect. The underlined portion doesn’t do this. No term is defined here. Choice C is incorrect. The underlined portion doesn’t do this. The text never tells us what the “goal” of the research was, just what its discovery was."
+  },
+  {
+    "id": 1401,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Text Structure and Purpose",
+    "difficulty": "Hard",
+    "solveRate": 33,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best describes the function of the underlined portion in the text as a whole?",
+    "passage": "According to historian Vicki L. Ruiz, Mexican American women made crucial contributions to the labor movement during World War II. At the time, food processing companies entered into contracts to supply United States armed forces with canned goods. Increased production quotas conferred greater bargaining power on the companies’ employees, many of whom were Mexican American women: **employees insisted on more favorable benefits, and employers, who were anxious to fulfill the contracts, complied.** Thus, labor activism became a platform for Mexican American women to assert their agency.",
+    "choices": [
+      "A) It elaborates on a claim about labor relations in a particular industry made earlier in the text.",
+      "B) It offers an example of a trend in the World War II–era economy discussed earlier in the text.",
+      "C) It notes a possible exception to the historical narrative of labor activism sketched earlier in the text.",
+      "D) It provides further details about the identities of the workers discussed earlier in the text."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer because it best describes how the underlined portion functions in the text as a whole. The text says that the increased production quotas of food processing companies during World War II enabled employees to make better bargains in exchange for their labor. The underlined portion presents an example of this increased bargaining power: employees requested more favorable benefits, and employers complied because they were under pressure to fulfill the demanding terms of their contracts. Thus, the underlined portion of the text elaborates on a claim about labor relations in a particular industry (food processing) made earlier in the text.\n\nChoice B is incorrect because there is no indication in the text that the economic factors that influenced food processing also influenced other parts of the economy; thus, the bargaining described in the underlined portion of the text cannot be called an example of a trend. Choice C is incorrect because the underlined portion supports the historical narrative of labor activism in food processing that is sketched in the text, instead of noting an exception to that narrative. Choice D is incorrect because while the underlined portion does discuss the demands that workers made in exchange for their labor, it does not discuss the identities of the workers."
+  },
+  {
+    "id": 1371,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Easy",
+    "solveRate": 44,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Artist Marilyn Dingle’s intricate, coiled baskets are _____ sweetgrass and palmetto palm. Following a Gullah technique that originated in West Africa, Dingle skillfully winds a thin palm frond around a bunch of sweetgrass with the help of a “sewing bone” to create the basket’s signature look that no factory can reproduce.",
+    "choices": [
+      "A) indicated by",
+      "B) handmade from",
+      "C) represented by",
+      "D) collected with"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of Marilyn Dingle’s baskets. In this context, to say that Dingle’s baskets are “handmade from” particular plants means that Dingle creates baskets herself using those plants but without using machines. The text says that Dingle “skillfully winds” parts of palmetto palm plants around sweetgrass plants to make baskets with an appearance that “no factory can reproduce.” This context suggests that Dingle’s baskets are handmade from sweetgrass and palmetto palm.\n\nChoice A is incorrect because the text describes how Dingle uses sweetgrass and palmetto palm to create her baskets, not how her baskets are “indicated by,” or signified by, sweetgrass and palmetto palm. Choice C is incorrect. Although Dingle’s baskets are described as being made using sweetgrass and palm, there’s nothing in the text to suggest that the baskets are “represented by,” or exemplified or portrayed by, sweetgrass and palmetto palm. Instead, the focus of the text is on Dingle’s use of sweetgrass and palmetto palm and the impossibility of replicating the appearance of her baskets using machines. Choice D is incorrect because there’s nothing in the text to suggest that Dingle’s baskets are “collected with,” or brought together in a group with, sweetgrass and palmetto palm. Instead, the text describes how Dingle uses those plants to make her baskets."
+  },
+  {
+    "id": 1372,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Medium",
+    "solveRate": 15,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "As used in the text, what does the phrase 'a singular' most nearly mean?",
+    "passage": "The following text is adapted from Nathaniel Hawthorne’s 1837 story “Dr. Heidegger’s Experiment.” The main character, a physician, is experimenting with rehydrating a dried flower.\n\nAt first [the rose] lay lightly on the surface of the fluid, appearing to imbibe none of its moisture. Soon, however, a singular change began to be visible. The crushed and dried petals stirred and assumed a deepening tinge of crimson, as if the flower were reviving from a deathlike slumber.",
+    "choices": [
+      "A) A lonely",
+      "B) A disagreeable",
+      "C) An acceptable",
+      "D) An extraordinary"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer because as used in the text, 'singular' most nearly means extraordinary. The text portrays an experiment in which a character rehydrates a dried rose by infusing it with moisture. After prolonged contact with the liquid, the rose begins to absorb it, undergoing an exceptional transformation: its color deepens, its previously 'crushed and dried' petals shift, and the entire flower revives 'from a deathlike slumber.' In other words, an extraordinary change is visible in the flower.\n\nChoice A is incorrect. Although in some contexts 'singular' can mean of or relating to an individual or to a single instance of something, this usage doesn’t imply loneliness or an otherwise unsatisfactory condition of isolation. Moreover, the text doesn’t attribute such a condition to the rose. Choice B is incorrect. Although 'singular' has several related meanings, none of them relate to being disagreeable or unpleasant. Moreover, the text doesn’t portray the change undergone by the rose as necessarily disagreeable. Choice C is incorrect because 'singular' means extraordinary, not acceptable. The change is portrayed as striking, not barely satisfactory."
+  },
+  {
+    "id": 1373,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Hard",
+    "solveRate": 44,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Rejecting the premise that the literary magazine *Ebony and Topaz* (1927) should present a unified vision of Black American identity, editor Charles S. Johnson fostered his contributors’ diverse perspectives by promoting their authorial autonomy. Johnson’s self-effacement diverged from the editorial stances of W.E.B. Du Bois and Alain Locke, whose decisions for their publications were more _____.",
+    "choices": [
+      "A) proficient",
+      "B) dogmatic",
+      "C) ambiguous",
+      "D) unpretentious"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. A person who is 'dogmatic' believes strongly that their principles and opinions are true. Because Du Bois and Locke are implied to have one 'unified vision' of Black American identity that they prioritize over the 'diverse perspectives' of different writers, they can be described as dogmatic.\n\nChoice A is incorrect. 'Proficient' means 'skilled.' Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson was not skilled at making editorial decisions. Based on the text, the three editors just have different styles; they’re not necessarily more or less skilled. Choice C is incorrect. 'Ambiguous' means 'unclear' or 'open to multiple interpretations.' However, it’s actually Johnson who encouraged multiple interpretations ('diverse perspectives'). Since Du Bois and Locke are said to 'diverge' from Johnson, we can assume that the views they published were not ambiguous, but instead clear and firm (a 'unified vision'). Choice D is incorrect. 'Unpretentious' means 'not trying to impress others with greater skill or importance than is actually possessed.' Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson is pretentious (trying to impress others)."
+  },
+  {
+    "id": 1376,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Hard",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Some economic historians _____ that late nineteenth- and early twentieth-century households in the United States experienced an economy of scale when it came to food purchases—they assumed that large households spent less on food per person than did small households. Economist Trevon Logan showed, however, that a close look at the available data disproves this supposition.",
+    "choices": ["A) surmised", "B) contrived", "C) questioned", "D) regretted"],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer because it most logically completes the text’s discussion of late nineteenth- and early twentieth-century household food purchases. In this context, 'surmised' means formed an idea or assumption with little evidence. The text explains that certain economic historians 'assumed' that large and small households spent different amounts on food per person, but that another economist found this supposition to be false based on evidence from available data. This context suggests that the economic historians made an incorrect assumption without enough consideration of evidence.\n\nChoice B is incorrect. In this context, 'contrived' would mean brought about or created through trickery. Nothing in the text suggests that the economic historians were deliberately trying to trick people with a claim about food purchasing behaviors in late nineteenth- and early twentieth-century households; the text simply suggests that they made an assumption about those behaviors that another historian believes isn’t supported by the available data. Choice C is incorrect because the text indicates that it’s Logan and not the economic historians who 'questioned,' or doubted, the assumption that large and small households in the late nineteenth and early twentieth centuries spent different amounts on food per person; the economic historians are the ones who made that assumption to begin with. Choice D is incorrect because nothing in the text suggests that some economic historians 'regretted,' or felt sad or remorseful about, the food purchasing behaviors of late nineteenth- and early twentieth-century households. The text focuses on the idea that the economic historians made an assumption about those behaviors that may not be supported by available data, not on the historians’ emotional response to what households did in the past."
+  },
+  {
+    "id": 1377,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Easy",
+    "solveRate": 23,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "As used in the text, what does the word 'disturbed' most nearly mean?",
+    "passage": "The following text is from Bram Stoker’s 1897 novel *Dracula*. The narrator is being driven in a carriage through a remote region at night.\n\nThe baying of the wolves sounded nearer and nearer, as though they were closing round on us from every side. I grew dreadfully afraid, and the horses shared my fear. The driver, however, was not in the least *disturbed*; he kept turning his head to left and right, but I could not see anything through the darkness.",
+    "choices": [
+      "A) Disorganized",
+      "B) Alarmed",
+      "C) Offended",
+      "D) Interrupted"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer because as used in the text, 'disturbed' most nearly means alarmed. The text portrays the narrator traveling in a carriage as wolves howl in the surrounding darkness. The text contrasts the reaction of both the narrator and the horses pulling the carriage with that of the driver of the carriage: the narrator and horses are 'dreadfully afraid,' but the driver is 'not in the least disturbed.' In other words, the driver is not alarmed by the wolves nearby."
+  },
+  {
+    "id": 1378,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Word Choice",
+    "difficulty": "Hard",
+    "solveRate": 43,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Economist Marco Castillo and colleagues showed that nuisance costs—the time and effort people must spend to make donations—reduce charitable giving. Charities can mitigate this effect by compensating donors for nuisance costs, but those costs, though variable, are largely _____ donation size, so charities that compensate donors will likely favor attracting a few large donors over many small donors.",
+    "choices": [
+      "A) supplemental to",
+      "B) predictive of",
+      "C) independent of",
+      "D) subsumed in"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. We’re told that charities that pay donors back for nuisance costs will attract a few large donors instead of many small donors. This suggests that nuisance costs are not linked to donation size.\n\nChoice A is incorrect. This doesn’t fit the logic of the text. If nuisance costs are supplemental to (meaning in addition to) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors. Choice B is incorrect. This doesn’t fit the logic of the text. If nuisance costs can predict donation size, that wouldn’t necessarily result in charities that compensate donors for those costs attracting a few large donors over many small donors. Choice D is incorrect. This doesn’t fit the logic of the text. If nuisance costs are subsumed in (meaning included in) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors."
+  },
+  {
+    "id": 1380,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Medium",
+    "solveRate": 54,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "During a 2014 archaeological dig in Spain, Vicente Lull and his team uncovered the skeleton of a woman from El Algar, an Early Bronze Age society, buried with valuable objects signaling a high position of power. This finding may persuade researchers who have argued that Bronze Age societies were ruled by men to _____ that women may have also held leadership roles.",
+    "choices": ["A) waive", "B) concede", "C) refute", "D) require"],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of the significance of the 2014 archaeological finding at El Algar. In this context, 'concede' means to admit something is true after first resisting that admission. The text indicates that some researchers believe 'Bronze Age societies were ruled by men.' But the Bronze Age burial of a woman at El Algar included 'valuable objects signaling a high position of power,' which would raise the possibility that 'women may have also held leadership roles.' Thus, the text is calling into question the notion that only men were leaders in these societies and speculating that people holding this view may reconsider their opinion.\n\nChoice A is incorrect because 'waive' means to refrain from insisting that something, such as a right or a requirement, be observed; the word isn’t used, however, in contexts where someone acknowledges that an opinion they hold may be invalid, as is the case in the text. Choice C is incorrect. According to the text, the finding from the El Algar burial site undermines the view that Bronze Age societies were exclusively ruled by men. However, 'refute' means to demonstrate that something is false and would not make sense in context. Lull and team’s finding supports the view that women may have also held leadership roles, not that they did not participate in such roles. Choice D is incorrect because in this context, 'require' means to demand or specify as mandatory. However, it would not make sense for contemporary researchers to demand that Bronze Age 'women may have also held leadership roles.'"
+  },
+  {
+    "id": 1383,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Easy",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Dance choreographer Jawole Willa Jo Zollar aims to give people the opportunity to be _____ her creative process. For example, live performances of her dance HairStories, which debuted in 2001, featured videos of people across the United States talking about their hair and audience members sharing pictures of their interesting hairstyles.",
+    "choices": [
+      "A) nervous about",
+      "B) completed by",
+      "C) delayed by",
+      "D) involved in"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. 'Involved in' means 'playing an active role in.' This fits the context clues describing how Zollar includes the audience in her shows by incorporating their stories and pictures.\n\nChoice A is incorrect. 'Nervous about' means 'worried or anxious about.' Nothing in the text suggests that people would be nervous about Zollar’s creative process. Choice B is incorrect. 'Completed by' means 'made whole by.' It doesn’t make sense to say that Zollar’s shows would make her audience complete. Choice C is incorrect. 'Delayed by' means 'made late by.' Nothing in the text suggests that people would be delayed by Zollar’s creative process."
+  },
+  {
+    "id": 1384,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Medium",
+    "solveRate": 11,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "As used in the text, what does the word 'assumed' most nearly mean?",
+    "passage": "The following text is adapted from Nathaniel Hawthorne’s 1844 short story 'Drowne’s Wooden Image.' Drowne, a young man, is carving a wooden figure to decorate the front of a ship.\n\nDay by day, the work assumed greater precision, and settled its irregular and misty outline into distinct grace and beauty. The general design was now obvious to the common eye.",
+    "choices": [
+      "A) Acquired",
+      "B) Acknowledged",
+      "C) Imitated",
+      "D) Speculated"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer because as used in the text, 'assumed' most nearly means acquired, or came to possess. The text portrays a character named Drowne carving a figure out of wood. At first 'irregular and misty,' or haphazard and indistinct, the figure’s outline gradually showed 'distincter grace and beauty' until the general design of the carved object 'was now obvious to the common eye,' or plainly recognizable to anyone. In other words, as Drowne continued to carve, the wooden object came to possess, or acquired, greater precision, changing from an indistinct outline or shape into a graceful, beautiful, and clearly recognizable form.\n\nChoice B is incorrect. Although in some contexts 'assumed' can mean acknowledged, or recognized, it doesn’t have that meaning in this context because an inanimate object like the wooden figure can’t acknowledge its own precision. Choice C is incorrect because there’s nothing in the text to suggest that the wooden figure merely imitated, or mimicked, precision. Rather, the text suggests that as Drowne carved his wooden figure, it gradually became more precise. Choice D is incorrect. Although in some contexts 'assumed' can mean speculated, or supposed based on incomplete information, it doesn’t have that meaning in this context because an inanimate object like the wooden figure can’t speculate about its own precision."
+  },
+  {
+    "id": 1388,
+    "type": "Verbal",
+    "topic": "Craft and Structure",
+    "subtopic": "Words in Context",
+    "difficulty": "Easy",
+    "solveRate": null,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical and precise word or phrase?",
+    "passage": "Former astronaut Ellen Ochoa says that although she doesn’t have a definite idea of when it might happen, she _____ that humans will someday need to be able to live in other environments than those found on Earth. This conjecture informs her interest in future research missions to the moon.",
+    "choices": ["A) demands", "B) speculates", "C) doubts", "D) establishes"],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of Ochoa’s prediction that humans will one day need to live in places other than Earth. As used in this context, 'speculates' would mean puts forward an idea without firm evidence. The text states that Ochoa 'doesn’t have a definite idea' about when humans might need to live in other environments and characterizes Ochoa’s prediction as a 'conjecture,' or a conclusion presented without convincing evidence. This context indicates that Ochoa speculates when she makes this prediction.\n\nChoice A is incorrect because saying that Ochoa 'demands,' or insists or requires, that humans will one day need to live in other environments than Earth’s would not make sense in context. The text indicates that she’s unsure about the timing but hypothesizes that it will someday happen. Choice C is incorrect because saying that Ochoa 'doubts,' or questions or disbelieves, that humans will one day need to live in other environments than Earth’s would not make sense in context. The text indicates that although Ochoa is unsure about the timing, she hypothesizes that humans will need to live in places other than Earth and encourages research into future travel to the moon. Choice D is incorrect because saying that Ochoa 'establishes,' or proves, that humans will one day need to live in other environments than Earth’s would not make sense in context. Rather than stating that Ochoa discusses her idea with certainty and supports it with evidence, the text indicates that Ochoa is unsure about when humans might need to live in other environments."
+  }
+]
