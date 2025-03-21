@@ -1,172 +1,262 @@
 [
   {
-    "id": 1371,
+    "id": 1619,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
     "difficulty": "Easy",
-    "solveRate": 44,
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "Artist Marilyn Dingle’s intricate, coiled baskets are _____ sweetgrass and palmetto palm. Following a Gullah technique that originated in West Africa, Dingle skillfully winds a thin palm frond around a bunch of sweetgrass with the help of a “sewing bone” to create the basket’s signature look that no factory can reproduce.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Samuel Coleridge-Taylor was a prominent classical music composer from England who toured the US three times in the early 1900s. The child of a West African father and an English mother, Coleridge-Taylor emphasized his mixed-race ancestry. For example, he referred to himself as Anglo-African. ____ he incorporated the sounds of traditional African music into his classical music compositions.",
     "choices": [
-      "A) indicated by",
-      "B) handmade from",
-      "C) represented by",
-      "D) collected with"
+      "A) In addition,",
+      "B) Actually,",
+      "C) However,",
+      "D) Regardless,"
     ],
-    "correctAnswer": "B",
-    "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of Marilyn Dingle’s baskets. In this context, to say that Dingle’s baskets are “handmade from” particular plants means that Dingle creates baskets herself using those plants but without using machines. The text says that Dingle “skillfully winds” parts of palmetto palm plants around sweetgrass plants to make baskets with an appearance that “no factory can reproduce.” This context suggests that Dingle’s baskets are handmade from sweetgrass and palmetto palm.\n\nChoice A is incorrect because the text describes how Dingle uses sweetgrass and palmetto palm to create her baskets, not how her baskets are “indicated by,” or signified by, sweetgrass and palmetto palm. Choice C is incorrect. Although Dingle’s baskets are described as being made using sweetgrass and palm, there’s nothing in the text to suggest that the baskets are “represented by,” or exemplified or portrayed by, sweetgrass and palmetto palm. Instead, the focus of the text is on Dingle’s use of sweetgrass and palmetto palm and the impossibility of replicating the appearance of her baskets using machines. Choice D is incorrect because there’s nothing in the text to suggest that Dingle’s baskets are “collected with,” or brought together in a group with, sweetgrass and palmetto palm. Instead, the text describes how Dingle uses those plants to make her baskets."
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that follows indicates a second, additional way. Choice B is incorrect because “actually” illogically signals that the detail in this sentence is surprising in light of the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry. Choice C is incorrect because “however” illogically signals that the detail in this sentence contrasts with the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry. Choice D is incorrect because “regardless” illogically signals that the detail in this sentence is true despite the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry."
   },
   {
-    "id": 1372,
+    "id": 1620,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
-    "difficulty": "Medium",
-    "solveRate": 15,
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Hard",
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "As used in the text, what does the phrase 'a singular' most nearly mean?",
-    "passage": "The following text is adapted from Nathaniel Hawthorne’s 1837 story “Dr. Heidegger’s Experiment.” The main character, a physician, is experimenting with rehydrating a dried flower.\n\nAt first [the rose] lay lightly on the surface of the fluid, appearing to imbibe none of its moisture. Soon, however, a singular change began to be visible. The crushed and dried petals stirred and assumed a deepening tinge of crimson, as if the flower were reviving from a deathlike slumber.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In her poetry collection Thomas and Beulah, Rita Dove interweaves the titular characters’ personal stories with broader historical narratives. She places Thomas’s journey from the American South to the Midwest in the early 1900s within the larger context of the Great Migration. ____ Dove sets events from Beulah’s personal life against the backdrop of the US Civil Rights Movement.",
     "choices": [
-      "A) A lonely",
-      "B) A disagreeable",
-      "C) An acceptable",
-      "D) An extraordinary"
+      "A) Specifically,",
+      "B) Thus,",
+      "C) Regardless,",
+      "D) Similarly,"
     ],
     "correctAnswer": "D",
-    "explanation": "Choice D is the best answer because as used in the text, 'singular' most nearly means extraordinary. The text portrays an experiment in which a character rehydrates a dried rose by infusing it with moisture. After prolonged contact with the liquid, the rose begins to absorb it, undergoing an exceptional transformation: its color deepens, its previously 'crushed and dried' petals shift, and the entire flower revives 'from a deathlike slumber.' In other words, an extraordinary change is visible in the flower.\n\nChoice A is incorrect. Although in some contexts 'singular' can mean of or relating to an individual or to a single instance of something, this usage doesn’t imply loneliness or an otherwise unsatisfactory condition of isolation. Moreover, the text doesn’t attribute such a condition to the rose. Choice B is incorrect. Although 'singular' has several related meanings, none of them relate to being disagreeable or unpleasant. Moreover, the text doesn’t portray the change undergone by the rose as necessarily disagreeable. Choice C is incorrect because 'singular' means extraordinary, not acceptable. The change is portrayed as striking, not barely satisfactory."
+    "explanation": "Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader historical narratives. Choice A is incorrect because “specifically” illogically signals that the information about Beulah in this sentence provides specific details elaborating on the previous information about Thomas. Instead, it’s similar to the previous information about Thomas. Choice B is incorrect because “thus” illogically signals that the information about Beulah in this sentence is a result or consequence of the previous information about Thomas. Instead, it’s similar to the previous information about Thomas. Choice C is incorrect because “regardless” illogically signals that the information about Beulah in this sentence is true despite the previous information about Thomas. Instead, it’s similar to the previous information about Thomas."
   },
   {
-    "id": 1373,
+    "id": 1626,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
     "difficulty": "Hard",
-    "solveRate": 44,
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "Rejecting the premise that the literary magazine *Ebony and Topaz* (1927) should present a unified vision of Black American identity, editor Charles S. Johnson fostered his contributors’ diverse perspectives by promoting their authorial autonomy. Johnson’s self-effacement diverged from the editorial stances of W.E.B. Du Bois and Alain Locke, whose decisions for their publications were more _____.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. ____ there are those who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who insist that vicariance (separation due to geographic barriers) is. Biogeographer Isabel Sanmartin counts herself among the latter.",
     "choices": [
-      "A) proficient",
-      "B) dogmatic",
-      "C) ambiguous",
-      "D) unpretentious"
+      "A) Furthermore,",
+      "B) By contrast,",
+      "C) Similarly,",
+      "D) That is,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate introduced in the previous sentence by explaining the difference between dispersalists and vicariancists. Choice A is incorrect because “furthermore” illogically signals that the information in this sentence is merely additional to (and separate from) the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate. Choice B is incorrect because “by contrast” illogically signals that the information in this sentence contrasts with the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate. Choice C is incorrect because “similarly” illogically signals that the information in this sentence is merely similar to the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate."
+  },
+  {
+    "id": 1627,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ____ researchers identified a planet orbiting KELT-9, a B-type star more than twice as massive and nearly twice as hot as the Sun. Called KELT-9b, it is one of the hottest planets ever discovered.",
+    "choices": [
+      "A) likewise,",
+      "B) however,",
+      "C) therefore,",
+      "D) for example,"
     ],
     "correctAnswer": "B",
-    "explanation": "Choice B is the best answer. A person who is 'dogmatic' believes strongly that their principles and opinions are true. Because Du Bois and Locke are implied to have one 'unified vision' of Black American identity that they prioritize over the 'diverse perspectives' of different writers, they can be described as dogmatic.\n\nChoice A is incorrect. 'Proficient' means 'skilled.' Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson was not skilled at making editorial decisions. Based on the text, the three editors just have different styles; they’re not necessarily more or less skilled. Choice C is incorrect. 'Ambiguous' means 'unclear' or 'open to multiple interpretations.' However, it’s actually Johnson who encouraged multiple interpretations ('diverse perspectives'). Since Du Bois and Locke are said to 'diverge' from Johnson, we can assume that the views they published were not ambiguous, but instead clear and firm (a 'unified vision'). Choice D is incorrect. 'Unpretentious' means 'not trying to impress others with greater skill or importance than is actually possessed.' Du Bois and Locke are contrasted with Johnson, but nothing in the text suggests that Johnson is pretentious (trying to impress others)."
+    "explanation": "Choice B is the best answer. The word “however” logically signals that the information in this sentence about the planet KELT-9b—that it orbits a B-type star—contrasts with the previous information about planets discovered outside our solar system. Most of these planets orbit G-type stars, not B-type stars. Choice A is incorrect because “likewise” illogically signals that the information about the planet KELT-9b is similar to the previous information about most planets outside our solar system. Instead, it contrasts with that information. Choice C is incorrect because “therefore” illogically signals that the information about the planet KELT-9b is a result of the previous information about most planets outside our solar system. Instead, it contrasts with that information. Choice D is incorrect because “for example” illogically signals that the information about the planet KELT-9b is an example of the previous information about most planets outside our solar system. Instead, it contrasts with that information."
   },
   {
-    "id": 1376,
+    "id": 1628,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
     "difficulty": "Hard",
-    "solveRate": null,
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "Some economic historians _____ that late nineteenth- and early twentieth-century households in the United States experienced an economy of scale when it came to food purchases—they assumed that large households spent less on food per person than did small households. Economist Trevon Logan showed, however, that a close look at the available data disproves this supposition.",
-    "choices": ["A) surmised", "B) contrived", "C) questioned", "D) regretted"],
-    "correctAnswer": "A",
-    "explanation": "Choice A is the best answer because it most logically completes the text’s discussion of late nineteenth- and early twentieth-century household food purchases. In this context, 'surmised' means formed an idea or assumption with little evidence. The text explains that certain economic historians 'assumed' that large and small households spent different amounts on food per person, but that another economist found this supposition to be false based on evidence from available data. This context suggests that the economic historians made an incorrect assumption without enough consideration of evidence.\n\nChoice B is incorrect. In this context, 'contrived' would mean brought about or created through trickery. Nothing in the text suggests that the economic historians were deliberately trying to trick people with a claim about food purchasing behaviors in late nineteenth- and early twentieth-century households; the text simply suggests that they made an assumption about those behaviors that another historian believes isn’t supported by the available data. Choice C is incorrect because the text indicates that it’s Logan and not the economic historians who 'questioned,' or doubted, the assumption that large and small households in the late nineteenth and early twentieth centuries spent different amounts on food per person; the economic historians are the ones who made that assumption to begin with. Choice D is incorrect because nothing in the text suggests that some economic historians 'regretted,' or felt sad or remorseful about, the food purchasing behaviors of late nineteenth- and early twentieth-century households. The text focuses on the idea that the economic historians made an assumption about those behaviors that may not be supported by available data, not on the historians’ emotional response to what households did in the past."
-  },
-  {
-    "id": 1377,
-    "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
-    "difficulty": "Easy",
-    "solveRate": 23,
-    "isBookmarked": false,
-    "isIncorrect": false,
-    "question": "As used in the text, what does the word 'disturbed' most nearly mean?",
-    "passage": "The following text is from Bram Stoker’s 1897 novel *Dracula*. The narrator is being driven in a carriage through a remote region at night.\n\nThe baying of the wolves sounded nearer and nearer, as though they were closing round on us from every side. I grew dreadfully afraid, and the horses shared my fear. The driver, however, was not in the least *disturbed*; he kept turning his head to left and right, but I could not see anything through the darkness.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1815, while in exile in Jamaica, Venezuelan revolutionary Simón Bolívar penned a letter praising England’s republican government and expressing hope that Latin American nations seeking independence from Spain might achieve something similar. The letter was addressed to a local merchant, Henry Cullen; ____ though, Bolívar’s goal was to persuade political leaders from England and Europe to support his cause.",
     "choices": [
-      "A) Disorganized",
-      "B) Alarmed",
-      "C) Offended",
-      "D) Interrupted"
+      "A) additionally,",
+      "B) ultimately,",
+      "C) accordingly,",
+      "D) consequently,"
     ],
     "correctAnswer": "B",
-    "explanation": "Choice B is the best answer because as used in the text, 'disturbed' most nearly means alarmed. The text portrays the narrator traveling in a carriage as wolves howl in the surrounding darkness. The text contrasts the reaction of both the narrator and the horses pulling the carriage with that of the driver of the carriage: the narrator and horses are 'dreadfully afraid,' but the driver is 'not in the least disturbed.' In other words, the driver is not alarmed by the wolves nearby."
+    "explanation": "Choice B is the best answer. “Ultimately” means “in the long run” or “at the highest level.” Although Bolívar wrote to a local merchant, his ultimate goal was to send a message to political leaders in Europe. Therefore, “ultimately” fits perfectly in this context. Choice A is incorrect. This choice uses a transition that indicates the addition of an agreeing idea. However, the second part of the sentence actually disagrees with the first part. Bolívar addressed the letter to Cullen, but he was really sending a message to someone else. Notice how the contrast word “though” also acts as a transition between these ideas. Choice C is incorrect. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him. Choice D is incorrect. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him."
   },
   {
-    "id": 1378,
+    "id": 1629,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Word Choice",
-    "difficulty": "Hard",
-    "solveRate": 43,
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "Economist Marco Castillo and colleagues showed that nuisance costs—the time and effort people must spend to make donations—reduce charitable giving. Charities can mitigate this effect by compensating donors for nuisance costs, but those costs, though variable, are largely _____ donation size, so charities that compensate donors will likely favor attracting a few large donors over many small donors.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "The Babylonian king Hammurabi achieved much during his forty-year reign. He conquered all of Mesopotamia and built Babylon into one of the most powerful cities of the ancient world. Today, ____ he is mainly remembered for a code of laws inscribed on a seven-foot-tall block of stone: the Code of Hammurabi.",
     "choices": [
-      "A) supplemental to",
-      "B) predictive of",
-      "C) independent of",
-      "D) subsumed in"
+      "A) therefore,",
+      "B) likewise,",
+      "C) however,",
+      "D) for instance,"
     ],
     "correctAnswer": "C",
-    "explanation": "Choice C is the best answer. We’re told that charities that pay donors back for nuisance costs will attract a few large donors instead of many small donors. This suggests that nuisance costs are not linked to donation size.\n\nChoice A is incorrect. This doesn’t fit the logic of the text. If nuisance costs are supplemental to (meaning in addition to) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors. Choice B is incorrect. This doesn’t fit the logic of the text. If nuisance costs can predict donation size, that wouldn’t necessarily result in charities that compensate donors for those costs attracting a few large donors over many small donors. Choice D is incorrect. This doesn’t fit the logic of the text. If nuisance costs are subsumed in (meaning included in) donation size, that wouldn’t result in charities that compensate donors for those costs attracting a few large donors over many small donors."
+    "explanation": "Choice C is the best answer. “However” logically signals that the information in this sentence—that Hammurabi is mainly remembered for just a single achievement, the Code of Hammurabi—is contrary to what might be assumed from the previous information about Hammurabi’s many achievements. Choice A is incorrect because “therefore” illogically signals that the information in this sentence is a result of the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information. Choice B is incorrect because “likewise” illogically signals that the information in this sentence is similar to the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information. Choice D is incorrect because “for instance” illogically signals that this sentence exemplifies the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information."
   },
   {
-    "id": 1380,
+    "id": 1632,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
     "difficulty": "Medium",
-    "solveRate": 54,
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "During a 2014 archaeological dig in Spain, Vicente Lull and his team uncovered the skeleton of a woman from El Algar, an Early Bronze Age society, buried with valuable objects signaling a high position of power. This finding may persuade researchers who have argued that Bronze Age societies were ruled by men to _____ that women may have also held leadership roles.",
-    "choices": ["A) waive", "B) concede", "C) refute", "D) require"],
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments, concerned that the participants would be tempted to perform for the cameras (and thus lower the quality of the discourse). ____ the justices worry that most viewers would not even watch the full deliberations, only short clips that could be misinterpreted and mischaracterized.",
+    "choices": [
+      "A) However,",
+      "B) Additionally,",
+      "C) In comparison,",
+      "D) For example,"
+    ],
     "correctAnswer": "B",
-    "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of the significance of the 2014 archaeological finding at El Algar. In this context, 'concede' means to admit something is true after first resisting that admission. The text indicates that some researchers believe 'Bronze Age societies were ruled by men.' But the Bronze Age burial of a woman at El Algar included 'valuable objects signaling a high position of power,' which would raise the possibility that 'women may have also held leadership roles.' Thus, the text is calling into question the notion that only men were leaders in these societies and speculating that people holding this view may reconsider their opinion.\n\nChoice A is incorrect because 'waive' means to refrain from insisting that something, such as a right or a requirement, be observed; the word isn’t used, however, in contexts where someone acknowledges that an opinion they hold may be invalid, as is the case in the text. Choice C is incorrect. According to the text, the finding from the El Algar burial site undermines the view that Bronze Age societies were exclusively ruled by men. However, 'refute' means to demonstrate that something is false and would not make sense in context. Lull and team’s finding supports the view that women may have also held leadership roles, not that they did not participate in such roles. Choice D is incorrect because in this context, 'require' means to demand or specify as mandatory. However, it would not make sense for contemporary researchers to demand that Bronze Age 'women may have also held leadership roles.'"
+    "explanation": "Choice B is the best answer. “Additionally” logically signals that the claim in this sentence—that some Supreme Court justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the information in the previous sentence. Specifically, the previous sentence indicates one concern raised by those opposed to televising the court’s oral arguments, and the claim that follows indicates a second, additional concern. Choice A is incorrect because “however” illogically signals that the claim in this sentence contrasts with the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments. Choice C is incorrect because “in comparison” illogically signals that the claim in this sentence is being compared to the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments. Choice D is incorrect because “for example” illogically signals that the claim in this sentence exemplifies the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments."
   },
   {
-    "id": 1383,
+    "id": 1633,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
-    "difficulty": "Easy",
-    "solveRate": null,
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "Which choice completes the text with the most logical and precise word or phrase?",
-    "passage": "Dance choreographer Jawole Willa Jo Zollar aims to give people the opportunity to be _____ her creative process. For example, live performances of her dance HairStories, which debuted in 2001, featured videos of people across the United States talking about their hair and audience members sharing pictures of their interesting hairstyles.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Award-winning travel writer Linda Watanabe McFerrin considers the background research she conducts on destinations featured in her travel books to be its own reward. ____ McFerrin admits to finding the research phase of her work just as fascinating and engaging as exploring a location in person.",
     "choices": [
-      "A) nervous about",
-      "B) completed by",
-      "C) delayed by",
-      "D) involved in"
+      "A) By contrast,",
+      "B) Likewise,",
+      "C) Besides,",
+      "D) In fact,"
     ],
     "correctAnswer": "D",
-    "explanation": "Choice D is the best answer. 'Involved in' means 'playing an active role in.' This fits the context clues describing how Zollar includes the audience in her shows by incorporating their stories and pictures.\n\nChoice A is incorrect. 'Nervous about' means 'worried or anxious about.' Nothing in the text suggests that people would be nervous about Zollar’s creative process. Choice B is incorrect. 'Completed by' means 'made whole by.' It doesn’t make sense to say that Zollar’s shows would make her audience complete. Choice C is incorrect. 'Delayed by' means 'made late by.' Nothing in the text suggests that people would be delayed by Zollar’s creative process."
+    "explanation": "Choice D is the best answer. “In fact” logically signals that the information in this sentence—that McFerrin finds the research phase of her work to be just as fascinating as travel—emphasizes and elaborates on the previous sentence’s point that McFerrin regards background research as a rewarding activity. Choice A is incorrect because “by contrast” illogically signals that the information in this sentence contrasts with the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point. Choice B is incorrect because “likewise” illogically signals that this sentence merely adds a second, similar point to the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point. Choice C is incorrect because “besides” illogically signals that this sentence provides a separate point in addition to, or apart from, the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point."
   },
   {
-    "id": 1384,
+    "id": 1634,
     "type": "Verbal",
-    "topic": "Craft and Structure",
-    "subtopic": "Words in Context",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
     "difficulty": "Medium",
-    "solveRate": null,
+    "solveRate": 30,
     "isBookmarked": false,
     "isIncorrect": false,
-    "question": "As used in the text, what does the word 'assumed' most nearly mean?",
-    "passage": "The following text is adapted from Nathaniel Hawthorne’s 1844 short story 'Drowne’s Wooden Image.' Drowne, a young man, is carving a wooden figure to decorate the front of a ship.\n\nDay by day, the work assumed greater precision, and settled its irregular and misty outline into distinct grace and beauty. The general design was now obvious to the common eye.",
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1873, Spanish scientist Santiago Ramón y Cajal observed that brain fibers have distinct boundaries with clear end points, a finding that went against earlier assumptions about the brain. ____ scientists had assumed that the brain was a continuous web of fused fibers, not a vast network of distinct, individual cells.",
     "choices": [
-      "A) Acquired",
-      "B) Acknowledged",
-      "C) Imitated",
-      "D) Speculated"
+      "A) However,",
+      "B) Previously,",
+      "C) As a result,",
+      "D) Likewise,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. “Previously” logically signals that the fused fiber theory came before Ramón y Cajal’s discovery. Choice A is incorrect. “However” illogically signals that the fused fiber theory in this sentence contrasts with the information in the previous sentence. While this theory does contrast with Ramón y Cajal’s discovery, the previous sentence concludes by stating that his discovery went against prior assumptions about the brain. The fact that the fused fiber theory was one of those earlier assumptions makes “however” an illogical choice. Choice C is incorrect because “as a result” illogically signals that the fused fiber theory in this sentence was a result of the discovery in the previous sentence. Instead, the fused fiber theory came before Ramón y Cajal’s discovery. Choice D is incorrect because “likewise” illogically signals that the fused fiber theory in this sentence was similar to the discovery in the previous sentence. Instead, the fused fiber theory, which came before Ramón y Cajal’s discovery, was very different from it."
+  },
+  {
+    "id": 1636,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "For years, biologists have experimented with using grime-eating bacteria rather than harsh chemicals to clean artworks, and results have been impressive overall. ____ these bacterial strains—which can metabolize centuries’ worth of oil, glue, dirt, and other surface impurities without creating harmful byproducts—have proven more effective than traditional chemical cleaning methods.",
+    "choices": [
+      "A) However,",
+      "B) In many cases,",
+      "C) As a result,",
+      "D) Additionally,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. The first sentence makes the claim that using grime-eating bacteria has led to “impressive results.” This sentence supports that claim by describing the specific findings of the biologists’ experimentation. The transition “in many cases” fits the context perfectly. Choice A is incorrect. This choice uses a disagreement transition. But this sentence actually agrees with the previous sentence. Both claim that grime-eating bacteria are better at cleaning artworks than chemicals. Choice C is incorrect. This choice uses a cause-and-effect transition, which doesn’t make sense in context. The fact that the results of the experimentation have been impressive overall doesn’t cause the bacteria to have proven more effective. Choice D is incorrect. This choice uses a transition that indicates the addition of a new idea. But this sentence doesn’t introduce a new idea. Instead, it elaborates on the same idea laid out in the previous sentence by describing the “impressive results” in more detail."
+  },
+  {
+    "id": 1637,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1968, US Congressman John Conyers introduced a bill to establish a national holiday in honor of Dr. Martin Luther King Jr. The bill didn’t make it to a vote, but Conyers was determined. He teamed up with Shirley Chisholm, the first Black woman to be elected to Congress, and they resubmitted the bill every session for the next fifteen years. ____ in 1983, the bill passed.",
+    "choices": [
+      "A) Instead,",
+      "B) Likewise,",
+      "C) Finally,",
+      "D) Additionally,"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. “Finally” logically signals that the bill passing—following many attempts between 1968 and 1983—is the final, concluding event in the sequence described in the previous sentences. Choice A is incorrect because “instead” illogically signals that the bill passing is an alternative to one of the events described in the previous sentences. Instead, it is the final event in the sequence. Choice B is incorrect because “likewise” illogically signals that the bill passing is similar to one of the events described in the previous sentences. Instead, it is the final event in the sequence. Choice D is incorrect because “additionally” illogically signals that the bill passing is merely another event described along with the events of the previous sentences. Instead, the bill passing is the final, concluding event in the sequence."
+  },
+  {
+    "id": 1081,
+    "type": "Verbal",
+    "topic": "Information and Ideas",
+    "subtopic": "Central Ideas and Details",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the text, what can be concluded about the diminishing popularity of the portrait miniature in the nineteenth century?",
+    "passage": "A common assumption among art historians is that the invention of photography in the mid-nineteenth century displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature, which coincided with the rise of photography, seems to support this claim. However, photography’s impact on the portrait miniature may be overstated. Although records from art exhibitions in the Netherlands from 1820 to 1892 show a decrease in the number of both full-size and miniature portraits submitted, this trend was established before the invention of photography.",
+    "choices": [
+      "A) Factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline.",
+      "B) Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit.",
+      "C) The popularity of the portrait miniature likely persisted for longer than art historians have assumed.",
+      "D) As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography."
     ],
     "correctAnswer": "A",
-    "explanation": "Choice A is the best answer because as used in the text, 'assumed' most nearly means acquired, or came to possess. The text portrays a character named Drowne carving a figure out of wood. At first 'irregular and misty,' or haphazard and indistinct, the figure’s outline gradually showed 'distincter grace and beauty' until the general design of the carved object 'was now obvious to the common eye,' or plainly recognizable to anyone. In other words, as Drowne continued to carve, the wooden object came to possess, or acquired, greater precision, changing from an indistinct outline or shape into a graceful, beautiful, and clearly recognizable form.\n\nChoice B is incorrect. Although in some contexts 'assumed' can mean acknowledged, or recognized, it doesn’t have that meaning in this context because an inanimate object like the wooden figure can’t acknowledge its own precision. Choice C is incorrect because there’s nothing in the text to suggest that the wooden figure merely imitated, or mimicked, precision. Rather, the text suggests that as Drowne carved his wooden figure, it gradually became more precise. Choice D is incorrect. Although in some contexts 'assumed' can mean speculated, or supposed based on incomplete information, it doesn’t have that meaning in this context because an inanimate object like the wooden figure can’t speculate about its own precision."
+    "explanation": "Choice A is the best answer. The text says that the impact of photography on the portrait miniature might be 'overstated,' as some records show a decrease in the number of portrait miniatures before the invention of photography. From this, we can conclude that factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline. Choice B is incorrect. The text never discusses the 'artistic merit' of either art form. Choice C is incorrect. The text never suggests that the portrait miniature was popular for longer than historians thought—if anything, it suggests that the portrait miniature started losing its popularity earlier than historians thought. Choice D is incorrect. The text never suggests that portrait painters shifted to become photographers."
+  },
+  {
+    "id": 1082,
+    "type": "Verbal",
+    "topic": "Information and Ideas",
+    "subtopic": "Central Ideas and Details",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best states the main idea of the text?",
+    "passage": "Believing that living in an impractical space can heighten awareness and even improve health, conceptual artists Madeline Gins and Shusaku Arakawa designed an apartment building in Japan to be more fanciful than functional. A kitchen counter is chest-high on one side and knee-high on the other; a ceiling has a door to nowhere. The effect is disorienting but invigorating: after four years there, filmmaker Nobu Yamaoka reported significant health benefits.",
+    "choices": [
+      "A) Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable.",
+      "B) Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment.",
+      "C) As a filmmaker, Yamaoka has long supported the designs of artists such as Gins and Arakawa.",
+      "D) Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building’s residents."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer because it most accurately states the main idea of the text. According to the text, conceptual artists Gins and Arakawa have designed an apartment building that is disorienting because of several unconventional elements, such as uneven kitchen counters and “a door to nowhere.” The text goes on to suggest that there may be benefits to this kind of design because filmmaker Yamaoka lived in the apartment building for four years and reported health benefits. Thus, although the design is impractical, it may improve the well-being of the apartment building’s residents. Choice A is incorrect. Although the text mentions that Yamaoka lived in the apartment for four years, it doesn’t address how long someone can beneficially live in a home surrounded by fanciful features or whether doing so can be sustained. Choice B is incorrect. Although the text mentions the potential benefits of living in a home with disorienting design features, it doesn’t suggest that this is the most effective method to create a physically stimulating environment. Choice C is incorrect because the text refers to Yamaoka to support the claim that Gins and Arakawa’s apartment building design may be beneficial, but the text doesn’t indicate that Yamaoka supports the designs of other conceptual artists."
   }
 ]

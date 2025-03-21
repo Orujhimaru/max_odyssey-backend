@@ -545,5 +545,685 @@
     "choices": ["A) demands", "B) speculates", "C) doubts", "D) establishes"],
     "correctAnswer": "B",
     "explanation": "Choice B is the best answer because it most logically completes the text’s discussion of Ochoa’s prediction that humans will one day need to live in places other than Earth. As used in this context, 'speculates' would mean puts forward an idea without firm evidence. The text states that Ochoa 'doesn’t have a definite idea' about when humans might need to live in other environments and characterizes Ochoa’s prediction as a 'conjecture,' or a conclusion presented without convincing evidence. This context indicates that Ochoa speculates when she makes this prediction.\n\nChoice A is incorrect because saying that Ochoa 'demands,' or insists or requires, that humans will one day need to live in other environments than Earth’s would not make sense in context. The text indicates that she’s unsure about the timing but hypothesizes that it will someday happen. Choice C is incorrect because saying that Ochoa 'doubts,' or questions or disbelieves, that humans will one day need to live in other environments than Earth’s would not make sense in context. The text indicates that although Ochoa is unsure about the timing, she hypothesizes that humans will need to live in places other than Earth and encourages research into future travel to the moon. Choice D is incorrect because saying that Ochoa 'establishes,' or proves, that humans will one day need to live in other environments than Earth’s would not make sense in context. Rather than stating that Ochoa discusses her idea with certainty and supports it with evidence, the text indicates that Ochoa is unsure about when humans might need to live in other environments."
+  },
+  {
+    "id": 1618,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to present the primary aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- As engineered structures, many bird nests are uniquely flexible yet cohesive.\n- A research team led by Yashraj Bhosale wanted to better understand the mechanics behind these structural properties.\n- Bhosale’s team used laboratory models that simulated the arrangement of flexible sticks into nest-like structures.\n- The researchers analyzed the points where sticks touched one another.\n- When pressure was applied to the model nests, the number of contact points between the sticks increased, making the structures stiffer.",
+    "choices": [
+      "A) Bhosale’s team wanted to better understand the mechanics behind bird nests’ uniquely flexible yet cohesive structural properties.",
+      "B) The researchers used laboratory models that simulated the arrangement of flexible sticks and analyzed the points where sticks touched one another.",
+      "C) After analyzing the points where sticks touched, the researchers found that the structures became stiffer when pressure was applied.",
+      "D) As analyzed by Bhosale’s team, bird nests are uniquely flexible yet cohesive engineered structures."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. It describes the reason Bhosale’s team wanted to study the structures of bird nests—that is to say, the study’s primary aim. Choice B is incorrect. This choice doesn’t present the primary aim of the research study. It describes how the study worked, but not why it was done. Choice C is incorrect. This choice doesn’t present the primary aim of the research study. It describes a result of the experiment, but not why it was carried out. Choice D is incorrect. This choice doesn’t present the primary aim of the research study."
+  },
+  {
+    "id": 1621,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to introduce Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Atlantic Monthly magazine was first published in 1857.\n- The magazine focused on politics, art, and literature.\n- In 2019, historian Cathryn Halverson published the book Faraway Women and the “Atlantic Monthly.”\n- Its subject is the female authors whose autobiographies appeared in the magazine in the early 1900s.\n- One of the authors discussed is Juanita Harrison.",
+    "choices": [
+      "A) Cathryn Halverson’s Faraway Women and the “Atlantic Monthly” discusses female authors whose autobiographies appeared in the magazine in the early 1900s.",
+      "B) A magazine called the Atlantic Monthly, referred to in Cathryn Halverson’s book title, was first published in 1857.",
+      "C) Faraway Women and the “Atlantic Monthly” features contributors to the Atlantic Monthly, first published in 1857 as a magazine focusing on politics, art, and literature.",
+      "D) An author discussed by Cathryn Halverson is Juanita Harrison, whose autobiography appeared in the Atlantic Monthly in the early 1900s."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence effectively introduces Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly, noting the title of Halverson’s book and describing its content without providing background information about the Atlantic Monthly. Choice B is incorrect. The sentence introduces the Atlantic Monthly and mentions that it’s referred to in Cathryn Halverson’s book title; it doesn’t effectively introduce Halverson’s book. Choice C is incorrect. The sentence assumes that the audience is unfamiliar with the Atlantic Monthly, providing background information about the magazine; it doesn’t effectively introduce Halverson’s book to an audience already familiar with the Atlantic Monthly. Choice D is incorrect. While the sentence assumes that the audience is familiar with the Atlantic Monthly, it doesn’t effectively introduce Cathryn Halverson’s book."
+  },
+  {
+    "id": 1622,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to present the study to an audience already familiar with environmental DNA. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Organisms release cellular material into their environment by shedding substances such as hair or skin.\n- The DNA in these substances is known as environmental DNA, or eDNA.\n- Researchers collect and analyze eDNA to detect the presence of species that are difficult to observe.\n- Geneticist Sara Oyler-McCance’s research team analyzed eDNA in water samples from the Florida Everglades to detect invasive constrictor snake species in the area.\n- The study determined a 91% probability of detecting Burmese python eDNA in a given location.",
+    "choices": [
+      "A) Sara Oyler-McCance’s researchers analyzed eDNA in water samples from the Florida Everglades for evidence of invasive constrictor snakes, which are difficult to observe.",
+      "B) An analysis of eDNA can detect the presence of invasive species that are difficult to observe, such as constrictor snakes.",
+      "C) Researchers found Burmese python eDNA, or environmental DNA, in water samples; eDNA is the DNA in released cellular materials, such as shed skin cells.",
+      "D) Sara Oyler-McCance’s researchers analyzed environmental DNA (eDNA)—that is, DNA from cellular materials released by organisms—in water samples from the Florida Everglades."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice presents the study in a way that assumes the audience is already familiar with eDNA. Choice B is incorrect. This choice doesn’t present the study. It only states a general fact about eDNA analysis. Choice C is incorrect. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained. Choice D is incorrect. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained. It also doesn’t present the study."
+  },
+  {
+    "id": 1623,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to describe the rocking chair to an audience unfamiliar with Sam Maloof. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Sam Maloof (1916–2009) was an American woodworker and furniture designer.\n- He was the son of Lebanese immigrants.\n- He received a “genius grant” from the John D. and Catherine T. MacArthur Foundation in 1985.\n- The Museum of Fine Arts in Boston, Massachusetts, owns a rocking chair that Maloof made from walnut wood.\n- The armrests and the seat of the chair are sleek and contoured, and the back consists of seven spindle-like slats.",
+    "choices": [
+      "A) With its sleek, contoured armrests and seat, the walnut rocking chair in Boston’s Museum of Fine Arts is just one piece of furniture created by American woodworker Sam Maloof.",
+      "B) Sam Maloof was born in 1916 and died in 2009, and during his life, he made a chair that you can see if you visit the Museum of Fine Arts in Boston.",
+      "C) Furniture designer Sam Maloof was a recipient of one of the John D. and Catherine T. MacArthur Foundation’s “genius grants.”",
+      "D) The rocking chair is made from walnut, and it has been shaped such that its armrests and seat are sleek and contoured."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence effectively describes the rocking chair to an audience unfamiliar with Sam Maloof, noting its sleek, contoured armrests and seat and explaining that Sam Maloof (the walnut chair’s creator) was an American woodworker. Choice B is incorrect. While the sentence explains who Sam Maloof was and mentions a chair, it doesn’t describe the chair. Choice C is incorrect. While the sentence explains who Sam Maloof was, it doesn’t describe the rocking chair. Choice D is incorrect. While the sentence describes the rocking chair, it doesn’t explain who Sam Maloof was."
+  },
+  {
+    "id": 1624,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to present the study and its findings. Which choice most effectively uses the information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Species belonging to the Orchidaceae (orchid) family can be found in both tropical and temperate environments.\n- Orchidaceae species diversity has not been well studied in temperate forests, such as those in Oaxaca, Mexico.\n- Arelée Estefanía Muñoz-Hernández led a study to determine how many different Orchidaceae species are present in the forests of Oaxaca.\n- Muñoz-Hernández and her team collected orchids each month for a year at a site in Oaxaca.\n- Seventy-four Orchidaceae species were present at the site.",
+    "choices": [
+      "A) A study led by Arelée Estefanía Muñoz-Hernández identified a total of 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico.",
+      "B) There are orchids in many environments, but there are 74 Orchidaceae species in Oaxaca, Mexico.",
+      "C) Oaxaca, Mexico, is home to temperate forests containing 74 Orchidaceae species.",
+      "D) Arelée Estefanía Muñoz-Hernández and her team wanted to know how many different Orchidaceae species are present in the forests of Oaxaca, Mexico, so they conducted a study to collect the orchids."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice most effectively presents the study and its findings. It opens with the study and names its lead researcher, then tells us its finding: that they identified 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico. Choice B is incorrect. This choice doesn’t include the study’s findings, so it fails to achieve the goal. It doesn’t mention that there was a study at all. Choice C is incorrect. This choice doesn’t present the study, so it fails to achieve the goal. It doesn’t mention that there was a study at all. Choice D is incorrect. This choice doesn’t include the study’s findings, so it fails to achieve the goal."
+  },
+  {
+    "id": 1625,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize the distance covered by the Philadelphia and Lancaster Turnpike. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Philadelphia and Lancaster Turnpike was a road built between 1792 and 1794.\n- It was the first private turnpike in the United States.\n- It connected the cities of Philadelphia and Lancaster in the state of Pennsylvania.\n- It was sixty-two miles long.",
+    "choices": [
+      "A) The sixty-two-mile-long Philadelphia and Lancaster Turnpike connected the Pennsylvania cities of Philadelphia and Lancaster.",
+      "B) The Philadelphia and Lancaster Turnpike was the first private turnpike in the United States.",
+      "C) The Philadelphia and Lancaster Turnpike, which connected two Pennsylvania cities, was built between 1792 and 1794.",
+      "D) A historic Pennsylvania road, the Philadelphia and Lancaster Turnpike was completed in 1794."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence emphasizes the distance covered by the Philadelphia and Lancaster Turnpike, noting that the turnpike, which connected the two Pennsylvania cities in its name, was sixty-two miles long. Choice B is incorrect. The sentence emphasizes the significance of the turnpike; it doesn’t emphasize the distance that the turnpike covered. Choice C is incorrect. While the sentence mentions that the turnpike connected two Pennsylvania cities, it doesn’t emphasize the specific distance covered by the turnpike. Choice D is incorrect. The sentence emphasizes when the turnpike was built; it doesn’t emphasize the distance that the turnpike covered."
+  },
+  {
+    "id": 1630,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to explain a disadvantage of relying on audio features to predict a song’s popularity. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Million Song Dataset (MSD) includes main audio features and descriptive tags for popular songs.\n- Audio features include acoustic traits such as loudness and pitch intervals.\n- Many algorithms use these audio features to predict a new song’s popularity.\n- These algorithms may fail to accurately identify main features of a song with varying acoustic traits.\n- Algorithms based on descriptive tags that describe fixed traits such as genre are more reliable predictors of song popularity.",
+    "choices": [
+      "A) Many popularity-predicting algorithms are based on a song’s audio features, such as loudness and pitch intervals.",
+      "B) Algorithms based on audio features may misidentify the main features of a song with varying acoustic traits, making such algorithms less reliable predictors of popularity than those based on fixed traits.",
+      "C) Audio features describe acoustic traits such as pitch intervals, which may vary within a song, whereas descriptive tags describe fixed traits such as genre, which are reliable predictors of popularity.",
+      "D) The MSD’s descriptive tags are reliable predictors of a song’s popularity, as the traits they describe are fixed."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. This choice uses relevant information from the notes to explain a disadvantage of relying on audio features to predict a song’s popularity—namely, that it may misidentify features of certain songs. It also contrasts audio features with descriptive tags, which are more reliable predictors. Choice A is incorrect. This choice only states a fact about the algorithms without evaluating their reliability or accuracy. Choice C is incorrect. This choice only describes the difference between audio features and descriptive tags without indicating why this difference matters for predicting popularity. Choice D is incorrect. This choice only mentions descriptive tags, which are not the focus of the student’s rhetorical goal."
+  },
+  {
+    "id": 1631,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to describe how fabric is used in Assertion of Will. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Oracles of the Pink Universe was a 2021 exhibition at the Denver Museum of Art in Colorado.\n- It featured eight artworks by South African artist Simphiwe Ndzube.\n- One of these works is a painting titled Assertion of Will.\n- Assertion of Will depicts three standing figures.\n- The figures wear clothing made of fabric pieces stitched to the painting’s canvas.",
+    "choices": [
+      "A) In Assertion of Will, the figures’ clothing is made of fabric pieces stitched to the painting’s canvas.",
+      "B) The exhibition Oracles of the Pink Universe featured artworks by artist Simphiwe Ndzube.",
+      "C) Depicting three standing, clothed figures, Assertion of Will is a painting by Simphiwe Ndzube.",
+      "D) Simphiwe Ndzube’s Assertion of Will was one of eight artworks exhibited in Oracles of the Pink Universe at the Denver Museum of Art."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice directly describes how fabric is used in Assertion of Will, by explaining that the fabric pieces are part of the painting itself. Choice B is incorrect. This choice provides contextual information about the exhibition, but it doesn’t mention anything about the painting or the fabric. Choice C is incorrect. This choice mentions that the figures are clothed, but it doesn’t explain how the fabric is integrated into the painting. Choice D is incorrect. This choice provides contextual information about the painting, but it doesn’t mention anything about the fabric or how it is used."
+  },
+  {
+    "id": 1635,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to explain an advantage of the new platinum catalyst developed by Jianbo Tang and his colleagues. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Platinum is a rare and expensive metal.\n- It is used as a catalyst for chemical reactions.\n- Platinum catalysts typically require a large amount of platinum to be effective.\n- Researcher Jianbo Tang and his colleagues created a platinum catalyst that combines platinum with liquid gallium.\n- Their catalyst was highly effective and required only trace amounts of platinum (0.00001% of the atoms in the mixture).",
+    "choices": [
+      "A) Researcher Jianbo Tang and his colleagues created a platinum catalyst that combines platinum, a rare and expensive metal, with liquid gallium.",
+      "B) Like other platinum catalysts, the new platinum catalyst requires a particular amount of the metal to be effective.",
+      "C) Platinum is a rare and expensive metal that is used as a catalyst for chemical reactions; however, platinum catalysts typically require a large amount of platinum to be effective.",
+      "D) While still highly effective, the new platinum catalyst requires far less of the rare and expensive metal than do other platinum catalysts."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. The sentence explains an advantage of Tang and his colleagues’ platinum catalyst, noting that it requires far less platinum (which is rare and expensive) than other platinum catalysts do. Choice A is incorrect. The sentence describes the platinum catalyst that Tang and his colleagues created; it doesn’t explain an advantage of their platinum catalyst. Choice B is incorrect. The sentence emphasizes a similarity between the new platinum catalyst and other platinum catalysts; it doesn’t explain an advantage of the new platinum catalyst. Choice C is incorrect. The sentence connects the metal platinum to the functioning of platinum catalysts, noting that large amounts of platinum are typically required for platinum catalysts to be effective; it doesn’t explain an advantage of Tang and his colleagues’ platinum catalyst."
+  },
+  {
+    "id": 1639,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize a difference between the two muslins. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Muslins are woven cotton fabrics with a variety of uses.\n- Dhaka muslin is a handmade fabric produced in Dhaka, Bangladesh.\n- It has an extremely fine weave and is primarily used to make luxury clothing.\n- Sheeting muslin is a machine-made fabric produced in factories.\n- It has a coarse weave and is primarily used to upholster furniture and create backdrops for theater sets.",
+    "choices": [
+      "A) Dhaka muslin is a handmade fabric with an extremely fine weave, while sheeting muslin is machine-made with a coarse weave.",
+      "B) Dhaka muslin and sheeting muslin are two different types of woven cotton fabrics.",
+      "C) Muslins can be used in a variety of ways, from making luxury clothing to upholstering furniture and creating backdrops for theater sets.",
+      "D) Sheeting muslin is machine-made, has a coarse weave, and is used for furniture and theater sets."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The difference between the two different kinds of muslin is emphasized. Choice B is incorrect. This choice lists two kinds of muslins, but does not say how they are different from one another. Choice C is incorrect. This choice does not emphasize a difference between the two muslins. Choice D is incorrect. This choice does not emphasize a difference between the two muslins. It only describes sheeting muslin."
+  },
+  {
+    "id": 1640,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize a difference between the two books. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Some powerful works of literature have so influenced readers that new legislation has been passed as a result.\n- The Interesting Narrative of the Life of Olaudah Equiano (1789) is the autobiography of a man who endured slavery on both sides of the Atlantic.\n- Equiano’s book contributed to the passage of the Slave Trade Act of 1807.\n- The Jungle (1906) is a fictional work by Upton Sinclair that describes unsanitary conditions in US meatpacking plants.\n- Sinclair’s book contributed to the passage of the Pure Food and Drug Act in 1906.",
+    "choices": [
+      "A) Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional.",
+      "B) They may have written about different topics, but Equiano and Sinclair both influenced readers.",
+      "C) The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906 Pure Food and Drug Act resulted in part from a book by Sinclair.",
+      "D) The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two works of literature that contributed to new legislation (concerning the slave trade and food safety, respectively)."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice emphasizes a difference between the two books by using relevant information from the notes to contrast their genres. Choice B is incorrect. This choice mentions a difference between the books (their different topics), but it emphasizes a similarity between the books (their influence on readers). Choice C is incorrect. This choice provides information about the books that reflects both a similarity (both resulted in new laws) and a difference (the specific laws that resulted), without emphasizing either. Choice D is incorrect. This choice doesn’t emphasize a difference between the two books. Instead, it emphasizes a similarity."
+  },
+  {
+    "id": 1621,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to introduce Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Atlantic Monthly magazine was first published in 1857.\n- The magazine focused on politics, art, and literature.\n- In 2019, historian Cathryn Halverson published the book Faraway Women and the “Atlantic Monthly.”\n- Its subject is the female authors whose autobiographies appeared in the magazine in the early 1900s.\n- One of the authors discussed is Juanita Harrison.",
+    "choices": [
+      "A) Cathryn Halverson’s Faraway Women and the “Atlantic Monthly” discusses female authors whose autobiographies appeared in the magazine in the early 1900s.",
+      "B) A magazine called the Atlantic Monthly, referred to in Cathryn Halverson’s book title, was first published in 1857.",
+      "C) Faraway Women and the “Atlantic Monthly” features contributors to the Atlantic Monthly, first published in 1857 as a magazine focusing on politics, art, and literature.",
+      "D) An author discussed by Cathryn Halverson is Juanita Harrison, whose autobiography appeared in the Atlantic Monthly in the early 1900s."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence effectively introduces Cathryn Halverson’s book to an audience already familiar with the Atlantic Monthly, noting the title of Halverson’s book and describing its content without providing background information about the Atlantic Monthly. Choice B is incorrect. The sentence introduces the Atlantic Monthly and mentions that it’s referred to in Cathryn Halverson’s book title; it doesn’t effectively introduce Halverson’s book. Choice C is incorrect. The sentence assumes that the audience is unfamiliar with the Atlantic Monthly, providing background information about the magazine; it doesn’t effectively introduce Halverson’s book to an audience already familiar with the Atlantic Monthly. Choice D is incorrect. While the sentence assumes that the audience is familiar with the Atlantic Monthly, it doesn’t effectively introduce Cathryn Halverson’s book."
+  },
+  {
+    "id": 1622,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to present the study to an audience already familiar with environmental DNA. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Organisms release cellular material into their environment by shedding substances such as hair or skin.\n- The DNA in these substances is known as environmental DNA, or eDNA.\n- Researchers collect and analyze eDNA to detect the presence of species that are difficult to observe.\n- Geneticist Sara Oyler-McCance’s research team analyzed eDNA in water samples from the Florida Everglades to detect invasive constrictor snake species in the area.\n- The study determined a 91% probability of detecting Burmese python eDNA in a given location.",
+    "choices": [
+      "A) Sara Oyler-McCance’s researchers analyzed eDNA in water samples from the Florida Everglades for evidence of invasive constrictor snakes, which are difficult to observe.",
+      "B) An analysis of eDNA can detect the presence of invasive species that are difficult to observe, such as constrictor snakes.",
+      "C) Researchers found Burmese python eDNA, or environmental DNA, in water samples; eDNA is the DNA in released cellular materials, such as shed skin cells.",
+      "D) Sara Oyler-McCance’s researchers analyzed environmental DNA (eDNA)—that is, DNA from cellular materials released by organisms—in water samples from the Florida Everglades."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice presents the study in a way that assumes the audience is already familiar with eDNA. Choice B is incorrect. This choice doesn’t present the study. It only states a general fact about eDNA analysis. Choice C is incorrect. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained. Choice D is incorrect. This choice isn’t suited for an audience already familiar with eDNA. A familiar audience wouldn’t need to have the term defined or explained. It also doesn’t present the study."
+  },
+  {
+    "id": 1623,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to describe the rocking chair to an audience unfamiliar with Sam Maloof. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Sam Maloof (1916–2009) was an American woodworker and furniture designer.\n- He was the son of Lebanese immigrants.\n- He received a “genius grant” from the John D. and Catherine T. MacArthur Foundation in 1985.\n- The Museum of Fine Arts in Boston, Massachusetts, owns a rocking chair that Maloof made from walnut wood.\n- The armrests and the seat of the chair are sleek and contoured, and the back consists of seven spindle-like slats.",
+    "choices": [
+      "A) With its sleek, contoured armrests and seat, the walnut rocking chair in Boston’s Museum of Fine Arts is just one piece of furniture created by American woodworker Sam Maloof.",
+      "B) Sam Maloof was born in 1916 and died in 2009, and during his life, he made a chair that you can see if you visit the Museum of Fine Arts in Boston.",
+      "C) Furniture designer Sam Maloof was a recipient of one of the John D. and Catherine T. MacArthur Foundation’s “genius grants.”",
+      "D) The rocking chair is made from walnut, and it has been shaped such that its armrests and seat are sleek and contoured."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence effectively describes the rocking chair to an audience unfamiliar with Sam Maloof, noting its sleek, contoured armrests and seat and explaining that Sam Maloof (the walnut chair’s creator) was an American woodworker. Choice B is incorrect. While the sentence explains who Sam Maloof was and mentions a chair, it doesn’t describe the chair. Choice C is incorrect. While the sentence explains who Sam Maloof was, it doesn’t describe the rocking chair. Choice D is incorrect. While the sentence describes the rocking chair, it doesn’t explain who Sam Maloof was."
+  },
+  {
+    "id": 1624,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to present the study and its findings. Which choice most effectively uses the information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Species belonging to the Orchidaceae (orchid) family can be found in both tropical and temperate environments.\n- Orchidaceae species diversity has not been well studied in temperate forests, such as those in Oaxaca, Mexico.\n- Arelée Estefanía Muñoz-Hernández led a study to determine how many different Orchidaceae species are present in the forests of Oaxaca.\n- Muñoz-Hernández and her team collected orchids each month for a year at a site in Oaxaca.\n- Seventy-four Orchidaceae species were present at the site.",
+    "choices": [
+      "A) A study led by Arelée Estefanía Muñoz-Hernández identified a total of 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico.",
+      "B) There are orchids in many environments, but there are 74 Orchidaceae species in Oaxaca, Mexico.",
+      "C) Oaxaca, Mexico, is home to temperate forests containing 74 Orchidaceae species.",
+      "D) Arelée Estefanía Muñoz-Hernández and her team wanted to know how many different Orchidaceae species are present in the forests of Oaxaca, Mexico, so they conducted a study to collect the orchids."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice most effectively presents the study and its findings. It opens with the study and names its lead researcher, then tells us its finding: that they identified 74 Orchidaceae species in the temperate forests of Oaxaca, Mexico. Choice B is incorrect. This choice doesn’t include the study’s findings, so it fails to achieve the goal. It doesn’t mention that there was a study at all. Choice C is incorrect. This choice doesn’t present the study, so it fails to achieve the goal. It doesn’t mention that there was a study at all. Choice D is incorrect. This choice doesn’t include the study’s findings, so it fails to achieve the goal."
+  },
+  {
+    "id": 1625,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize the distance covered by the Philadelphia and Lancaster Turnpike. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Philadelphia and Lancaster Turnpike was a road built between 1792 and 1794.\n- It was the first private turnpike in the United States.\n- It connected the cities of Philadelphia and Lancaster in the state of Pennsylvania.\n- It was sixty-two miles long.",
+    "choices": [
+      "A) The sixty-two-mile-long Philadelphia and Lancaster Turnpike connected the Pennsylvania cities of Philadelphia and Lancaster.",
+      "B) The Philadelphia and Lancaster Turnpike was the first private turnpike in the United States.",
+      "C) The Philadelphia and Lancaster Turnpike, which connected two Pennsylvania cities, was built between 1792 and 1794.",
+      "D) A historic Pennsylvania road, the Philadelphia and Lancaster Turnpike was completed in 1794."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The sentence emphasizes the distance covered by the Philadelphia and Lancaster Turnpike, noting that the turnpike, which connected the two Pennsylvania cities in its name, was sixty-two miles long. Choice B is incorrect. The sentence emphasizes the significance of the turnpike; it doesn’t emphasize the distance that the turnpike covered. Choice C is incorrect. While the sentence mentions that the turnpike connected two Pennsylvania cities, it doesn’t emphasize the specific distance covered by the turnpike. Choice D is incorrect. The sentence emphasizes when the turnpike was built; it doesn’t emphasize the distance that the turnpike covered."
+  },
+  {
+    "id": 1630,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to explain a disadvantage of relying on audio features to predict a song’s popularity. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- The Million Song Dataset (MSD) includes main audio features and descriptive tags for popular songs.\n- Audio features include acoustic traits such as loudness and pitch intervals.\n- Many algorithms use these audio features to predict a new song’s popularity.\n- These algorithms may fail to accurately identify main features of a song with varying acoustic traits.\n- Algorithms based on descriptive tags that describe fixed traits such as genre are more reliable predictors of song popularity.",
+    "choices": [
+      "A) Many popularity-predicting algorithms are based on a song’s audio features, such as loudness and pitch intervals.",
+      "B) Algorithms based on audio features may misidentify the main features of a song with varying acoustic traits, making such algorithms less reliable predictors of popularity than those based on fixed traits.",
+      "C) Audio features describe acoustic traits such as pitch intervals, which may vary within a song, whereas descriptive tags describe fixed traits such as genre, which are reliable predictors of popularity.",
+      "D) The MSD’s descriptive tags are reliable predictors of a song’s popularity, as the traits they describe are fixed."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. This choice uses relevant information from the notes to explain a disadvantage of relying on audio features to predict a song’s popularity—namely, that it may misidentify features of certain songs. It also contrasts audio features with descriptive tags, which are more reliable predictors. Choice A is incorrect. This choice only states a fact about the algorithms without evaluating their reliability or accuracy. Choice C is incorrect. This choice only describes the difference between audio features and descriptive tags without indicating why this difference matters for predicting popularity. Choice D is incorrect. This choice only mentions descriptive tags, which are not the focus of the student’s rhetorical goal."
+  },
+  {
+    "id": 1631,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to describe how fabric is used in Assertion of Will. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Oracles of the Pink Universe was a 2021 exhibition at the Denver Museum of Art in Colorado.\n- It featured eight artworks by South African artist Simphiwe Ndzube.\n- One of these works is a painting titled Assertion of Will.\n- Assertion of Will depicts three standing figures.\n- The figures wear clothing made of fabric pieces stitched to the painting’s canvas.",
+    "choices": [
+      "A) In Assertion of Will, the figures’ clothing is made of fabric pieces stitched to the painting’s canvas.",
+      "B) The exhibition Oracles of the Pink Universe featured artworks by artist Simphiwe Ndzube.",
+      "C) Depicting three standing, clothed figures, Assertion of Will is a painting by Simphiwe Ndzube.",
+      "D) Simphiwe Ndzube’s Assertion of Will was one of eight artworks exhibited in Oracles of the Pink Universe at the Denver Museum of Art."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice directly describes how fabric is used in Assertion of Will, by explaining that the fabric pieces are part of the painting itself. Choice B is incorrect. This choice provides contextual information about the exhibition, but it doesn’t mention anything about the painting or the fabric. Choice C is incorrect. This choice mentions that the figures are clothed, but it doesn’t explain how the fabric is integrated into the painting. Choice D is incorrect. This choice provides contextual information about the painting, but it doesn’t mention anything about the fabric or how it is used."
+  },
+  {
+    "id": 1635,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to explain an advantage of the new platinum catalyst developed by Jianbo Tang and his colleagues. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Platinum is a rare and expensive metal.\n- It is used as a catalyst for chemical reactions.\n- Platinum catalysts typically require a large amount of platinum to be effective.\n- Researcher Jianbo Tang and his colleagues created a platinum catalyst that combines platinum with liquid gallium.\n- Their catalyst was highly effective and required only trace amounts of platinum (0.00001% of the atoms in the mixture).",
+    "choices": [
+      "A) Researcher Jianbo Tang and his colleagues created a platinum catalyst that combines platinum, a rare and expensive metal, with liquid gallium.",
+      "B) Like other platinum catalysts, the new platinum catalyst requires a particular amount of the metal to be effective.",
+      "C) Platinum is a rare and expensive metal that is used as a catalyst for chemical reactions; however, platinum catalysts typically require a large amount of platinum to be effective.",
+      "D) While still highly effective, the new platinum catalyst requires far less of the rare and expensive metal than do other platinum catalysts."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. The sentence explains an advantage of Tang and his colleagues’ platinum catalyst, noting that it requires far less platinum (which is rare and expensive) than other platinum catalysts do. Choice A is incorrect. The sentence describes the platinum catalyst that Tang and his colleagues created; it doesn’t explain an advantage of their platinum catalyst. Choice B is incorrect. The sentence emphasizes a similarity between the new platinum catalyst and other platinum catalysts; it doesn’t explain an advantage of the new platinum catalyst. Choice C is incorrect. The sentence connects the metal platinum to the functioning of platinum catalysts, noting that large amounts of platinum are typically required for platinum catalysts to be effective; it doesn’t explain an advantage of Tang and his colleagues’ platinum catalyst."
+  },
+  {
+    "id": 1639,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize a difference between the two muslins. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Muslins are woven cotton fabrics with a variety of uses.\n- Dhaka muslin is a handmade fabric produced in Dhaka, Bangladesh.\n- It has an extremely fine weave and is primarily used to make luxury clothing.\n- Sheeting muslin is a machine-made fabric produced in factories.\n- It has a coarse weave and is primarily used to upholster furniture and create backdrops for theater sets.",
+    "choices": [
+      "A) Dhaka muslin is a handmade fabric with an extremely fine weave, while sheeting muslin is machine-made with a coarse weave.",
+      "B) Dhaka muslin and sheeting muslin are two different types of woven cotton fabrics.",
+      "C) Muslins can be used in a variety of ways, from making luxury clothing to upholstering furniture and creating backdrops for theater sets.",
+      "D) Sheeting muslin is machine-made, has a coarse weave, and is used for furniture and theater sets."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The difference between the two different kinds of muslin is emphasized. Choice B is incorrect. This choice lists two kinds of muslins, but does not say how they are different from one another. Choice C is incorrect. This choice does not emphasize a difference between the two muslins. Choice D is incorrect. This choice does not emphasize a difference between the two muslins. It only describes sheeting muslin."
+  },
+  {
+    "id": 1640,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Rhetorical Synthesis",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "The student wants to emphasize a difference between the two books. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+    "passage": "While researching a topic, a student has taken the following notes:\n\n- Some powerful works of literature have so influenced readers that new legislation has been passed as a result.\n- The Interesting Narrative of the Life of Olaudah Equiano (1789) is the autobiography of a man who endured slavery on both sides of the Atlantic.\n- Equiano’s book contributed to the passage of the Slave Trade Act of 1807.\n- The Jungle (1906) is a fictional work by Upton Sinclair that describes unsanitary conditions in US meatpacking plants.\n- Sinclair’s book contributed to the passage of the Pure Food and Drug Act in 1906.",
+    "choices": [
+      "A) Although both are powerful works of literature that contributed to new legislation, Equiano’s book is an autobiography, while Sinclair’s is fictional.",
+      "B) They may have written about different topics, but Equiano and Sinclair both influenced readers.",
+      "C) The 1807 Slave Trade Act resulted in part from a book by Equiano, while the 1906 Pure Food and Drug Act resulted in part from a book by Sinclair.",
+      "D) The Interesting Narrative of the Life of Olaudah Equiano and The Jungle are two works of literature that contributed to new legislation (concerning the slave trade and food safety, respectively)."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. This choice emphasizes a difference between the two books by using relevant information from the notes to contrast their genres. Choice B is incorrect. This choice mentions a difference between the books (their different topics), but it emphasizes a similarity between the books (their influence on readers). Choice C is incorrect. This choice provides information about the books that reflects both a similarity (both resulted in new laws) and a difference (the specific laws that resulted), without emphasizing either. Choice D is incorrect. This choice doesn’t emphasize a difference between the two books. Instead, it emphasizes a similarity."
+  },
+  {
+    "id": 1619,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Samuel Coleridge-Taylor was a prominent classical music composer from England who toured the US three times in the early 1900s. The child of a West African father and an English mother, Coleridge-Taylor emphasized his mixed-race ancestry. For example, he referred to himself as Anglo-African. ____ he incorporated the sounds of traditional African music into his classical music compositions.",
+    "choices": [
+      "A) In addition,",
+      "B) Actually,",
+      "C) However,",
+      "D) Regardless,"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. “In addition” logically signals that the detail in this sentence—that Coleridge-Taylor included traditional African music in his classical compositions—adds to the information in the previous sentence. Specifically, the previous sentence indicates one way in which Coleridge-Taylor emphasized his mixed-race ancestry, and the claim that follows indicates a second, additional way. Choice B is incorrect because “actually” illogically signals that the detail in this sentence is surprising in light of the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry. Choice C is incorrect because “however” illogically signals that the detail in this sentence contrasts with the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry. Choice D is incorrect because “regardless” illogically signals that the detail in this sentence is true despite the information in the previous sentence. Instead, the detail adds to the information, indicating a second, additional way in which Coleridge-Taylor emphasized his mixed-race ancestry."
+  },
+  {
+    "id": 1620,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In her poetry collection Thomas and Beulah, Rita Dove interweaves the titular characters’ personal stories with broader historical narratives. She places Thomas’s journey from the American South to the Midwest in the early 1900s within the larger context of the Great Migration. ____ Dove sets events from Beulah’s personal life against the backdrop of the US Civil Rights Movement.",
+    "choices": [
+      "A) Specifically,",
+      "B) Thus,",
+      "C) Regardless,",
+      "D) Similarly,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. “Similarly” logically signals that the information in the sentence—that Dove situates Beulah’s life in the context of the US Civil Rights Movement—is similar to the previous information about Thomas and the Great Migration. Both sentences support the first sentence’s claim that Dove portrays her characters in the context of broader historical narratives. Choice A is incorrect because “specifically” illogically signals that the information about Beulah in this sentence provides specific details elaborating on the previous information about Thomas. Instead, it’s similar to the previous information about Thomas. Choice B is incorrect because “thus” illogically signals that the information about Beulah in this sentence is a result or consequence of the previous information about Thomas. Instead, it’s similar to the previous information about Thomas. Choice C is incorrect because “regardless” illogically signals that the information about Beulah in this sentence is true despite the previous information about Thomas. Instead, it’s similar to the previous information about Thomas."
+  },
+  {
+    "id": 1626,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In a heated debate in biogeography, the field is divided between dispersalists and vicariancists. ____ there are those who argue that dispersal is the most crucial determining factor in a species’ distribution, and those who insist that vicariance (separation due to geographic barriers) is. Biogeographer Isabel Sanmartin counts herself among the latter.",
+    "choices": [
+      "A) Furthermore,",
+      "B) By contrast,",
+      "C) Similarly,",
+      "D) That is,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. “That is” logically signals that this sentence clarifies the terms of the scientific debate introduced in the previous sentence by explaining the difference between dispersalists and vicariancists. Choice A is incorrect because “furthermore” illogically signals that the information in this sentence is merely additional to (and separate from) the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate. Choice B is incorrect because “by contrast” illogically signals that the information in this sentence contrasts with the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate. Choice C is incorrect because “similarly” illogically signals that the information in this sentence is merely similar to the information in the previous sentence about the scientific debate. Instead, the information about dispersalists and vicariancists clarifies the terms of that debate."
+  },
+  {
+    "id": 1627,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Most of the planets that have been discovered outside our solar system orbit G-type stars, like our Sun. In 2014, ____ researchers identified a planet orbiting KELT-9, a B-type star more than twice as massive and nearly twice as hot as the Sun. Called KELT-9b, it is one of the hottest planets ever discovered.",
+    "choices": [
+      "A) likewise,",
+      "B) however,",
+      "C) therefore,",
+      "D) for example,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. The word “however” logically signals that the information in this sentence about the planet KELT-9b—that it orbits a B-type star—contrasts with the previous information about planets discovered outside our solar system. Most of these planets orbit G-type stars, not B-type stars. Choice A is incorrect because “likewise” illogically signals that the information about the planet KELT-9b is similar to the previous information about most planets outside our solar system. Instead, it contrasts with that information. Choice C is incorrect because “therefore” illogically signals that the information about the planet KELT-9b is a result of the previous information about most planets outside our solar system. Instead, it contrasts with that information. Choice D is incorrect because “for example” illogically signals that the information about the planet KELT-9b is an example of the previous information about most planets outside our solar system. Instead, it contrasts with that information."
+  },
+  {
+    "id": 1628,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Hard",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1815, while in exile in Jamaica, Venezuelan revolutionary Simón Bolívar penned a letter praising England’s republican government and expressing hope that Latin American nations seeking independence from Spain might achieve something similar. The letter was addressed to a local merchant, Henry Cullen; ____ though, Bolívar’s goal was to persuade political leaders from England and Europe to support his cause.",
+    "choices": [
+      "A) additionally,",
+      "B) ultimately,",
+      "C) accordingly,",
+      "D) consequently,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. “Ultimately” means “in the long run” or “at the highest level.” Although Bolívar wrote to a local merchant, his ultimate goal was to send a message to political leaders in Europe. Therefore, “ultimately” fits perfectly in this context. Choice A is incorrect. This choice uses a transition that indicates the addition of an agreeing idea. However, the second part of the sentence actually disagrees with the first part. Bolívar addressed the letter to Cullen, but he was really sending a message to someone else. Notice how the contrast word “though” also acts as a transition between these ideas. Choice C is incorrect. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him. Choice D is incorrect. This choice uses a cause-and-effect transition. Bolívar’s writing of the letter to Cullen would not cause him to have a goal of persuading European powers to support him."
+  },
+  {
+    "id": 1629,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "The Babylonian king Hammurabi achieved much during his forty-year reign. He conquered all of Mesopotamia and built Babylon into one of the most powerful cities of the ancient world. Today, ____ he is mainly remembered for a code of laws inscribed on a seven-foot-tall block of stone: the Code of Hammurabi.",
+    "choices": [
+      "A) therefore,",
+      "B) likewise,",
+      "C) however,",
+      "D) for instance,"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. “However” logically signals that the information in this sentence—that Hammurabi is mainly remembered for just a single achievement, the Code of Hammurabi—is contrary to what might be assumed from the previous information about Hammurabi’s many achievements. Choice A is incorrect because “therefore” illogically signals that the information in this sentence is a result of the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information. Choice B is incorrect because “likewise” illogically signals that the information in this sentence is similar to the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information. Choice D is incorrect because “for instance” illogically signals that this sentence exemplifies the previous information about Hammurabi’s many achievements. Instead, this sentence makes a point that is contrary to what might be assumed from the previous information."
+  },
+  {
+    "id": 1632,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Some members of the US Supreme Court have resisted calls to televise the court’s oral arguments, concerned that the participants would be tempted to perform for the cameras (and thus lower the quality of the discourse). ____ the justices worry that most viewers would not even watch the full deliberations, only short clips that could be misinterpreted and mischaracterized.",
+    "choices": [
+      "A) However,",
+      "B) Additionally,",
+      "C) In comparison,",
+      "D) For example,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. “Additionally” logically signals that the claim in this sentence—that some Supreme Court justices worry that viewers (of televised court arguments) would watch only short, misleading clips—adds to the information in the previous sentence. Specifically, the previous sentence indicates one concern raised by those opposed to televising the court’s oral arguments, and the claim that follows indicates a second, additional concern. Choice A is incorrect because “however” illogically signals that the claim in this sentence contrasts with the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments. Choice C is incorrect because “in comparison” illogically signals that the claim in this sentence is being compared to the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments. Choice D is incorrect because “for example” illogically signals that the claim in this sentence exemplifies the information in the previous sentence. Instead, the claim adds to the information, indicating a second, additional concern that some Supreme Court justices have about televising the court’s arguments."
+  },
+  {
+    "id": 1633,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Award-winning travel writer Linda Watanabe McFerrin considers the background research she conducts on destinations featured in her travel books to be its own reward. ____ McFerrin admits to finding the research phase of her work just as fascinating and engaging as exploring a location in person.",
+    "choices": [
+      "A) By contrast,",
+      "B) Likewise,",
+      "C) Besides,",
+      "D) In fact,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. “In fact” logically signals that the information in this sentence—that McFerrin finds the research phase of her work to be just as fascinating as travel—emphasizes and elaborates on the previous sentence’s point that McFerrin regards background research as a rewarding activity. Choice A is incorrect because “by contrast” illogically signals that the information in this sentence contrasts with the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point. Choice B is incorrect because “likewise” illogically signals that this sentence merely adds a second, similar point to the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point. Choice C is incorrect because “besides” illogically signals that this sentence provides a separate point in addition to, or apart from, the previous sentence’s point about McFerrin’s attitude toward background research. Instead, it emphasizes and elaborates on that point."
+  },
+  {
+    "id": 1634,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1873, Spanish scientist Santiago Ramón y Cajal observed that brain fibers have distinct boundaries with clear end points, a finding that went against earlier assumptions about the brain. ____ scientists had assumed that the brain was a continuous web of fused fibers, not a vast network of distinct, individual cells.",
+    "choices": [
+      "A) However,",
+      "B) Previously,",
+      "C) As a result,",
+      "D) Likewise,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. “Previously” logically signals that the fused fiber theory came before Ramón y Cajal’s discovery. Choice A is incorrect. “However” illogically signals that the fused fiber theory in this sentence contrasts with the information in the previous sentence. While this theory does contrast with Ramón y Cajal’s discovery, the previous sentence concludes by stating that his discovery went against prior assumptions about the brain. The fact that the fused fiber theory was one of those earlier assumptions makes “however” an illogical choice. Choice C is incorrect because “as a result” illogically signals that the fused fiber theory in this sentence was a result of the discovery in the previous sentence. Instead, the fused fiber theory came before Ramón y Cajal’s discovery. Choice D is incorrect because “likewise” illogically signals that the fused fiber theory in this sentence was similar to the discovery in the previous sentence. Instead, the fused fiber theory, which came before Ramón y Cajal’s discovery, was very different from it."
+  },
+  {
+    "id": 1636,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "For years, biologists have experimented with using grime-eating bacteria rather than harsh chemicals to clean artworks, and results have been impressive overall. ____ these bacterial strains—which can metabolize centuries’ worth of oil, glue, dirt, and other surface impurities without creating harmful byproducts—have proven more effective than traditional chemical cleaning methods.",
+    "choices": [
+      "A) However,",
+      "B) In many cases,",
+      "C) As a result,",
+      "D) Additionally,"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Choice B is the best answer. The first sentence makes the claim that using grime-eating bacteria has led to “impressive results.” This sentence supports that claim by describing the specific findings of the biologists’ experimentation. The transition “in many cases” fits the context perfectly. Choice A is incorrect. This choice uses a disagreement transition. But this sentence actually agrees with the previous sentence. Both claim that grime-eating bacteria are better at cleaning artworks than chemicals. Choice C is incorrect. This choice uses a cause-and-effect transition, which doesn’t make sense in context. The fact that the results of the experimentation have been impressive overall doesn’t cause the bacteria to have proven more effective. Choice D is incorrect. This choice uses a transition that indicates the addition of a new idea. But this sentence doesn’t introduce a new idea. Instead, it elaborates on the same idea laid out in the previous sentence by describing the “impressive results” in more detail."
+  },
+  {
+    "id": 1637,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "In 1968, US Congressman John Conyers introduced a bill to establish a national holiday in honor of Dr. Martin Luther King Jr. The bill didn’t make it to a vote, but Conyers was determined. He teamed up with Shirley Chisholm, the first Black woman to be elected to Congress, and they resubmitted the bill every session for the next fifteen years. ____ in 1983, the bill passed.",
+    "choices": [
+      "A) Instead,",
+      "B) Likewise,",
+      "C) Finally,",
+      "D) Additionally,"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. “Finally” logically signals that the bill passing—following many attempts between 1968 and 1983—is the final, concluding event in the sequence described in the previous sentences. Choice A is incorrect because “instead” illogically signals that the bill passing is an alternative to one of the events described in the previous sentences. Instead, it is the final event in the sequence. Choice B is incorrect because “likewise” illogically signals that the bill passing is similar to one of the events described in the previous sentences. Instead, it is the final event in the sequence. Choice D is incorrect because “additionally” illogically signals that the bill passing is merely another event described along with the events of the previous sentences. Instead, the bill passing is the final, concluding event in the sequence."
+  },
+  {
+    "id": 1081,
+    "type": "Verbal",
+    "topic": "Information and Ideas",
+    "subtopic": "Central Ideas and Details",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Based on the text, what can be concluded about the diminishing popularity of the portrait miniature in the nineteenth century?",
+    "passage": "A common assumption among art historians is that the invention of photography in the mid-nineteenth century displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature, which coincided with the rise of photography, seems to support this claim. However, photography’s impact on the portrait miniature may be overstated. Although records from art exhibitions in the Netherlands from 1820 to 1892 show a decrease in the number of both full-size and miniature portraits submitted, this trend was established before the invention of photography.",
+    "choices": [
+      "A) Factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline.",
+      "B) Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit.",
+      "C) The popularity of the portrait miniature likely persisted for longer than art historians have assumed.",
+      "D) As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Choice A is the best answer. The text says that the impact of photography on the portrait miniature might be 'overstated,' as some records show a decrease in the number of portrait miniatures before the invention of photography. From this, we can conclude that factors other than the rise of photography may be more directly responsible for the portrait miniature’s decline. Choice B is incorrect. The text never discusses the 'artistic merit' of either art form. Choice C is incorrect. The text never suggests that the portrait miniature was popular for longer than historians thought—if anything, it suggests that the portrait miniature started losing its popularity earlier than historians thought. Choice D is incorrect. The text never suggests that portrait painters shifted to become photographers."
+  },
+  {
+    "id": 1082,
+    "type": "Verbal",
+    "topic": "Information and Ideas",
+    "subtopic": "Central Ideas and Details",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "isBookmarked": false,
+    "isIncorrect": false,
+    "question": "Which choice best states the main idea of the text?",
+    "passage": "Believing that living in an impractical space can heighten awareness and even improve health, conceptual artists Madeline Gins and Shusaku Arakawa designed an apartment building in Japan to be more fanciful than functional. A kitchen counter is chest-high on one side and knee-high on the other; a ceiling has a door to nowhere. The effect is disorienting but invigorating: after four years there, filmmaker Nobu Yamaoka reported significant health benefits.",
+    "choices": [
+      "A) Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable.",
+      "B) Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment.",
+      "C) As a filmmaker, Yamaoka has long supported the designs of artists such as Gins and Arakawa.",
+      "D) Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building’s residents."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer because it most accurately states the main idea of the text. According to the text, conceptual artists Gins and Arakawa have designed an apartment building that is disorienting because of several unconventional elements, such as uneven kitchen counters and “a door to nowhere.” The text goes on to suggest that there may be benefits to this kind of design because filmmaker Yamaoka lived in the apartment building for four years and reported health benefits. Thus, although the design is impractical, it may improve the well-being of the apartment building’s residents. Choice A is incorrect. Although the text mentions that Yamaoka lived in the apartment for four years, it doesn’t address how long someone can beneficially live in a home surrounded by fanciful features or whether doing so can be sustained. Choice B is incorrect. Although the text mentions the potential benefits of living in a home with disorienting design features, it doesn’t suggest that this is the most effective method to create a physically stimulating environment. Choice C is incorrect because the text refers to Yamaoka to support the claim that Gins and Arakawa’s apartment building design may be beneficial, but the text doesn’t indicate that Yamaoka supports the designs of other conceptual artists."
   }
 ]
