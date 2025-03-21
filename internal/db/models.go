@@ -66,6 +66,7 @@ type Question struct {
 	SolveRate          sql.NullInt32
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
+	Passage            sql.NullString
 }
 
 type User struct {

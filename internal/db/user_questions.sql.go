@@ -68,6 +68,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -96,6 +97,7 @@ type GetUserBookmarkedQuestionsRow struct {
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
 	CreatedAt          sql.NullTime
+	Passage            sql.NullString
 	TotalCount         int64
 }
 
@@ -120,6 +122,7 @@ func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, arg GetUserBoo
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
+			&i.Passage,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -148,6 +151,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -167,6 +171,7 @@ type GetUserBookmarkedQuestionsAscRow struct {
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
 	CreatedAt          sql.NullTime
+	Passage            sql.NullString
 	TotalCount         int64
 }
 
@@ -191,6 +196,7 @@ func (q *Queries) GetUserBookmarkedQuestionsAsc(ctx context.Context, userID int3
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
+			&i.Passage,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -219,6 +225,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -238,6 +245,7 @@ type GetUserBookmarkedQuestionsDescRow struct {
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
 	CreatedAt          sql.NullTime
+	Passage            sql.NullString
 	TotalCount         int64
 }
 
@@ -262,6 +270,7 @@ func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
+			&i.Passage,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err

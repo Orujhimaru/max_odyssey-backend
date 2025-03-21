@@ -12,6 +12,8 @@ sql:
       - "sql/schema/010_add_solve_rate_index.sql"
       - "sql/schema/011_add_filter_indexes.sql"
       - "sql/schema/012_create_users_skills.sql"
+      - "sql/schema/013_add_passage_column.sql"
+      - "sql/schema/014_update_unique_constraint.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"

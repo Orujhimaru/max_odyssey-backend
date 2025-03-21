@@ -60,6 +60,7 @@ func (s *UserQuestionService) GetBookmarkedQuestions(userID int64, sortDir strin
 				CreatedAt:          q.CreatedAt.Time,
 				SolveRate:          int(q.SolveRate.Int32),
 				Choices:            q.Choices,
+				Passage:            q.Passage.String,
 			}
 		}
 	} else {
@@ -92,6 +93,7 @@ func (s *UserQuestionService) GetBookmarkedQuestions(userID int64, sortDir strin
 				CreatedAt:          q.CreatedAt.Time,
 				SolveRate:          int(q.SolveRate.Int32),
 				Choices:            q.Choices,
+				Passage:            q.Passage.String,
 			}
 		}
 	}

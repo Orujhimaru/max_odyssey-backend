@@ -15,6 +15,7 @@ type Question struct {
 	Subtopic           string    `json:"subtopic"`
 	SolveRate          int       `json:"solve_rate"`
 	CreatedAt          time.Time `json:"created_at"`
+	Passage            string    `json:"passage"`
 }
 
 // User represents a user in the system

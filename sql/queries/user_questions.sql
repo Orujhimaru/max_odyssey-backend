@@ -15,6 +15,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -88,6 +89,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -107,6 +109,7 @@ SELECT
   q.choices,
   q.correct_answer_index,
   q.created_at,
+  q.passage,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id

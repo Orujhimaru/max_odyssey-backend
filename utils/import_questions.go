@@ -11,6 +11,7 @@ import (
 	"github.com/lib/pq"
 )
 
+// JSONQuestion represents a question in the JSON file
 type JSONQuestion struct {
 	ID            int      `json:"id"`
 	Type          string   `json:"type"`
@@ -35,6 +36,14 @@ func ImportQuestions() {
 	}
 	defer db.Close()
 
+	// Add this before the transaction begins
+	var count int
+	err = db.QueryRow("SELECT COUNT(*) FROM questions").Scan(&count)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Database has %d existing questions\n", count)
+
 	// Read JSON file
 	jsonData, err := ioutil.ReadFile("questions.json")
 	if err != nil {
@@ -46,27 +55,51 @@ func ImportQuestions() {
 		log.Fatal(err)
 	}
 
-	// Begin transaction
-	tx, err := db.Begin()
-	if err != nil {
-		log.Fatal(err)
-	}
+	// // Check for duplicates in the JSON file
+	// uniqueCheck := make(map[string]bool)
+	// duplicatesInJSON := 0
 
-	// Prepare statement
-	insertQuestion, err := tx.Prepare(`
-		INSERT INTO questions (
-			subject_id, question_text, difficulty_level, explanation, 
-			topic, subtopic, solve_rate, choices, correct_answer_index
-		)
-		VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-		RETURNING id`)
-	if err != nil {
-		tx.Rollback()
-		log.Fatal(err)
-	}
+	// for i, q := range questions {
+	// 	// Create a unique key based on the constraint fields
+	// 	key := fmt.Sprintf("%s|%s|%s", q.QuestionText, q.Topic, q.Subtopic)
+
+	// 	if uniqueCheck[key] {
+	// 		// Truncate question text for display if needed
+	// 		displayText := q.QuestionText
+	// 		if len(displayText) > 50 {
+	// 			displayText = displayText[:50] + "..."
+	// 		}
+
+	// 		fmt.Printf("Duplicate found in JSON (index #%d): %s\n", i+1, displayText)
+	// 		fmt.Printf("  Topic: %s, Subtopic: %s\n", q.Topic, q.Subtopic)
+	// 		duplicatesInJSON++
+	// 	}
+	// 	uniqueCheck[key] = true
+	// }
+
+	// fmt.Printf("Found %d duplicates in JSON file\n", duplicatesInJSON)
 
 	// Insert questions
-	for _, q := range questions {
+	for i, q := range questions {
+		// Start a new transaction for each question
+		tx, err := db.Begin()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// Prepare statement
+		insertQuestion, err := tx.Prepare(`
+			INSERT INTO questions (
+				subject_id, question_text, difficulty_level, explanation, 
+				topic, subtopic, solve_rate, choices, correct_answer_index, passage
+			)
+			VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+			RETURNING id`)
+		if err != nil {
+			tx.Rollback()
+			log.Fatal(err)
+		}
+
 		// Map difficulty to level (0-2)
 		difficultyLevel := map[string]int{
 			"Easy":   0,
@@ -80,11 +113,8 @@ func ImportQuestions() {
 			"Verbal": 2,
 		}[q.Type]
 
-		// Combine question and passage if present
+		// Get question text
 		questionText := q.Question
-		if q.Passage != "" {
-			questionText = fmt.Sprintf("Passage:\n%s\n\nQuestion:\n%s", q.Passage, q.Question)
-		}
 
 		// Convert letter answer (A, B, C, D) to index (0, 1, 2, 3)
 		correctAnswerIndex := map[string]int{
@@ -96,7 +126,7 @@ func ImportQuestions() {
 
 		// Insert question
 		var questionID int
-		err := insertQuestion.QueryRow(
+		err = insertQuestion.QueryRow(
 			subjectID,
 			questionText,
 			difficultyLevel,
@@ -106,21 +136,36 @@ func ImportQuestions() {
 			q.SolveRate,
 			pq.Array(q.Choices),
 			correctAnswerIndex,
+			q.Passage,
 		).Scan(&questionID)
+
 		if err != nil {
 			if strings.Contains(err.Error(), "unique_question") {
-				// Skip duplicate question
-				fmt.Printf("Skipping duplicate question: %s\n", q.Question)
+				// Log duplicate
+				displayText := "Empty question text"
+				if len(questionText) > 0 {
+					if len(questionText) > 50 {
+						displayText = questionText[:50] + "..."
+					} else {
+						displayText = questionText
+					}
+				}
+
+				fmt.Printf("Skipping duplicate question #%d: %s\n", i+1, displayText)
+				tx.Rollback() // Roll back this transaction
 				continue
 			}
 			tx.Rollback()
 			log.Fatal(err)
 		}
-	}
 
-	// Commit transaction
-	if err := tx.Commit(); err != nil {
-		log.Fatal(err)
+		// Commit this question's transaction
+		if err := tx.Commit(); err != nil {
+			log.Fatal(err)
+		}
+
+		// Log successful insert
+		fmt.Printf("Imported question #%d with DB ID %d\n", i+1, questionID)
 	}
 
 	fmt.Println("Successfully imported questions!")

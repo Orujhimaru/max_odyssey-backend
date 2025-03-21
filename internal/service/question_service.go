@@ -42,7 +42,8 @@ func (s *QuestionService) GetQuestions() ([]models.Question, error) {
 			Explanation:        q.Explanation.String,
 			CreatedAt:          q.CreatedAt.Time,
 			SolveRate:          int(q.SolveRate.Int32),
-			Choices:            q.Choices, // Use the actual choices from DB, not an empty array
+			Choices:            q.Choices,
+			Passage:            q.Passage.String,
 		}
 	}
 
@@ -71,7 +72,8 @@ func (s *QuestionService) GetQuestionByID(id int64) (*models.Question, error) {
 		Explanation:        q.Explanation.String,
 		CreatedAt:          q.CreatedAt.Time,
 		SolveRate:          int(q.SolveRate.Int32),
-		Choices:            q.Choices, // Just use the choices directly
+		Choices:            q.Choices,
+		Passage:            q.Passage.String,
 	}, nil
 }
 
@@ -162,6 +164,7 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 			Explanation:        q.Explanation.String,
 			SolveRate:          int(q.SolveRate.Int32),
 			Choices:            q.Choices,
+			Passage:            q.Passage.String,
 		}
 	}
 
