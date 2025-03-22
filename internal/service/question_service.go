@@ -44,6 +44,7 @@ func (s *QuestionService) GetQuestions() ([]models.Question, error) {
 			SolveRate:          int(q.SolveRate.Int32),
 			Choices:            q.Choices,
 			Passage:            q.Passage.String,
+			Bluebook:           q.Bluebook,
 		}
 	}
 
@@ -74,6 +75,7 @@ func (s *QuestionService) GetQuestionByID(id int64) (*models.Question, error) {
 		SolveRate:          int(q.SolveRate.Int32),
 		Choices:            q.Choices,
 		Passage:            q.Passage.String,
+		Bluebook:           q.Bluebook,
 	}, nil
 }
 
@@ -165,6 +167,7 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 			SolveRate:          int(q.SolveRate.Int32),
 			Choices:            q.Choices,
 			Passage:            q.Passage.String,
+			Bluebook:           q.Bluebook,
 		}
 	}
 

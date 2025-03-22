@@ -1,18 +1,18 @@
 -- name: GetQuestions :many
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
 FROM questions; 
 
 -- name: GetQuestion :one
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
 FROM questions 
 WHERE id = $1; 
 
 -- name: GetFilteredQuestions :many
 SELECT 
   id, subject_id, question_text, correct_answer_index, 
-  difficulty_level, explanation, topic, subtopic, solve_rate, choices,
+  difficulty_level, explanation, topic, subtopic, solve_rate, choices, passage, bluebook,
   COUNT(*) OVER() AS total_count
 FROM questions
 WHERE 

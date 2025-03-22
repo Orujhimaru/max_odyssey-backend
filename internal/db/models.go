@@ -67,6 +67,7 @@ type Question struct {
 	Choices            []string
 	CorrectAnswerIndex sql.NullInt32
 	Passage            sql.NullString
+	Bluebook           bool
 }
 
 type User struct {

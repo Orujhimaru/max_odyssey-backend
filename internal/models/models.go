@@ -16,6 +16,7 @@ type Question struct {
 	SolveRate          int       `json:"solve_rate"`
 	CreatedAt          time.Time `json:"created_at"`
 	Passage            string    `json:"passage"`
+	Bluebook           bool      `json:"bluebook"`
 }
 
 // User represents a user in the system

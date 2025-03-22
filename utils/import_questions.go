@@ -24,6 +24,7 @@ type JSONQuestion struct {
 	CorrectAnswer string   `json:"correctAnswer"`
 	Explanation   string   `json:"explanation"`
 	SolveRate     int      `json:"solveRate"`
+	Bluebook      bool     `json:"bluebook"`
 }
 
 // This function reads questions.json, and adds the questions to our database.
@@ -91,9 +92,9 @@ func ImportQuestions() {
 		insertQuestion, err := tx.Prepare(`
 			INSERT INTO questions (
 				subject_id, question_text, difficulty_level, explanation, 
-				topic, subtopic, solve_rate, choices, correct_answer_index, passage
+				topic, subtopic, solve_rate, choices, correct_answer_index, passage, bluebook
 			)
-			VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+			VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
 			RETURNING id`)
 		if err != nil {
 			tx.Rollback()
@@ -137,6 +138,7 @@ func ImportQuestions() {
 			pq.Array(q.Choices),
 			correctAnswerIndex,
 			q.Passage,
+			q.Bluebook,
 		).Scan(&questionID)
 
 		if err != nil {
