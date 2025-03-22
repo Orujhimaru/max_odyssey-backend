@@ -89,6 +89,7 @@ type UserQuestion struct {
 	IsBookmarked sql.NullBool
 	TimeTaken    sql.NullInt32
 	CreatedAt    sql.NullTime
+	Incorrect    bool
 }
 
 type UsersSkill struct {

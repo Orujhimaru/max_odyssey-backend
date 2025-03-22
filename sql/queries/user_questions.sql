@@ -43,18 +43,29 @@ FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_solved = TRUE;
 
+-- name: GetUserQuestions :many
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+FROM user_questions
+WHERE user_id = $1;
+
+-- name: GetUserQuestion :one
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+FROM user_questions
+WHERE user_id = $1 AND question_id = $2;
+
 -- name: CreateUserQuestion :one
 INSERT INTO user_questions (
-    user_id, question_id, is_solved, is_bookmarked, time_taken
+  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect
 ) VALUES (
-    $1, $2, $3, $4, $5
+  $1, $2, $3, $4, $5, $6
 )
-ON CONFLICT (user_id, question_id) 
-DO UPDATE SET
-    is_solved = EXCLUDED.is_solved,
-    is_bookmarked = EXCLUDED.is_bookmarked,
-    time_taken = EXCLUDED.time_taken
-RETURNING *;
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect;
+
+-- name: UpdateUserQuestion :one
+UPDATE user_questions
+SET is_solved = $3, is_bookmarked = $4, time_taken = $5, incorrect = $6
+WHERE user_id = $1 AND question_id = $2
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect;
 
 -- name: ToggleBookmark :one
 UPDATE user_questions
@@ -66,7 +77,8 @@ RETURNING *;
 UPDATE user_questions
 SET 
     is_solved = TRUE,
-    time_taken = $3
+    time_taken = $3,
+    incorrect = $4
 WHERE user_id = $1 AND question_id = $2
 RETURNING *;
 
@@ -114,4 +126,14 @@ SELECT
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_bookmarked = TRUE
-ORDER BY q.solve_rate DESC; 
+ORDER BY q.solve_rate DESC;
+
+-- name: UpdateUserQuestionData :one
+UPDATE user_questions
+SET 
+    is_solved = $3,
+    is_bookmarked = $4,
+    time_taken = $5,
+    incorrect = $6
+WHERE user_id = $1 AND question_id = $2
+RETURNING *; 

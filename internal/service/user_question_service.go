@@ -128,6 +128,7 @@ func (s *UserQuestionService) ToggleBookmark(userID, questionID int64) error {
 				IsSolved:     sql.NullBool{Bool: false, Valid: true},
 				IsBookmarked: sql.NullBool{Bool: true, Valid: true},
 				TimeTaken:    sql.NullInt32{Valid: false},
+				Incorrect:    false,
 			})
 			return err
 		}
@@ -148,11 +149,12 @@ func (s *UserQuestionService) ToggleBookmark(userID, questionID int64) error {
 }
 
 // MarkQuestionSolved marks a question as solved for a user
-func (s *UserQuestionService) MarkQuestionSolved(userID, questionID int64, timeTaken int32) error {
+func (s *UserQuestionService) MarkQuestionSolved(userID, questionID int64, timeTaken int32, incorrect bool) error {
 	_, err := s.db.MarkQuestionSolved(context.Background(), db.MarkQuestionSolvedParams{
 		UserID:     int32(userID),
 		QuestionID: int32(questionID),
 		TimeTaken:  sql.NullInt32{Int32: timeTaken, Valid: true},
+		Incorrect:  incorrect,
 	})
 	return err
 }
@@ -191,6 +193,7 @@ func (s *UserQuestionService) ToggleSolved(userID, questionID int64) error {
 				IsSolved:     sql.NullBool{Bool: true, Valid: true},
 				IsBookmarked: sql.NullBool{Bool: false, Valid: true},
 				TimeTaken:    sql.NullInt32{Valid: false},
+				Incorrect:    false,
 			})
 			return err
 		}
@@ -207,5 +210,18 @@ func (s *UserQuestionService) ToggleSolved(userID, questionID int64) error {
 	if err != nil {
 		log.Printf("Error toggling solved status: %v", err)
 	}
+	return err
+}
+
+// UpdateUserQuestionData updates all fields for a user question
+func (s *UserQuestionService) UpdateUserQuestionData(userID, questionID int64, isSolved bool, isBookmarked bool, timeTaken int32, incorrect bool) error {
+	_, err := s.db.UpdateUserQuestionData(context.Background(), db.UpdateUserQuestionDataParams{
+		UserID:       int32(userID),
+		QuestionID:   int32(questionID),
+		IsSolved:     sql.NullBool{Bool: isSolved, Valid: true},
+		IsBookmarked: sql.NullBool{Bool: isBookmarked, Valid: true},
+		TimeTaken:    sql.NullInt32{Int32: timeTaken, Valid: true},
+		Incorrect:    incorrect,
+	})
 	return err
 }

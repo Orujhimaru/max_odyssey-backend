@@ -14,16 +14,11 @@ import (
 
 const createUserQuestion = `-- name: CreateUserQuestion :one
 INSERT INTO user_questions (
-    user_id, question_id, is_solved, is_bookmarked, time_taken
+  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect
 ) VALUES (
-    $1, $2, $3, $4, $5
+  $1, $2, $3, $4, $5, $6
 )
-ON CONFLICT (user_id, question_id) 
-DO UPDATE SET
-    is_solved = EXCLUDED.is_solved,
-    is_bookmarked = EXCLUDED.is_bookmarked,
-    time_taken = EXCLUDED.time_taken
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type CreateUserQuestionParams struct {
@@ -32,6 +27,7 @@ type CreateUserQuestionParams struct {
 	IsSolved     sql.NullBool
 	IsBookmarked sql.NullBool
 	TimeTaken    sql.NullInt32
+	Incorrect    bool
 }
 
 func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestionParams) (UserQuestion, error) {
@@ -41,6 +37,7 @@ func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestion
 		arg.IsSolved,
 		arg.IsBookmarked,
 		arg.TimeTaken,
+		arg.Incorrect,
 	)
 	var i UserQuestion
 	err := row.Scan(
@@ -51,6 +48,7 @@ func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestion
 		&i.IsBookmarked,
 		&i.TimeTaken,
 		&i.CreatedAt,
+		&i.Incorrect,
 	)
 	return i, err
 }
@@ -286,8 +284,35 @@ func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int
 	return items, nil
 }
 
+const getUserQuestion = `-- name: GetUserQuestion :one
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+FROM user_questions
+WHERE user_id = $1 AND question_id = $2
+`
+
+type GetUserQuestionParams struct {
+	UserID     int32
+	QuestionID int32
+}
+
+func (q *Queries) GetUserQuestion(ctx context.Context, arg GetUserQuestionParams) (UserQuestion, error) {
+	row := q.db.QueryRowContext(ctx, getUserQuestion, arg.UserID, arg.QuestionID)
+	var i UserQuestion
+	err := row.Scan(
+		&i.ID,
+		&i.UserID,
+		&i.QuestionID,
+		&i.IsSolved,
+		&i.IsBookmarked,
+		&i.TimeTaken,
+		&i.CreatedAt,
+		&i.Incorrect,
+	)
+	return i, err
+}
+
 const getUserQuestionByIDs = `-- name: GetUserQuestionByIDs :one
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at FROM user_questions
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect FROM user_questions
 WHERE user_id = $1 AND question_id = $2
 `
 
@@ -307,8 +332,47 @@ func (q *Queries) GetUserQuestionByIDs(ctx context.Context, arg GetUserQuestionB
 		&i.IsBookmarked,
 		&i.TimeTaken,
 		&i.CreatedAt,
+		&i.Incorrect,
 	)
 	return i, err
+}
+
+const getUserQuestions = `-- name: GetUserQuestions :many
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+FROM user_questions
+WHERE user_id = $1
+`
+
+func (q *Queries) GetUserQuestions(ctx context.Context, userID int32) ([]UserQuestion, error) {
+	rows, err := q.db.QueryContext(ctx, getUserQuestions, userID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []UserQuestion
+	for rows.Next() {
+		var i UserQuestion
+		if err := rows.Scan(
+			&i.ID,
+			&i.UserID,
+			&i.QuestionID,
+			&i.IsSolved,
+			&i.IsBookmarked,
+			&i.TimeTaken,
+			&i.CreatedAt,
+			&i.Incorrect,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
 }
 
 const getUserSolvedQuestions = `-- name: GetUserSolvedQuestions :many
@@ -382,19 +446,26 @@ const markQuestionSolved = `-- name: MarkQuestionSolved :one
 UPDATE user_questions
 SET 
     is_solved = TRUE,
-    time_taken = $3
+    time_taken = $3,
+    incorrect = $4
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type MarkQuestionSolvedParams struct {
 	UserID     int32
 	QuestionID int32
 	TimeTaken  sql.NullInt32
+	Incorrect  bool
 }
 
 func (q *Queries) MarkQuestionSolved(ctx context.Context, arg MarkQuestionSolvedParams) (UserQuestion, error) {
-	row := q.db.QueryRowContext(ctx, markQuestionSolved, arg.UserID, arg.QuestionID, arg.TimeTaken)
+	row := q.db.QueryRowContext(ctx, markQuestionSolved,
+		arg.UserID,
+		arg.QuestionID,
+		arg.TimeTaken,
+		arg.Incorrect,
+	)
 	var i UserQuestion
 	err := row.Scan(
 		&i.ID,
@@ -404,6 +475,7 @@ func (q *Queries) MarkQuestionSolved(ctx context.Context, arg MarkQuestionSolved
 		&i.IsBookmarked,
 		&i.TimeTaken,
 		&i.CreatedAt,
+		&i.Incorrect,
 	)
 	return i, err
 }
@@ -412,7 +484,7 @@ const toggleBookmark = `-- name: ToggleBookmark :one
 UPDATE user_questions
 SET is_bookmarked = NOT is_bookmarked
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type ToggleBookmarkParams struct {
@@ -431,6 +503,7 @@ func (q *Queries) ToggleBookmark(ctx context.Context, arg ToggleBookmarkParams) 
 		&i.IsBookmarked,
 		&i.TimeTaken,
 		&i.CreatedAt,
+		&i.Incorrect,
 	)
 	return i, err
 }
@@ -439,7 +512,7 @@ const toggleSolved = `-- name: ToggleSolved :one
 UPDATE user_questions
 SET is_solved = NOT is_solved
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type ToggleSolvedParams struct {
@@ -458,6 +531,89 @@ func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (Use
 		&i.IsBookmarked,
 		&i.TimeTaken,
 		&i.CreatedAt,
+		&i.Incorrect,
+	)
+	return i, err
+}
+
+const updateUserQuestion = `-- name: UpdateUserQuestion :one
+UPDATE user_questions
+SET is_solved = $3, is_bookmarked = $4, time_taken = $5, incorrect = $6
+WHERE user_id = $1 AND question_id = $2
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+`
+
+type UpdateUserQuestionParams struct {
+	UserID       int32
+	QuestionID   int32
+	IsSolved     sql.NullBool
+	IsBookmarked sql.NullBool
+	TimeTaken    sql.NullInt32
+	Incorrect    bool
+}
+
+func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestionParams) (UserQuestion, error) {
+	row := q.db.QueryRowContext(ctx, updateUserQuestion,
+		arg.UserID,
+		arg.QuestionID,
+		arg.IsSolved,
+		arg.IsBookmarked,
+		arg.TimeTaken,
+		arg.Incorrect,
+	)
+	var i UserQuestion
+	err := row.Scan(
+		&i.ID,
+		&i.UserID,
+		&i.QuestionID,
+		&i.IsSolved,
+		&i.IsBookmarked,
+		&i.TimeTaken,
+		&i.CreatedAt,
+		&i.Incorrect,
+	)
+	return i, err
+}
+
+const updateUserQuestionData = `-- name: UpdateUserQuestionData :one
+UPDATE user_questions
+SET 
+    is_solved = $3,
+    is_bookmarked = $4,
+    time_taken = $5,
+    incorrect = $6
+WHERE user_id = $1 AND question_id = $2
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+`
+
+type UpdateUserQuestionDataParams struct {
+	UserID       int32
+	QuestionID   int32
+	IsSolved     sql.NullBool
+	IsBookmarked sql.NullBool
+	TimeTaken    sql.NullInt32
+	Incorrect    bool
+}
+
+func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQuestionDataParams) (UserQuestion, error) {
+	row := q.db.QueryRowContext(ctx, updateUserQuestionData,
+		arg.UserID,
+		arg.QuestionID,
+		arg.IsSolved,
+		arg.IsBookmarked,
+		arg.TimeTaken,
+		arg.Incorrect,
+	)
+	var i UserQuestion
+	err := row.Scan(
+		&i.ID,
+		&i.UserID,
+		&i.QuestionID,
+		&i.IsSolved,
+		&i.IsBookmarked,
+		&i.TimeTaken,
+		&i.CreatedAt,
+		&i.Incorrect,
 	)
 	return i, err
 }

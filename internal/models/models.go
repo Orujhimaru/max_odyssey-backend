@@ -40,6 +40,7 @@ type UserQuestion struct {
 	IsBookmarked bool      `json:"is_bookmarked"`
 	TimeTaken    int       `json:"time_taken"`
 	CreatedAt    time.Time `json:"created_at"`
+	Incorrect    bool      `json:"incorrect"`
 }
 
 // LoginRequest represents a login request
