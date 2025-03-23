@@ -21,8 +21,8 @@ FROM questions
 WHERE 
   ($1 = -1 OR subject_id = $1) AND 
   ($2 = -1 OR difficulty_level = $2) AND
-  ($3 = '' OR topic = $3) AND
-  ($4 = '' OR subtopic = $4)
+  ($3 = '' OR topic = ANY(string_to_array($3, ','))) AND
+  ($4 = '' OR subtopic = ANY(string_to_array($4, ',')))
 ORDER BY 
   CASE WHEN $5 = 'asc' THEN solve_rate END ASC,
   CASE WHEN $5 = 'desc' THEN solve_rate END DESC
