@@ -17,6 +17,8 @@ type Question struct {
 	CreatedAt          time.Time `json:"created_at"`
 	Passage            string    `json:"passage"`
 	Bluebook           bool      `json:"bluebook"`
+	HTMLTable          string    `json:"html_table"`
+	SVGImage           string    `json:"svg_image"`
 }
 
 // User represents a user in the system

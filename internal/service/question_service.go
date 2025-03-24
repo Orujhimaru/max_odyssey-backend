@@ -45,6 +45,8 @@ func (s *QuestionService) GetQuestions() ([]models.Question, error) {
 			Choices:            q.Choices,
 			Passage:            q.Passage.String,
 			Bluebook:           q.Bluebook,
+			HTMLTable:          q.HtmlTable.String,
+			SVGImage:           q.SvgImage.String,
 		}
 	}
 
@@ -76,6 +78,8 @@ func (s *QuestionService) GetQuestionByID(id int64) (*models.Question, error) {
 		Choices:            q.Choices,
 		Passage:            q.Passage.String,
 		Bluebook:           q.Bluebook,
+		HTMLTable:          q.HtmlTable.String,
+		SVGImage:           q.SvgImage.String,
 	}, nil
 }
 
@@ -168,6 +172,8 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 			Choices:            q.Choices,
 			Passage:            q.Passage.String,
 			Bluebook:           q.Bluebook,
+			HTMLTable:          q.HtmlTable.String,
+			SVGImage:           q.SvgImage.String,
 		}
 	}
 

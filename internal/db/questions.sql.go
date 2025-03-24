@@ -16,6 +16,7 @@ const getFilteredQuestions = `-- name: GetFilteredQuestions :many
 SELECT 
   id, subject_id, question_text, correct_answer_index, 
   difficulty_level, explanation, topic, subtopic, solve_rate, choices, passage, bluebook,
+  html_table, svg_image,
   COUNT(*) OVER() AS total_count
 FROM questions
 WHERE 
@@ -52,6 +53,8 @@ type GetFilteredQuestionsRow struct {
 	Choices            []string
 	Passage            sql.NullString
 	Bluebook           bool
+	HtmlTable          sql.NullString
+	SvgImage           sql.NullString
 	TotalCount         int64
 }
 
@@ -85,6 +88,8 @@ func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuest
 			pq.Array(&i.Choices),
 			&i.Passage,
 			&i.Bluebook,
+			&i.HtmlTable,
+			&i.SvgImage,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -102,7 +107,7 @@ func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuest
 
 const getQuestion = `-- name: GetQuestion :one
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook, html_table, svg_image
 FROM questions 
 WHERE id = $1
 `
@@ -121,6 +126,8 @@ type GetQuestionRow struct {
 	Choices            []string
 	Passage            sql.NullString
 	Bluebook           bool
+	HtmlTable          sql.NullString
+	SvgImage           sql.NullString
 }
 
 func (q *Queries) GetQuestion(ctx context.Context, id int32) (GetQuestionRow, error) {
@@ -140,13 +147,15 @@ func (q *Queries) GetQuestion(ctx context.Context, id int32) (GetQuestionRow, er
 		pq.Array(&i.Choices),
 		&i.Passage,
 		&i.Bluebook,
+		&i.HtmlTable,
+		&i.SvgImage,
 	)
 	return i, err
 }
 
 const getQuestions = `-- name: GetQuestions :many
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook, html_table, svg_image
 FROM questions
 `
 
@@ -164,6 +173,8 @@ type GetQuestionsRow struct {
 	Choices            []string
 	Passage            sql.NullString
 	Bluebook           bool
+	HtmlTable          sql.NullString
+	SvgImage           sql.NullString
 }
 
 func (q *Queries) GetQuestions(ctx context.Context) ([]GetQuestionsRow, error) {
@@ -189,6 +200,8 @@ func (q *Queries) GetQuestions(ctx context.Context) ([]GetQuestionsRow, error) {
 			pq.Array(&i.Choices),
 			&i.Passage,
 			&i.Bluebook,
+			&i.HtmlTable,
+			&i.SvgImage,
 		); err != nil {
 			return nil, err
 		}

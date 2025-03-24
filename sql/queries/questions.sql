@@ -1,11 +1,11 @@
 -- name: GetQuestions :many
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook, html_table, svg_image
 FROM questions; 
 
 -- name: GetQuestion :one
 SELECT id, subject_id, question_text, correct_answer_index, difficulty_level, explanation, 
-       created_at, topic, subtopic, solve_rate, choices, passage, bluebook
+       created_at, topic, subtopic, solve_rate, choices, passage, bluebook, html_table, svg_image
 FROM questions 
 WHERE id = $1; 
 
@@ -13,6 +13,7 @@ WHERE id = $1;
 SELECT 
   id, subject_id, question_text, correct_answer_index, 
   difficulty_level, explanation, topic, subtopic, solve_rate, choices, passage, bluebook,
+  html_table, svg_image,
   COUNT(*) OVER() AS total_count
 FROM questions
 WHERE 

@@ -68,6 +68,8 @@ type Question struct {
 	CorrectAnswerIndex sql.NullInt32
 	Passage            sql.NullString
 	Bluebook           bool
+	HtmlTable          sql.NullString
+	SvgImage           sql.NullString
 }
 
 type User struct {

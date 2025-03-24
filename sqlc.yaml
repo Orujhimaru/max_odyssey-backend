@@ -18,6 +18,7 @@ sql:
       - "sql/schema/016_make_bluebook_not_null.sql"
       - "sql/schema/017_add_incorrect_field.sql"
       - "sql/schema/018_update_unique_constraint_passage.sql"
+      - "sql/schema/019_add_table_image_columns.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"
