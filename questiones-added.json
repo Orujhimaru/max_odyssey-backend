@@ -7569,5 +7569,64 @@
     "correctAnswer": "A",
     "explanation": "Choice A is the best answer. \"With this in mind\" logically signals that the activity described in this sentence\u2014Dominguez\u2019s use of techniques like decalcomania to produce unpredictable abstract patterns\u2014is a result of his desire to include random elements in his art. Choice B is incorrect. \"On the contrary\" illogically signals that the activity in this sentence opposes or is contrary to Dominguez\u2019s desire to use random elements in his art. Instead, his use of decalcomania is a result of that desire. Choice C is incorrect. \"In conclusion\" illogically signals that the activity in this sentence is a conclusion or summary of Dominguez\u2019s desire to use random elements in his art. Instead, his use of decalcomania is a result of that desire. Choice D is incorrect. \"Regardless\" illogically signals that the activity in this sentence occurs despite Dominguez\u2019s desire to use random elements in his art. Instead, his use of decalcomania is a result of that desire.",
     "bluebook": true
+  },
+
+  {
+    "id": 1658,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "Small, flat structures called spatulae are found at the tips of the hairs on a spider\u2019s leg. These spatulae temporarily bond with the atoms of whatever they touch.______blankspiders are able to cling to and climb almost any surface.",
+    "choices": [
+      "A) For instance,",
+      "B) However,",
+      "C) Similarly,",
+      "D) As a result,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. \u201cAs a result\u201d logically signals that the claim in this sentence\u2014that spiders can cling to and climb almost any surface\u2014is because of the previous information about the bonding properties of spiders\u2019 spatulae. Choice A is incorrect because \u201cfor instance\u201d illogically signals that the claim in this sentence exemplifies the information in the previous sentences. Instead, the claim is because of the previous information about the bonding properties of spiders\u2019 spatulae. Choice B is incorrect because \u201chowever\u201d illogically signals that the claim in this sentence contrasts with the information in the previous sentences. Instead, the claim is because of the previous information about the bonding properties of spiders\u2019 spatulae. Choice C is incorrect because \u201csimilarly\u201d illogically signals that the claim in this sentence is similar to, but separate from, the information in the previous sentences. Instead, the claim is because of the previous information about the bonding properties of spiders\u2019 spatulae.",
+    "bluebook": true
+  },
+  {
+    "id": 12028,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "The French directors Colas Koola and Vivien Mermet-Guyenet (known as Koola and Viv) founded the video game studio BlueTwelve. They also love cats.______blankthey created an award-winning cat video game,*Stray*(2021), that lets the player explore a dystopian city from the perspective of a clever orange house cat.",
+    "choices": [
+      "A) Intermittently,",
+      "B) On the other hand,",
+      "C) In fact,",
+      "D) Nevertheless,"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. \"In fact\" logically signals that the information in this sentence about the creation of the video game offers additional emphasis in support of the previous claim that video game studio founders Koola and Viv love cats. Choice A is incorrect because \"intermittently\" illogically signals that the information in this sentence occurs sporadically or in intervals. Instead, the creation of the video game offers additional emphasis in support of the previous claim about Koola and Viv. Choice B is incorrect because \"on the other hand\" illogically signals that the information in this sentence contrasts with the previous claim about Koola and Viv. Instead, the creation of the video game offers additional emphasis in support of that claim. Choice D is incorrect because \"nevertheless\" illogically signals that the information in this sentence is true despite the previous claim that Koola and Viv love cats. Instead, the creation of the video game offers additional emphasis in support of that claim.",
+    "bluebook": true
+  },
+
+  {
+    "id": 12008,
+    "type": "Verbal",
+    "topic": "Expression of Ideas",
+    "subtopic": "Transitions",
+    "difficulty": "Easy",
+    "solveRate": 30,
+    "question": "Which choice completes the text with the most logical transition?",
+    "passage": "After appropriate permissions are granted, a typical archeological dig begins with a surveyor making a detailed grid of the excavation site. Then, the site is carefully dug, and any artifacts found are recorded and mapped onto the grid. ____ the artifacts are removed, cataloged, and analyzed in a laboratory.",
+    "choices": [
+      "A) For instance,",
+      "B) On the contrary,",
+      "C) Earlier,",
+      "D) Finally,"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Choice D is the best answer. 'Finally' logically signals that the actions in this sentence—the removal, cataloging, and analysis of artifacts—are the next and final steps in a process, following the previous actions of surveying, digging, recording, and mapping. Choice A is incorrect because 'for instance' illogically signals that the actions in this sentence are an example of the actions in the previous sentence. Instead, the removal, cataloging, and analysis of artifacts are the next and final steps in a process. Choice B is incorrect because 'on the contrary' illogically signals that the actions in this sentence are directly opposed to the actions in the previous sentence. Instead, the removal, cataloging, and analysis of artifacts are the next and final steps in a process. Choice C is incorrect because 'earlier' illogically signals that the actions in this sentence occur before the actions in the previous sentence. Instead, the removal, cataloging, and analysis of artifacts are the next and final steps in a process.",
+    "bluebook": true
   }
 ]
