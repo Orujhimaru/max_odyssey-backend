@@ -1,0 +1,23 @@
+[
+  {
+    "id": 12120,
+    "type": "Verbal",
+    "topic": "Standard English Conventions",
+    "subtopic": "Boundaries",
+    "difficulty": "Medium",
+    "solveRate": 30,
+    "question": "Which choice completes the text so that it conforms to the conventions of Standard English?",
+    "passage": "Horsepower is a unit of measurement used to determine how much power a vehicle produces. The measurement is based on how much and how quickly weight can be______blankone unit of mechanical horsepower is equivalent to the amount of power it takes to lift 550 pounds one foot off the ground in one second.",
+    "choices": [
+      "A) moved, for example,",
+      "B) moved,",
+      "C) moved; for example,",
+      "D) moved"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Choice C is the best answer. The convention being tested is the use of punctuation within a sentence. This choice uses a semicolon in a conventional way to join the first main clause (\"The measurement...moved\") and the second main clause (\"for example...second\"). Choice A is incorrect because it results in a comma splice. Without a coordinating conjunction, a comma can\u2019t be used in this way to join the two main clauses (\"The measurement\u2026moved\" and \"for example\u2026second\"). Choice B is incorrect because it results in a comma splice. Without a conjunction following it, a comma can\u2019t be used in this way to join the two main clauses (\"The measurement\u2026moved\" and \"one unit\u2026second\"). Choice D is incorrect because it results in a run-on sentence. The two main clauses (\"The measurement\u2026moved\" and \"one unit\u2026second\") are fused without punctuation and/or a conjunction.",
+    "bluebook": true,
+    "tables": [],
+    "images": []
+  }
+]
