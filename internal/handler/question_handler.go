@@ -8,6 +8,7 @@ import (
 	"max-odyssey-backend/utils"
 	"net/http"
 	"strconv"
+	"strings"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -70,6 +71,7 @@ func (h *QuestionHandler) GetFilteredQuestions(w http.ResponseWriter, r *http.Re
 	difficultyStr := r.URL.Query().Get("difficulty")
 	topicStr := r.URL.Query().Get("topic")
 	subtopicStr := r.URL.Query().Get("subtopic")
+	log.Printf("Extracted subtopic: %q", subtopicStr)
 	sortDirStr := r.URL.Query().Get("sort_dir")
 	pageSizeStr := r.URL.Query().Get("page_size")
 	pageNumberStr := r.URL.Query().Get("page")
@@ -113,7 +115,11 @@ func (h *QuestionHandler) GetFilteredQuestions(w http.ResponseWriter, r *http.Re
 
 	// Parse subtopic
 	if subtopicStr != "" {
-		filters.Subtopic = subtopicStr
+		// Remove commas from subtopic
+		trimmedSubtopic := strings.ReplaceAll(subtopicStr, ",", "")
+		log.Printf("Original subtopic: %q, Trimmed subtopic: %q", subtopicStr, trimmedSubtopic)
+
+		filters.Subtopic = trimmedSubtopic
 	}
 
 	// Parse page size

@@ -85,13 +85,14 @@ func (s *QuestionService) GetQuestionByID(id int64) (*models.Question, error) {
 
 // QuestionFilters represents all possible filters for questions
 type QuestionFilters struct {
-	SubjectID       int
-	DifficultyLevel int
-	Topic           string
-	Subtopic        string
-	SortDir         string
-	PageSize        int
-	PageNumber      int
+	SubjectID          int
+	DifficultyLevel    int
+	Topic              string
+	Subtopic           string
+	HasSpecialSubtopic bool
+	SortDir            string
+	PageSize           int
+	PageNumber         int
 }
 
 // GetFilteredQuestions gets questions with filtering, sorting and pagination
@@ -136,19 +137,36 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 		filters.PageSize,
 		offset)
 
+	// Add detailed logging for the subtopic
+	log.Printf("Service received subtopic filter: %q", filters.Subtopic)
+
+	// Before executing the query
+	var subtopicParam string
+	if filters.HasSpecialSubtopic {
+		// For the special case, we'll use a different approach
+		// Option 1: Use LIKE instead of exact match
+		subtopicParam = "Form, Structure, and Sense"
+		log.Printf("Using special handling for subtopic: %q", subtopicParam)
+	} else {
+		subtopicParam = filters.Subtopic
+	}
+
 	// Get questions with total count
 	dbQuestions, err := s.db.GetFilteredQuestions(ctx, db.GetFilteredQuestionsParams{
-		Column1: subjectIDParam, // Use the parameter with special value
+		Column1: subjectIDParam,
 		Column2: difficultyParam,
 		Column3: filters.Topic,
-		Column4: filters.Subtopic,
+		Column4: subtopicParam,
 		Column5: filters.SortDir,
 		Limit:   int32(filters.PageSize),
 		Offset:  int32(offset),
 	})
 	if err != nil {
+		log.Printf("Query error: %v", err)
 		return nil, 0, err
 	}
+
+	log.Printf("Query successful, returned %d rows", len(dbQuestions))
 
 	// Extract total count from first row
 	var totalCount int
