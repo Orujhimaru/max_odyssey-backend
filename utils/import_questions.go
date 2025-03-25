@@ -13,20 +13,21 @@ import (
 
 // JSONQuestion represents a question in the JSON file
 type JSONQuestion struct {
-	ID            int      `json:"id"`
-	Type          string   `json:"type"`
-	Topic         string   `json:"topic"`
-	Subtopic      string   `json:"subtopic"`
-	Difficulty    string   `json:"difficulty"`
-	Question      string   `json:"question"`
-	Passage       string   `json:"passage,omitempty"`
-	Choices       []string `json:"choices"`
-	CorrectAnswer string   `json:"correctAnswer"`
-	Explanation   string   `json:"explanation"`
-	SolveRate     int      `json:"solveRate"`
-	Bluebook      bool     `json:"bluebook"`
-	HTMLTable     string   `json:"html_table,omitempty"`
-	SVGImage      string   `json:"svg_image,omitempty"`
+	ID               int      `json:"id"`
+	Type             string   `json:"type"`
+	Topic            string   `json:"topic"`
+	Subtopic         string   `json:"subtopic"`
+	Difficulty       string   `json:"difficulty"`
+	Question         string   `json:"question"`
+	Passage          string   `json:"passage,omitempty"`
+	Choices          []string `json:"choices"`
+	CorrectAnswer    string   `json:"correctAnswer"`
+	Explanation      string   `json:"explanation"`
+	SolveRate        int      `json:"solveRate"`
+	Bluebook         bool     `json:"bluebook"`
+	HTMLTable        string   `json:"html_table,omitempty"`
+	SVGImage         string   `json:"svg_image,omitempty"`
+	IsMultipleChoice bool     `json:"is_multiple_choice"`
 }
 
 // This function reads questions.json, and adds the questions to our database.
@@ -94,9 +95,9 @@ func ImportQuestions() {
 		insertQuestion, err := tx.Prepare(`
 			INSERT INTO questions (
 				subject_id, question_text, difficulty_level, explanation, 
-				topic, subtopic, solve_rate, choices, correct_answer_index, passage, bluebook, html_table, svg_image
+				topic, subtopic, solve_rate, choices, correct_answer_index, passage, bluebook, html_table, svg_image, is_multiple_choice
 			)
-			VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+			VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)
 			RETURNING id`)
 		if err != nil {
 			tx.Rollback()
@@ -143,6 +144,7 @@ func ImportQuestions() {
 			q.Bluebook,
 			q.HTMLTable,
 			q.SVGImage,
+			q.IsMultipleChoice,
 		).Scan(&questionID)
 
 		if err != nil {

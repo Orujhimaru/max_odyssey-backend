@@ -70,6 +70,7 @@ type Question struct {
 	Bluebook           bool
 	HtmlTable          sql.NullString
 	SvgImage           sql.NullString
+	IsMultipleChoice   sql.NullBool
 }
 
 type User struct {

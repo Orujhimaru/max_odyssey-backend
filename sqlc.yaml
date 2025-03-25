@@ -19,6 +19,7 @@ sql:
       - "sql/schema/017_add_incorrect_field.sql"
       - "sql/schema/018_update_unique_constraint_passage.sql"
       - "sql/schema/019_add_table_image_columns.sql"
+      - "sql/schema/020_add_is_multiple_choice.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"

@@ -19,6 +19,7 @@ type Question struct {
 	Bluebook           bool      `json:"bluebook"`
 	HTMLTable          string    `json:"html_table"`
 	SVGImage           string    `json:"svg_image"`
+	IsMultipleChoice   bool      `json:"is_multiple_choice"`
 }
 
 // User represents a user in the system
