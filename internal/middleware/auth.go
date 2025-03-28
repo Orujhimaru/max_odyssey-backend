@@ -9,9 +9,9 @@ import (
 	"strings"
 )
 
-type contextKey string
+type ContextKey string
 
-const UserContextKey contextKey = "user"
+const UserContextKey ContextKey = "max-odyssey-user"
 
 func Auth(authService *service.AuthService) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
@@ -42,8 +42,14 @@ func Auth(authService *service.AuthService) func(http.Handler) http.Handler {
 
 			log.Printf("Authenticated user: %s (ID: %d)", user.Username, user.ID)
 
-			// Add the user to the request context
+			// Set user in context
+			log.Printf("Auth middleware: Setting user in context: %+v", user)
 			ctx := context.WithValue(r.Context(), UserContextKey, user)
+
+			// Add this for debugging
+			testUser, ok := ctx.Value(UserContextKey).(*models.User)
+			log.Printf("Auth middleware: Test get user from context: %+v, ok: %v", testUser, ok)
+
 			next.ServeHTTP(w, r.WithContext(ctx))
 		})
 	}
@@ -51,6 +57,10 @@ func Auth(authService *service.AuthService) func(http.Handler) http.Handler {
 
 // GetUserFromContext gets the user from the request context
 func GetUserFromContext(ctx context.Context) (*models.User, bool) {
-	user, ok := ctx.Value(UserContextKey).(*models.User)
+	value := ctx.Value(UserContextKey)
+	if value == nil {
+		return nil, false
+	}
+	user, ok := value.(*models.User)
 	return user, ok
 }

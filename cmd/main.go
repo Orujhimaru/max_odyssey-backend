@@ -57,7 +57,7 @@ func main() {
 	r.Get("/questions/filtered", questionHandler.GetFilteredQuestions)
 	r.Get("/questions/{id}", questionHandler.GetQuestion)
 	r.Get("/questions", questionHandler.GetQuestions)
-	r.Get("/exams", examResultHandler.GetUserExamResults)
+
 	// r.Get("/test-direct-query", questionHandler.TestDirectQuery)
 	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
 	// docker exec -i max_odyssey-backend-postgres-1 psql -U satapp -d sat_tracker < sql/schema/004_add_choices_array.sql
@@ -109,7 +109,27 @@ func main() {
 		r.Post("/skills", userSkillHandler.CreateOrUpdateUserSkill)
 		r.Delete("/skills", userSkillHandler.DeleteUserSkill)
 
-		// Add more protected routes here
+		// Exam routes
+		r.Get("/exams", examResultHandler.GetUserExamResults)
+		r.Get("/exams/{id}", examResultHandler.GetExamResultByID)
+		r.Post("/exams", examResultHandler.CreateExamResult)
+		r.Delete("/exams/{id}", examResultHandler.DeleteExamResult)
+
+		// Test auth route
+		r.Get("/test-auth", func(w http.ResponseWriter, r *http.Request) {
+			user, ok := middleware.GetUserFromContext(r.Context())
+			if !ok || user == nil {
+				http.Error(w, "User not authenticated", http.StatusUnauthorized)
+				return
+			}
+
+			w.Header().Set("Content-Type", "application/json")
+			json.NewEncoder(w).Encode(map[string]interface{}{
+				"message":  "Authentication successful",
+				"user_id":  user.ID,
+				"username": user.Username,
+			})
+		})
 	})
 
 	log.Println("Server running on :8080")

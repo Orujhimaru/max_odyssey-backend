@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"encoding/json"
+	"log"
 	"max-odyssey-backend/internal/db"
 
 	"github.com/sqlc-dev/pqtype"
@@ -95,10 +96,15 @@ func (s *ExamResultService) CreateExamResult(ctx context.Context, req CreateExam
 }
 
 func (s *ExamResultService) GetExamResultsByUserID(ctx context.Context, userID int32) ([]ExamResultResponse, error) {
+	log.Printf("Service: Getting exam results for user ID: %d", userID)
+
 	results, err := s.queries.GetExamResultsByUserID(ctx, userID)
 	if err != nil {
+		log.Printf("Service: Error getting exam results: %v", err)
 		return nil, err
 	}
+
+	log.Printf("Service: Found %d exam results in database", len(results))
 
 	var response []ExamResultResponse
 	for _, result := range results {
@@ -115,6 +121,7 @@ func (s *ExamResultService) GetExamResultsByUserID(ctx context.Context, userID i
 		})
 	}
 
+	log.Printf("Service: Returning %d exam results", len(response))
 	return response, nil
 }
 
