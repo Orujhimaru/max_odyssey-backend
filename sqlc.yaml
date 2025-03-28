@@ -20,11 +20,13 @@ sql:
       - "sql/schema/018_update_unique_constraint_passage.sql"
       - "sql/schema/019_add_table_image_columns.sql"
       - "sql/schema/020_add_is_multiple_choice.sql"
+      - "sql/schema/021_create_exam_results.sql"
     queries:
       - "sql/queries/questions.sql"
       - "sql/queries/users.sql"
       - "sql/queries/user_questions.sql"
       - "sql/queries/users_skills.sql"
+      - "sql/queries/exam_results.sql"
     engine: "postgresql"
     gen:
       go:

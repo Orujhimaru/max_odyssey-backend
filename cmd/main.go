@@ -36,7 +36,7 @@ func main() {
 	// userService := service.NewUserService(queries)  // Comment out or remove this line
 	userQuestionService := service.NewUserQuestionService(queries)
 	userSkillService := service.NewUserSkillService(queries)
-
+	examResultService := service.NewExamResultService(queries)
 	// JWT configuration
 	jwtSecret := "your-secret-key" // In production, use environment variable
 	jwtExpires := 24 * time.Hour
@@ -46,7 +46,7 @@ func main() {
 	questionHandler := handler.NewQuestionHandler(questionService)
 	userQuestionHandler := handler.NewUserQuestionHandler(userQuestionService)
 	userSkillHandler := handler.NewUserSkillHandler(userSkillService)
-
+	examResultHandler := handler.NewExamResultHandler(examResultService)
 	// Create auth middleware
 	authMiddleware := middleware.Auth(authService)
 
@@ -57,6 +57,7 @@ func main() {
 	r.Get("/questions/filtered", questionHandler.GetFilteredQuestions)
 	r.Get("/questions/{id}", questionHandler.GetQuestion)
 	r.Get("/questions", questionHandler.GetQuestions)
+	r.Get("/exams", examResultHandler.GetUserExamResults)
 	// r.Get("/test-direct-query", questionHandler.TestDirectQuery)
 	//  curl -X GET http://localhost:8080/questions | jq '.' use and see what u get
 	// docker exec -i max_odyssey-backend-postgres-1 psql -U satapp -d sat_tracker < sql/schema/004_add_choices_array.sql

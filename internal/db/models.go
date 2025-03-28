@@ -8,6 +8,7 @@ import (
 	"database/sql"
 	"database/sql/driver"
 	"fmt"
+	"github.com/sqlc-dev/pqtype"
 )
 
 type UserRole string
@@ -51,6 +52,18 @@ func (ns NullUserRole) Value() (driver.Value, error) {
 		return nil, nil
 	}
 	return string(ns.UserRole), nil
+}
+
+type ExamResult struct {
+	ID              int32
+	UserID          int32
+	ExamNumber      int32
+	MathScore       sql.NullInt32
+	VerbalScore     sql.NullInt32
+	MathTimeTaken   sql.NullInt32
+	VerbalTimeTaken sql.NullInt32
+	ExamData        pqtype.NullRawMessage
+	CreatedAt       sql.NullTime
 }
 
 type Question struct {

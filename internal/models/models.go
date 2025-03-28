@@ -1,6 +1,10 @@
 package models
 
-import "time"
+import (
+	"database/sql"
+	"encoding/json"
+	"time"
+)
 
 // Question represents a question in the system
 type Question struct {
@@ -65,4 +69,17 @@ type UserSkill struct {
 	SkillScore float64   `json:"skill_score"`
 	CreatedAt  time.Time `json:"created_at"`
 	UpdatedAt  time.Time `json:"updated_at"`
+}
+
+// ExamResult represents a user's exam result
+type ExamResult struct {
+	ID              int64           `json:"id"`
+	UserID          int32           `json:"user_id"`
+	ExamNumber      int32           `json:"exam_number"`
+	MathScore       sql.NullInt32   `json:"math_score"`
+	VerbalScore     sql.NullInt32   `json:"verbal_score"`
+	MathTimeTaken   sql.NullInt32   `json:"math_time_taken"`
+	VerbalTimeTaken sql.NullInt32   `json:"verbal_time_taken"`
+	ExamData        json.RawMessage `json:"exam_data"`
+	CreatedAt       time.Time       `json:"created_at"`
 }
