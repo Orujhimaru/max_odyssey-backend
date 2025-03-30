@@ -557,15 +557,16 @@ func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (Use
 
 const updateUserQuestion = `-- name: UpdateUserQuestion :exec
 UPDATE user_questions
-SET is_solved = $3, incorrect = $4
+SET is_solved = $3, is_bookmarked = $4, incorrect = $5
 WHERE user_id = $1 AND question_id = $2
 `
 
 type UpdateUserQuestionParams struct {
-	UserID     int32
-	QuestionID int32
-	IsSolved   sql.NullBool
-	Incorrect  bool
+	UserID       int32
+	QuestionID   int32
+	IsSolved     sql.NullBool
+	IsBookmarked sql.NullBool
+	Incorrect    bool
 }
 
 func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestionParams) error {
@@ -573,6 +574,7 @@ func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestion
 		arg.UserID,
 		arg.QuestionID,
 		arg.IsSolved,
+		arg.IsBookmarked,
 		arg.Incorrect,
 	)
 	return err
@@ -582,18 +584,20 @@ const updateUserQuestionData = `-- name: UpdateUserQuestionData :one
 UPDATE user_questions
 SET 
     is_solved = $3,
-    time_taken = $4,
-    incorrect = $5
+    is_bookmarked = $4,
+    time_taken = $5,
+    incorrect = $6
 WHERE user_id = $1 AND question_id = $2
 RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type UpdateUserQuestionDataParams struct {
-	UserID     int32
-	QuestionID int32
-	IsSolved   sql.NullBool
-	TimeTaken  sql.NullInt32
-	Incorrect  bool
+	UserID       int32
+	QuestionID   int32
+	IsSolved     sql.NullBool
+	IsBookmarked sql.NullBool
+	TimeTaken    sql.NullInt32
+	Incorrect    bool
 }
 
 func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQuestionDataParams) (UserQuestion, error) {
@@ -601,6 +605,7 @@ func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQues
 		arg.UserID,
 		arg.QuestionID,
 		arg.IsSolved,
+		arg.IsBookmarked,
 		arg.TimeTaken,
 		arg.Incorrect,
 	)

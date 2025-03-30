@@ -126,8 +126,9 @@ ORDER BY q.solve_rate DESC;
 UPDATE user_questions
 SET 
     is_solved = $3,
-    time_taken = $4,
-    incorrect = $5
+    is_bookmarked = $4,
+    time_taken = $5,
+    incorrect = $6
 WHERE user_id = $1 AND question_id = $2
 RETURNING *;
 
@@ -139,6 +140,6 @@ SELECT EXISTS(
 
 -- name: UpdateUserQuestion :exec
 UPDATE user_questions
-SET is_solved = $3, incorrect = $4
-WHERE user_id = $1 AND question_id = $2; 
+SET is_solved = $3, is_bookmarked = $4, incorrect = $5
+WHERE user_id = $1 AND question_id = $2;
 

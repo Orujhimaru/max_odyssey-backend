@@ -247,11 +247,22 @@ func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, user
 		if exists {
 			// Update existing record
 			log.Printf("Question %d exists for user %d, updating record", update.QuestionID, userID)
-			err = s.db.UpdateUserQuestion(ctx, db.UpdateUserQuestionParams{
+			// First get the current user question to preserve the bookmark status
+			userQuestion, err := s.db.GetUserQuestion(ctx, db.GetUserQuestionParams{
 				UserID:     userID,
 				QuestionID: int32(update.QuestionID),
-				IsSolved:   sql.NullBool{Bool: update.IsSolved, Valid: true},
-				Incorrect:  update.IsIncorrect,
+			})
+			if err != nil {
+				log.Printf("Error getting current user question: %v", err)
+				return err
+			}
+
+			err = s.db.UpdateUserQuestion(ctx, db.UpdateUserQuestionParams{
+				UserID:       userID,
+				QuestionID:   int32(update.QuestionID),
+				IsSolved:     sql.NullBool{Bool: update.IsSolved, Valid: true},
+				IsBookmarked: userQuestion.IsBookmarked,
+				Incorrect:    update.IsIncorrect,
 			})
 			if err != nil {
 				log.Printf("Error updating question %d: %v", update.QuestionID, err)
@@ -262,11 +273,12 @@ func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, user
 			// Create new record
 			log.Printf("Question %d does not exist for user %d, creating new record", update.QuestionID, userID)
 			_, err = s.db.CreateUserQuestion(ctx, db.CreateUserQuestionParams{
-				UserID:     userID,
-				QuestionID: int32(update.QuestionID),
-				IsSolved:   sql.NullBool{Bool: update.IsSolved, Valid: true},
-				TimeTaken:  sql.NullInt32{Valid: false},
-				Incorrect:  update.IsIncorrect,
+				UserID:       userID,
+				QuestionID:   int32(update.QuestionID),
+				IsSolved:     sql.NullBool{Bool: update.IsSolved, Valid: true},
+				TimeTaken:    sql.NullInt32{Valid: false},
+				Incorrect:    update.IsIncorrect,
+				IsBookmarked: sql.NullBool{Bool: false, Valid: true},
 			})
 			if err != nil {
 				log.Printf("Error creating record for question %d: %v", update.QuestionID, err)
