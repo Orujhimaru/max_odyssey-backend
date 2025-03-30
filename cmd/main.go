@@ -103,6 +103,7 @@ func main() {
 		r.Get("/bookmarks", userQuestionHandler.GetBookmarkedQuestions)
 		r.Post("/bookmark", userQuestionHandler.ToggleBookmark)
 		r.Post("/solved", userQuestionHandler.ToggleSolved)
+		r.Post("/questions/batch-update", userQuestionHandler.BatchUpdateQuestions)
 
 		// User skill routes
 		r.Get("/skills", userSkillHandler.GetUserSkills)

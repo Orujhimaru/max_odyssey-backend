@@ -3,6 +3,7 @@ package handler
 import (
 	"database/sql"
 	"log"
+	"max-odyssey-backend/internal/middleware"
 	"max-odyssey-backend/internal/models"
 	"max-odyssey-backend/internal/service"
 	"max-odyssey-backend/utils"
@@ -152,8 +153,15 @@ func (h *QuestionHandler) GetFilteredQuestions(w http.ResponseWriter, r *http.Re
 	log.Printf("Processed filters - Subject: %d, Difficulty: %v, Topic: %v, Subtopic: %v, SortDir: %s, PageSize: %d, PageNumber: %d",
 		filters.SubjectID, filters.DifficultyLevel, filters.Topic, filters.Subtopic, filters.SortDir, filters.PageSize, filters.PageNumber)
 
-	// Get filtered questions
-	questions, totalCount, err := h.service.GetFilteredQuestions(filters)
+	// Get user ID from context if authenticated
+	userID := 0 // Default for unauthenticated users
+	user, ok := middleware.GetUserFromContext(r.Context())
+	if ok && user != nil {
+		userID = user.ID
+	}
+
+	// Get filtered questions with user data
+	questions, totalCount, err := h.service.GetFilteredQuestions(filters, userID)
 	if err != nil {
 		log.Printf("Error fetching filtered questions: %v", err)
 		utils.RespondWithError(w, http.StatusInternalServerError, "Failed to fetch questions", err)

@@ -98,7 +98,7 @@ type QuestionFilters struct {
 }
 
 // GetFilteredQuestions gets questions with filtering, sorting and pagination
-func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]models.Question, int, error) {
+func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters, userID int) ([]models.Question, int, error) {
 	ctx := context.Background()
 
 	// Set defaults
@@ -129,31 +129,18 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 	}
 
 	// Log the parameters
-	log.Printf("Executing GetFilteredQuestions with filters: %+v", filters)
-	log.Printf("SQL Parameters - SubjectID: %d, DifficultyLevel: %d, Topic: %s, Subtopic: %s, SortDir: %s, PageSize: %d, PageOffset: %d",
-		subjectIDParam,
-		difficultyParam,
-		filters.Topic,
-		filters.Subtopic,
-		filters.SortDir,
-		filters.PageSize,
-		offset)
-
-	// Add detailed logging for the subtopic
-	log.Printf("Service received subtopic filter: %q", filters.Subtopic)
+	log.Printf("Executing GetFilteredQuestions with filters: %+v, userID: %d", filters, userID)
 
 	// Before executing the query
 	var subtopicParam string
 	if filters.HasSpecialSubtopic {
-		// For the special case, we'll use a different approach
-		// Option 1: Use LIKE instead of exact match
 		subtopicParam = "Form, Structure, and Sense"
 		log.Printf("Using special handling for subtopic: %q", subtopicParam)
 	} else {
 		subtopicParam = filters.Subtopic
 	}
 
-	// Get questions with total count
+	// Get questions with user data
 	dbQuestions, err := s.db.GetFilteredQuestions(ctx, db.GetFilteredQuestionsParams{
 		Column1: subjectIDParam,
 		Column2: difficultyParam,
@@ -162,6 +149,7 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 		Column5: filters.SortDir,
 		Limit:   int32(filters.PageSize),
 		Offset:  int32(offset),
+		UserID:  int32(userID),
 	})
 	if err != nil {
 		log.Printf("Query error: %v", err)
@@ -195,6 +183,9 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters) ([]model
 			HTMLTable:          q.HtmlTable.String,
 			SVGImage:           q.SvgImage.String,
 			IsMultipleChoice:   q.IsMultipleChoice.Bool,
+			IsSolved:           q.IsSolved.Bool,
+			IsBookmarked:       q.IsBookmarked.Bool,
+			Incorrect:          q.Incorrect.Bool,
 		}
 	}
 

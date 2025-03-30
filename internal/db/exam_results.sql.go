@@ -8,8 +8,8 @@ package db
 import (
 	"context"
 	"database/sql"
+
 	"github.com/sqlc-dev/pqtype"
-	"log"
 )
 
 const createExamResult = `-- name: CreateExamResult :one
@@ -104,7 +104,6 @@ ORDER BY created_at DESC
 `
 
 func (q *Queries) GetExamResultsByUserID(ctx context.Context, userID int32) ([]ExamResult, error) {
-	log.Printf("SQL Query: GetExamResultsByUserID with userID=%d", userID)
 	rows, err := q.db.QueryContext(ctx, getExamResultsByUserID, userID)
 	if err != nil {
 		return nil, err

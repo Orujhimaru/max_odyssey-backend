@@ -24,6 +24,9 @@ type Question struct {
 	HTMLTable          string    `json:"html_table"`
 	SVGImage           string    `json:"svg_image"`
 	IsMultipleChoice   bool      `json:"is_multiple_choice"`
+	IsSolved           bool      `json:"is_solved"`
+	IsBookmarked       bool      `json:"is_bookmarked"`
+	Incorrect          bool      `json:"incorrect"`
 }
 
 // User represents a user in the system
@@ -82,4 +85,18 @@ type ExamResult struct {
 	VerbalTimeTaken sql.NullInt32   `json:"verbal_time_taken"`
 	ExamData        json.RawMessage `json:"exam_data"`
 	CreatedAt       time.Time       `json:"created_at"`
+}
+
+// QuestionUpdateRequest represents a request to update a user's interaction with a question
+type QuestionUpdateItem struct {
+	QuestionID     int  `json:"questionId"`
+	IsBookmarked   bool `json:"isBookmarked"`
+	IsSolved       bool `json:"isSolved"`
+	IsIncorrect    bool `json:"isIncorrect"`
+	SelectedOption *int `json:"selectedOption"`
+}
+
+// BatchQuestionUpdateRequest represents a batch update request for multiple questions
+type BatchQuestionUpdateRequest struct {
+	Questions []QuestionUpdateItem `json:"questions"`
 }

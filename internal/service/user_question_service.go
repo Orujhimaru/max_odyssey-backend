@@ -225,3 +225,57 @@ func (s *UserQuestionService) UpdateUserQuestionData(userID, questionID int64, i
 	})
 	return err
 }
+
+// BatchUpdateUserQuestions updates multiple user questions at once
+func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, userID int32, updates []models.QuestionUpdateItem) error {
+	log.Printf("Starting batch update for user %d with %d questions", userID, len(updates))
+
+	// Process each update individually without a transaction
+	for i, update := range updates {
+		log.Printf("Processing update %d/%d: Question ID %d", i+1, len(updates), update.QuestionID)
+
+		// Check if the user question already exists
+		exists, err := s.db.CheckUserQuestionExists(ctx, db.CheckUserQuestionExistsParams{
+			UserID:     userID,
+			QuestionID: int32(update.QuestionID),
+		})
+		if err != nil {
+			log.Printf("Error checking if question exists: %v", err)
+			return err
+		}
+
+		if exists {
+			// Update existing record
+			log.Printf("Question %d exists for user %d, updating record", update.QuestionID, userID)
+			err = s.db.UpdateUserQuestion(ctx, db.UpdateUserQuestionParams{
+				UserID:     userID,
+				QuestionID: int32(update.QuestionID),
+				IsSolved:   sql.NullBool{Bool: update.IsSolved, Valid: true},
+				Incorrect:  update.IsIncorrect,
+			})
+			if err != nil {
+				log.Printf("Error updating question %d: %v", update.QuestionID, err)
+				return err
+			}
+			log.Printf("Successfully updated question %d for user %d", update.QuestionID, userID)
+		} else {
+			// Create new record
+			log.Printf("Question %d does not exist for user %d, creating new record", update.QuestionID, userID)
+			_, err = s.db.CreateUserQuestion(ctx, db.CreateUserQuestionParams{
+				UserID:     userID,
+				QuestionID: int32(update.QuestionID),
+				IsSolved:   sql.NullBool{Bool: update.IsSolved, Valid: true},
+				TimeTaken:  sql.NullInt32{Valid: false},
+				Incorrect:  update.IsIncorrect,
+			})
+			if err != nil {
+				log.Printf("Error creating record for question %d: %v", update.QuestionID, err)
+				return err
+			}
+			log.Printf("Successfully created record for question %d for user %d", update.QuestionID, userID)
+		}
+	}
+
+	log.Printf("Batch update completed successfully for user %d, updated %d questions", userID, len(updates))
+	return nil
+}

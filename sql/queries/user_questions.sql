@@ -61,12 +61,6 @@ INSERT INTO user_questions (
 )
 RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect;
 
--- name: UpdateUserQuestion :one
-UPDATE user_questions
-SET is_solved = $3, is_bookmarked = $4, time_taken = $5, incorrect = $6
-WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect;
-
 -- name: ToggleBookmark :one
 UPDATE user_questions
 SET is_bookmarked = NOT is_bookmarked
@@ -132,8 +126,19 @@ ORDER BY q.solve_rate DESC;
 UPDATE user_questions
 SET 
     is_solved = $3,
-    is_bookmarked = $4,
-    time_taken = $5,
-    incorrect = $6
+    time_taken = $4,
+    incorrect = $5
 WHERE user_id = $1 AND question_id = $2
-RETURNING *; 
+RETURNING *;
+
+-- name: CheckUserQuestionExists :one
+SELECT EXISTS(
+  SELECT 1 FROM user_questions 
+  WHERE user_id = $1 AND question_id = $2
+) AS exists;
+
+-- name: UpdateUserQuestion :exec
+UPDATE user_questions
+SET is_solved = $3, incorrect = $4
+WHERE user_id = $1 AND question_id = $2; 
+

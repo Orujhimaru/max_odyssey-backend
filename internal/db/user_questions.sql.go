@@ -12,6 +12,25 @@ import (
 	"github.com/lib/pq"
 )
 
+const checkUserQuestionExists = `-- name: CheckUserQuestionExists :one
+SELECT EXISTS(
+  SELECT 1 FROM user_questions 
+  WHERE user_id = $1 AND question_id = $2
+) AS exists
+`
+
+type CheckUserQuestionExistsParams struct {
+	UserID     int32
+	QuestionID int32
+}
+
+func (q *Queries) CheckUserQuestionExists(ctx context.Context, arg CheckUserQuestionExistsParams) (bool, error) {
+	row := q.db.QueryRowContext(ctx, checkUserQuestionExists, arg.UserID, arg.QuestionID)
+	var exists bool
+	err := row.Scan(&exists)
+	return exists, err
+}
+
 const createUserQuestion = `-- name: CreateUserQuestion :one
 INSERT INTO user_questions (
   user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect
@@ -536,63 +555,45 @@ func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (Use
 	return i, err
 }
 
-const updateUserQuestion = `-- name: UpdateUserQuestion :one
+const updateUserQuestion = `-- name: UpdateUserQuestion :exec
 UPDATE user_questions
-SET is_solved = $3, is_bookmarked = $4, time_taken = $5, incorrect = $6
+SET is_solved = $3, incorrect = $4
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type UpdateUserQuestionParams struct {
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	TimeTaken    sql.NullInt32
-	Incorrect    bool
+	UserID     int32
+	QuestionID int32
+	IsSolved   sql.NullBool
+	Incorrect  bool
 }
 
-func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestionParams) (UserQuestion, error) {
-	row := q.db.QueryRowContext(ctx, updateUserQuestion,
+func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestionParams) error {
+	_, err := q.db.ExecContext(ctx, updateUserQuestion,
 		arg.UserID,
 		arg.QuestionID,
 		arg.IsSolved,
-		arg.IsBookmarked,
-		arg.TimeTaken,
 		arg.Incorrect,
 	)
-	var i UserQuestion
-	err := row.Scan(
-		&i.ID,
-		&i.UserID,
-		&i.QuestionID,
-		&i.IsSolved,
-		&i.IsBookmarked,
-		&i.TimeTaken,
-		&i.CreatedAt,
-		&i.Incorrect,
-	)
-	return i, err
+	return err
 }
 
 const updateUserQuestionData = `-- name: UpdateUserQuestionData :one
 UPDATE user_questions
 SET 
     is_solved = $3,
-    is_bookmarked = $4,
-    time_taken = $5,
-    incorrect = $6
+    time_taken = $4,
+    incorrect = $5
 WHERE user_id = $1 AND question_id = $2
 RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
 `
 
 type UpdateUserQuestionDataParams struct {
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	TimeTaken    sql.NullInt32
-	Incorrect    bool
+	UserID     int32
+	QuestionID int32
+	IsSolved   sql.NullBool
+	TimeTaken  sql.NullInt32
+	Incorrect  bool
 }
 
 func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQuestionDataParams) (UserQuestion, error) {
@@ -600,7 +601,6 @@ func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQues
 		arg.UserID,
 		arg.QuestionID,
 		arg.IsSolved,
-		arg.IsBookmarked,
 		arg.TimeTaken,
 		arg.Incorrect,
 	)

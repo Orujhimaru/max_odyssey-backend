@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"max-odyssey-backend/internal/middleware"
+	"max-odyssey-backend/internal/models"
 	"max-odyssey-backend/internal/service"
 	"max-odyssey-backend/utils"
 	"net/http"
@@ -201,5 +202,41 @@ func (h *UserQuestionHandler) ToggleSolved(w http.ResponseWriter, r *http.Reques
 
 	utils.RespondWithJSON(w, http.StatusOK, map[string]interface{}{
 		"success": true,
+	})
+}
+
+// BatchUpdateQuestions handles POST /api/questions/batch-update
+func (h *UserQuestionHandler) BatchUpdateQuestions(w http.ResponseWriter, r *http.Request) {
+	// Get user from context
+	user, ok := middleware.GetUserFromContext(r.Context())
+	if !ok || user == nil {
+		http.Error(w, "User not authenticated", http.StatusUnauthorized)
+		return
+	}
+
+	// Parse request body
+	var req models.BatchQuestionUpdateRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		http.Error(w, "Invalid request body", http.StatusBadRequest)
+		return
+	}
+
+	// Validate request
+	if len(req.Questions) == 0 {
+		http.Error(w, "No questions to update", http.StatusBadRequest)
+		return
+	}
+
+	// Update questions
+	err := h.service.BatchUpdateUserQuestions(r.Context(), int32(user.ID), req.Questions)
+	if err != nil {
+		log.Printf("Error updating questions: %v", err)
+		http.Error(w, "Failed to update questions", http.StatusInternalServerError)
+		return
+	}
+
+	// Return success response
+	utils.RespondWithJSON(w, http.StatusOK, map[string]string{
+		"message": "Questions updated successfully",
 	})
 }
