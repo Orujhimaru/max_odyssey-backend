@@ -156,7 +156,17 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters, userID i
 		return nil, 0, err
 	}
 
-	log.Printf("Query successful, returned %d rows", len(dbQuestions))
+	// Log raw database results in detail
+	log.Printf("===== DATABASE QUERY RESULTS =====")
+	log.Printf("User ID: %d", userID)
+	for i, q := range dbQuestions {
+		log.Printf("Question %d (ID: %d):", i, q.ID)
+		log.Printf("  - IsSolved: %v (type: %T)", q.IsSolved, q.IsSolved)
+		log.Printf("  - IsBookmarked: %v (type: %T)", q.IsBookmarked, q.IsBookmarked)
+		log.Printf("  - Incorrect: %v (type: %T)", q.Incorrect, q.Incorrect)
+		log.Printf("  - Text: %.30s...", q.QuestionText)
+	}
+	log.Printf("===== END DATABASE QUERY RESULTS =====")
 
 	// Extract total count from first row
 	var totalCount int
@@ -183,9 +193,9 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters, userID i
 			HTMLTable:          q.HtmlTable.String,
 			SVGImage:           q.SvgImage.String,
 			IsMultipleChoice:   q.IsMultipleChoice.Bool,
-			IsSolved:           q.IsSolved.Bool,
-			IsBookmarked:       q.IsBookmarked.Bool,
-			Incorrect:          q.Incorrect.Bool,
+			IsSolved:           q.IsSolved,
+			IsBookmarked:       q.IsBookmarked,
+			Incorrect:          q.Incorrect,
 		}
 	}
 

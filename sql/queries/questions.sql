@@ -28,9 +28,9 @@ SELECT
     q.svg_image, 
     q.is_multiple_choice,
     COUNT(*) OVER() AS total_count,
-    uq.is_solved,
-    uq.is_bookmarked,
-    uq.incorrect
+    COALESCE(uq.is_solved, FALSE) as is_solved,
+    COALESCE(uq.is_bookmarked, FALSE) as is_bookmarked,
+    COALESCE(uq.incorrect, FALSE) as incorrect
 FROM 
     questions q
 LEFT JOIN 

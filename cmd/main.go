@@ -54,7 +54,7 @@ func main() {
 	r.Use(middleware.Cors)
 
 	// Public routes - order matters!
-	r.Get("/questions/filtered", questionHandler.GetFilteredQuestions)
+
 	r.Get("/questions/{id}", questionHandler.GetQuestion)
 	r.Get("/questions", questionHandler.GetQuestions)
 
@@ -98,6 +98,9 @@ func main() {
 	// Protected routes
 	r.Group(func(r chi.Router) {
 		r.Use(authMiddleware)
+
+		// Add this line to the protected routes
+		r.Get("/questions/filtered", questionHandler.GetFilteredQuestions)
 
 		// User question routes
 		r.Get("/bookmarks", userQuestionHandler.GetBookmarkedQuestions)
