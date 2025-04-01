@@ -22,13 +22,13 @@ INSERT INTO exam_results (
 `
 
 type CreateExamResultParams struct {
-	UserID          int32
-	ExamNumber      int32
-	MathScore       sql.NullInt32
-	VerbalScore     sql.NullInt32
-	MathTimeTaken   sql.NullInt32
-	VerbalTimeTaken sql.NullInt32
-	ExamData        pqtype.NullRawMessage
+	UserID          int32                 `json:"user_id"`
+	ExamNumber      int32                 `json:"exam_number"`
+	MathScore       sql.NullInt32         `json:"math_score"`
+	VerbalScore     sql.NullInt32         `json:"verbal_score"`
+	MathTimeTaken   sql.NullInt32         `json:"math_time_taken"`
+	VerbalTimeTaken sql.NullInt32         `json:"verbal_time_taken"`
+	ExamData        pqtype.NullRawMessage `json:"exam_data"`
 }
 
 func (q *Queries) CreateExamResult(ctx context.Context, arg CreateExamResultParams) (ExamResult, error) {
@@ -62,8 +62,8 @@ WHERE id = $1 AND user_id = $2
 `
 
 type DeleteExamResultParams struct {
-	ID     int32
-	UserID int32
+	ID     int32 `json:"id"`
+	UserID int32 `json:"user_id"`
 }
 
 func (q *Queries) DeleteExamResult(ctx context.Context, arg DeleteExamResultParams) error {

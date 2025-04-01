@@ -16,6 +16,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -38,28 +39,29 @@ SELECT
   q.solve_rate,
   q.choices,
   q.correct_answer_index,
-  q.created_at
+  q.created_at,
+  uq.selected_option
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_solved = TRUE;
 
 -- name: GetUserQuestions :many
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 FROM user_questions
 WHERE user_id = $1;
 
 -- name: GetUserQuestion :one
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 FROM user_questions
 WHERE user_id = $1 AND question_id = $2;
 
 -- name: CreateUserQuestion :one
 INSERT INTO user_questions (
-  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect
+  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect, selected_option
 ) VALUES (
-  $1, $2, $3, $4, $5, $6
+  $1, $2, $3, $4, $5, $6, $7
 )
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect;
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option;
 
 -- name: ToggleBookmark :one
 UPDATE user_questions
@@ -72,7 +74,8 @@ UPDATE user_questions
 SET 
     is_solved = TRUE,
     time_taken = $3,
-    incorrect = $4
+    incorrect = $4,
+    selected_option = $5
 WHERE user_id = $1 AND question_id = $2
 RETURNING *;
 
@@ -96,6 +99,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -116,6 +120,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -128,7 +133,8 @@ SET
     is_solved = $3,
     is_bookmarked = $4,
     time_taken = $5,
-    incorrect = $6
+    incorrect = $6,
+    selected_option = $7
 WHERE user_id = $1 AND question_id = $2
 RETURNING *;
 
@@ -140,6 +146,6 @@ SELECT EXISTS(
 
 -- name: UpdateUserQuestion :exec
 UPDATE user_questions
-SET is_solved = $3, is_bookmarked = $4, incorrect = $5
+SET is_solved = $3, is_bookmarked = $4, incorrect = $5, selected_option = $6
 WHERE user_id = $1 AND question_id = $2;
 

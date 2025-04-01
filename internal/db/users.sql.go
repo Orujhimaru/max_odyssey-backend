@@ -20,10 +20,10 @@ RETURNING id, username, role, avatar_url, target_score, predicted_total_score, t
 `
 
 type CreateUserParams struct {
-	Username    string
-	Role        UserRole
-	AvatarUrl   sql.NullString
-	TargetScore sql.NullInt32
+	Username    string         `json:"username"`
+	Role        UserRole       `json:"role"`
+	AvatarUrl   sql.NullString `json:"avatar_url"`
+	TargetScore sql.NullInt32  `json:"target_score"`
 }
 
 func (q *Queries) CreateUser(ctx context.Context, arg CreateUserParams) (User, error) {
@@ -99,8 +99,8 @@ RETURNING id, username, role, avatar_url, target_score, predicted_total_score, t
 `
 
 type UpdateUserScoreParams struct {
-	ID                  int32
-	PredictedTotalScore sql.NullInt32
+	ID                  int32         `json:"id"`
+	PredictedTotalScore sql.NullInt32 `json:"predicted_total_score"`
 }
 
 func (q *Queries) UpdateUserScore(ctx context.Context, arg UpdateUserScoreParams) (User, error) {

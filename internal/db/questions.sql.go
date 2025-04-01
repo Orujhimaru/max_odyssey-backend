@@ -33,7 +33,8 @@ SELECT
     COUNT(*) OVER() AS total_count,
     COALESCE(uq.is_solved, FALSE) as is_solved,
     COALESCE(uq.is_bookmarked, FALSE) as is_bookmarked,
-    COALESCE(uq.incorrect, FALSE) as incorrect
+    COALESCE(uq.incorrect, FALSE) as incorrect,
+    uq.selected_option
 FROM 
     questions q
 LEFT JOIN 
@@ -51,37 +52,38 @@ OFFSET $7
 `
 
 type GetFilteredQuestionsParams struct {
-	Column1 interface{}
-	Column2 interface{}
-	Column3 interface{}
-	Column4 interface{}
-	Column5 interface{}
-	Limit   int32
-	Offset  int32
-	UserID  int32
+	Column1 interface{} `json:"column_1"`
+	Column2 interface{} `json:"column_2"`
+	Column3 interface{} `json:"column_3"`
+	Column4 interface{} `json:"column_4"`
+	Column5 interface{} `json:"column_5"`
+	Limit   int32       `json:"limit"`
+	Offset  int32       `json:"offset"`
+	UserID  int32       `json:"user_id"`
 }
 
 type GetFilteredQuestionsRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	CorrectAnswerIndex sql.NullInt32
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	CreatedAt          sql.NullTime
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	Passage            sql.NullString
-	Bluebook           bool
-	HtmlTable          sql.NullString
-	SvgImage           sql.NullString
-	IsMultipleChoice   sql.NullBool
-	TotalCount         int64
-	IsSolved           bool
-	IsBookmarked       bool
-	Incorrect          bool
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	Passage            sql.NullString `json:"passage"`
+	Bluebook           bool           `json:"bluebook"`
+	HtmlTable          sql.NullString `json:"html_table"`
+	SvgImage           sql.NullString `json:"svg_image"`
+	IsMultipleChoice   sql.NullBool   `json:"is_multiple_choice"`
+	TotalCount         int64          `json:"total_count"`
+	IsSolved           bool           `json:"is_solved"`
+	IsBookmarked       bool           `json:"is_bookmarked"`
+	Incorrect          bool           `json:"incorrect"`
+	SelectedOption     sql.NullInt32  `json:"selected_option"`
 }
 
 func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuestionsParams) ([]GetFilteredQuestionsRow, error) {
@@ -123,6 +125,7 @@ func (q *Queries) GetFilteredQuestions(ctx context.Context, arg GetFilteredQuest
 			&i.IsSolved,
 			&i.IsBookmarked,
 			&i.Incorrect,
+			&i.SelectedOption,
 		); err != nil {
 			return nil, err
 		}
@@ -145,22 +148,22 @@ WHERE id = $1
 `
 
 type GetQuestionRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	CorrectAnswerIndex sql.NullInt32
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	CreatedAt          sql.NullTime
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	Passage            sql.NullString
-	Bluebook           bool
-	HtmlTable          sql.NullString
-	SvgImage           sql.NullString
-	IsMultipleChoice   sql.NullBool
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	Passage            sql.NullString `json:"passage"`
+	Bluebook           bool           `json:"bluebook"`
+	HtmlTable          sql.NullString `json:"html_table"`
+	SvgImage           sql.NullString `json:"svg_image"`
+	IsMultipleChoice   sql.NullBool   `json:"is_multiple_choice"`
 }
 
 func (q *Queries) GetQuestion(ctx context.Context, id int32) (GetQuestionRow, error) {
@@ -194,22 +197,22 @@ FROM questions
 `
 
 type GetQuestionsRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	CorrectAnswerIndex sql.NullInt32
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	CreatedAt          sql.NullTime
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	Passage            sql.NullString
-	Bluebook           bool
-	HtmlTable          sql.NullString
-	SvgImage           sql.NullString
-	IsMultipleChoice   sql.NullBool
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	Passage            sql.NullString `json:"passage"`
+	Bluebook           bool           `json:"bluebook"`
+	HtmlTable          sql.NullString `json:"html_table"`
+	SvgImage           sql.NullString `json:"svg_image"`
+	IsMultipleChoice   sql.NullBool   `json:"is_multiple_choice"`
 }
 
 func (q *Queries) GetQuestions(ctx context.Context) ([]GetQuestionsRow, error) {

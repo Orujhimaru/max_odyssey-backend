@@ -27,6 +27,7 @@ type Question struct {
 	IsSolved           bool      `json:"is_solved"`
 	IsBookmarked       bool      `json:"is_bookmarked"`
 	Incorrect          bool      `json:"incorrect"`
+	SelectedOption     *int      `json:"selected_option,omitempty"`
 }
 
 // User represents a user in the system
@@ -43,14 +44,15 @@ type User struct {
 
 // UserQuestion represents a user's interaction with a question
 type UserQuestion struct {
-	ID           int       `json:"id"`
-	UserID       int       `json:"user_id"`
-	QuestionID   int       `json:"question_id"`
-	IsSolved     bool      `json:"is_solved"`
-	IsBookmarked bool      `json:"is_bookmarked"`
-	TimeTaken    int       `json:"time_taken"`
-	CreatedAt    time.Time `json:"created_at"`
-	Incorrect    bool      `json:"incorrect"`
+	ID             int       `json:"id"`
+	UserID         int       `json:"user_id"`
+	QuestionID     int       `json:"question_id"`
+	IsSolved       bool      `json:"is_solved"`
+	IsBookmarked   bool      `json:"is_bookmarked"`
+	TimeTaken      int       `json:"time_taken"`
+	CreatedAt      time.Time `json:"created_at"`
+	Incorrect      bool      `json:"incorrect"`
+	SelectedOption *int      `json:"selected_option,omitempty"`
 }
 
 // LoginRequest represents a login request

@@ -33,8 +33,8 @@ func (e *UserRole) Scan(src interface{}) error {
 }
 
 type NullUserRole struct {
-	UserRole UserRole
-	Valid    bool // Valid is true if UserRole is not NULL
+	UserRole UserRole `json:"user_role"`
+	Valid    bool     `json:"valid"` // Valid is true if UserRole is not NULL
 }
 
 // Scan implements the Scanner interface.
@@ -56,64 +56,65 @@ func (ns NullUserRole) Value() (driver.Value, error) {
 }
 
 type ExamResult struct {
-	ID              int32
-	UserID          int32
-	ExamNumber      int32
-	MathScore       sql.NullInt32
-	VerbalScore     sql.NullInt32
-	MathTimeTaken   sql.NullInt32
-	VerbalTimeTaken sql.NullInt32
-	ExamData        pqtype.NullRawMessage
-	CreatedAt       sql.NullTime
+	ID              int32                 `json:"id"`
+	UserID          int32                 `json:"user_id"`
+	ExamNumber      int32                 `json:"exam_number"`
+	MathScore       sql.NullInt32         `json:"math_score"`
+	VerbalScore     sql.NullInt32         `json:"verbal_score"`
+	MathTimeTaken   sql.NullInt32         `json:"math_time_taken"`
+	VerbalTimeTaken sql.NullInt32         `json:"verbal_time_taken"`
+	ExamData        pqtype.NullRawMessage `json:"exam_data"`
+	CreatedAt       sql.NullTime          `json:"created_at"`
 }
 
 type Question struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	CorrectAnswer      string
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	CreatedAt          sql.NullTime
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	CorrectAnswerIndex sql.NullInt32
-	Passage            sql.NullString
-	Bluebook           bool
-	HtmlTable          sql.NullString
-	SvgImage           sql.NullString
-	IsMultipleChoice   sql.NullBool
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	CorrectAnswer      string         `json:"correct_answer"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	Passage            sql.NullString `json:"passage"`
+	Bluebook           bool           `json:"bluebook"`
+	HtmlTable          sql.NullString `json:"html_table"`
+	SvgImage           sql.NullString `json:"svg_image"`
+	IsMultipleChoice   sql.NullBool   `json:"is_multiple_choice"`
 }
 
 type User struct {
-	ID                   int32
-	Username             string
-	Role                 UserRole
-	AvatarUrl            sql.NullString
-	TargetScore          sql.NullInt32
-	PredictedTotalScore  sql.NullInt32
-	TotalQuestionsSolved sql.NullInt32
-	CreatedAt            sql.NullTime
+	ID                   int32          `json:"id"`
+	Username             string         `json:"username"`
+	Role                 UserRole       `json:"role"`
+	AvatarUrl            sql.NullString `json:"avatar_url"`
+	TargetScore          sql.NullInt32  `json:"target_score"`
+	PredictedTotalScore  sql.NullInt32  `json:"predicted_total_score"`
+	TotalQuestionsSolved sql.NullInt32  `json:"total_questions_solved"`
+	CreatedAt            sql.NullTime   `json:"created_at"`
 }
 
 type UserQuestion struct {
-	ID           int32
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	TimeTaken    sql.NullInt32
-	CreatedAt    sql.NullTime
-	Incorrect    bool
+	ID             int32         `json:"id"`
+	UserID         int32         `json:"user_id"`
+	QuestionID     int32         `json:"question_id"`
+	IsSolved       sql.NullBool  `json:"is_solved"`
+	IsBookmarked   sql.NullBool  `json:"is_bookmarked"`
+	TimeTaken      sql.NullInt32 `json:"time_taken"`
+	CreatedAt      sql.NullTime  `json:"created_at"`
+	Incorrect      bool          `json:"incorrect"`
+	SelectedOption sql.NullInt32 `json:"selected_option"`
 }
 
 type UsersSkill struct {
-	ID         int32
-	UserID     int32
-	SkillName  string
-	SkillScore float32
-	CreatedAt  sql.NullTime
-	UpdatedAt  sql.NullTime
+	ID         int32        `json:"id"`
+	UserID     int32        `json:"user_id"`
+	SkillName  string       `json:"skill_name"`
+	SkillScore float32      `json:"skill_score"`
+	CreatedAt  sql.NullTime `json:"created_at"`
+	UpdatedAt  sql.NullTime `json:"updated_at"`
 }

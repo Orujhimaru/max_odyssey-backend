@@ -23,9 +23,9 @@ RETURNING id, user_id, skill_name, skill_score, created_at, updated_at
 `
 
 type CreateUserSkillParams struct {
-	UserID     int32
-	SkillName  string
-	SkillScore float32
+	UserID     int32   `json:"user_id"`
+	SkillName  string  `json:"skill_name"`
+	SkillScore float32 `json:"skill_score"`
 }
 
 func (q *Queries) CreateUserSkill(ctx context.Context, arg CreateUserSkillParams) (UsersSkill, error) {
@@ -48,8 +48,8 @@ WHERE user_id = $1 AND skill_name = $2
 `
 
 type DeleteUserSkillParams struct {
-	UserID    int32
-	SkillName string
+	UserID    int32  `json:"user_id"`
+	SkillName string `json:"skill_name"`
 }
 
 func (q *Queries) DeleteUserSkill(ctx context.Context, arg DeleteUserSkillParams) error {
@@ -63,8 +63,8 @@ WHERE user_id = $1 AND skill_name = $2
 `
 
 type GetUserSkillByNameParams struct {
-	UserID    int32
-	SkillName string
+	UserID    int32  `json:"user_id"`
+	SkillName string `json:"skill_name"`
 }
 
 func (q *Queries) GetUserSkillByName(ctx context.Context, arg GetUserSkillByNameParams) (UsersSkill, error) {
@@ -127,9 +127,9 @@ RETURNING id, user_id, skill_name, skill_score, created_at, updated_at
 `
 
 type UpdateUserSkillParams struct {
-	UserID     int32
-	SkillName  string
-	SkillScore float32
+	UserID     int32   `json:"user_id"`
+	SkillName  string  `json:"skill_name"`
+	SkillScore float32 `json:"skill_score"`
 }
 
 func (q *Queries) UpdateUserSkill(ctx context.Context, arg UpdateUserSkillParams) (UsersSkill, error) {

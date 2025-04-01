@@ -30,7 +30,8 @@ SELECT
     COUNT(*) OVER() AS total_count,
     COALESCE(uq.is_solved, FALSE) as is_solved,
     COALESCE(uq.is_bookmarked, FALSE) as is_bookmarked,
-    COALESCE(uq.incorrect, FALSE) as incorrect
+    COALESCE(uq.incorrect, FALSE) as incorrect,
+    uq.selected_option
 FROM 
     questions q
 LEFT JOIN 

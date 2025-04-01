@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"database/sql"
 	"log"
 	"max-odyssey-backend/internal/db"
 	"max-odyssey-backend/internal/models"
@@ -196,8 +197,18 @@ func (s *QuestionService) GetFilteredQuestions(filters QuestionFilters, userID i
 			IsSolved:           q.IsSolved,
 			IsBookmarked:       q.IsBookmarked,
 			Incorrect:          q.Incorrect,
+			SelectedOption:     getSelectedOption(q.SelectedOption),
 		}
 	}
 
 	return questions, totalCount, nil
+}
+
+// Helper function to convert sql.NullInt32 to *int
+func getSelectedOption(option sql.NullInt32) *int {
+	if !option.Valid {
+		return nil
+	}
+	val := int(option.Int32)
+	return &val
 }

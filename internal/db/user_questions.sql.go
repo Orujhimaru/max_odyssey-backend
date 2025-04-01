@@ -20,8 +20,8 @@ SELECT EXISTS(
 `
 
 type CheckUserQuestionExistsParams struct {
-	UserID     int32
-	QuestionID int32
+	UserID     int32 `json:"user_id"`
+	QuestionID int32 `json:"question_id"`
 }
 
 func (q *Queries) CheckUserQuestionExists(ctx context.Context, arg CheckUserQuestionExistsParams) (bool, error) {
@@ -33,20 +33,21 @@ func (q *Queries) CheckUserQuestionExists(ctx context.Context, arg CheckUserQues
 
 const createUserQuestion = `-- name: CreateUserQuestion :one
 INSERT INTO user_questions (
-  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect
+  user_id, question_id, is_solved, is_bookmarked, time_taken, incorrect, selected_option
 ) VALUES (
-  $1, $2, $3, $4, $5, $6
+  $1, $2, $3, $4, $5, $6, $7
 )
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 `
 
 type CreateUserQuestionParams struct {
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	TimeTaken    sql.NullInt32
-	Incorrect    bool
+	UserID         int32         `json:"user_id"`
+	QuestionID     int32         `json:"question_id"`
+	IsSolved       sql.NullBool  `json:"is_solved"`
+	IsBookmarked   sql.NullBool  `json:"is_bookmarked"`
+	TimeTaken      sql.NullInt32 `json:"time_taken"`
+	Incorrect      bool          `json:"incorrect"`
+	SelectedOption sql.NullInt32 `json:"selected_option"`
 }
 
 func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestionParams) (UserQuestion, error) {
@@ -57,6 +58,7 @@ func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestion
 		arg.IsBookmarked,
 		arg.TimeTaken,
 		arg.Incorrect,
+		arg.SelectedOption,
 	)
 	var i UserQuestion
 	err := row.Scan(
@@ -68,6 +70,7 @@ func (q *Queries) CreateUserQuestion(ctx context.Context, arg CreateUserQuestion
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
@@ -86,6 +89,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -98,24 +102,25 @@ ORDER BY
 `
 
 type GetUserBookmarkedQuestionsParams struct {
-	UserID  int32
-	Column2 interface{}
+	UserID  int32       `json:"user_id"`
+	Column2 interface{} `json:"column_2"`
 }
 
 type GetUserBookmarkedQuestionsRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	CorrectAnswerIndex sql.NullInt32
-	CreatedAt          sql.NullTime
-	Passage            sql.NullString
-	TotalCount         int64
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Passage            sql.NullString `json:"passage"`
+	SelectedOption     sql.NullInt32  `json:"selected_option"`
+	TotalCount         int64          `json:"total_count"`
 }
 
 func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, arg GetUserBookmarkedQuestionsParams) ([]GetUserBookmarkedQuestionsRow, error) {
@@ -140,6 +145,7 @@ func (q *Queries) GetUserBookmarkedQuestions(ctx context.Context, arg GetUserBoo
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
 			&i.Passage,
+			&i.SelectedOption,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -169,6 +175,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -177,19 +184,20 @@ ORDER BY q.solve_rate ASC
 `
 
 type GetUserBookmarkedQuestionsAscRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	CorrectAnswerIndex sql.NullInt32
-	CreatedAt          sql.NullTime
-	Passage            sql.NullString
-	TotalCount         int64
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Passage            sql.NullString `json:"passage"`
+	SelectedOption     sql.NullInt32  `json:"selected_option"`
+	TotalCount         int64          `json:"total_count"`
 }
 
 func (q *Queries) GetUserBookmarkedQuestionsAsc(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsAscRow, error) {
@@ -214,6 +222,7 @@ func (q *Queries) GetUserBookmarkedQuestionsAsc(ctx context.Context, userID int3
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
 			&i.Passage,
+			&i.SelectedOption,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -243,6 +252,7 @@ SELECT
   q.correct_answer_index,
   q.created_at,
   q.passage,
+  uq.selected_option,
   COUNT(*) OVER() AS total_count
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
@@ -251,19 +261,20 @@ ORDER BY q.solve_rate DESC
 `
 
 type GetUserBookmarkedQuestionsDescRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	CorrectAnswerIndex sql.NullInt32
-	CreatedAt          sql.NullTime
-	Passage            sql.NullString
-	TotalCount         int64
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	Passage            sql.NullString `json:"passage"`
+	SelectedOption     sql.NullInt32  `json:"selected_option"`
+	TotalCount         int64          `json:"total_count"`
 }
 
 func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int32) ([]GetUserBookmarkedQuestionsDescRow, error) {
@@ -288,6 +299,7 @@ func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
 			&i.Passage,
+			&i.SelectedOption,
 			&i.TotalCount,
 		); err != nil {
 			return nil, err
@@ -304,14 +316,14 @@ func (q *Queries) GetUserBookmarkedQuestionsDesc(ctx context.Context, userID int
 }
 
 const getUserQuestion = `-- name: GetUserQuestion :one
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 FROM user_questions
 WHERE user_id = $1 AND question_id = $2
 `
 
 type GetUserQuestionParams struct {
-	UserID     int32
-	QuestionID int32
+	UserID     int32 `json:"user_id"`
+	QuestionID int32 `json:"question_id"`
 }
 
 func (q *Queries) GetUserQuestion(ctx context.Context, arg GetUserQuestionParams) (UserQuestion, error) {
@@ -326,18 +338,19 @@ func (q *Queries) GetUserQuestion(ctx context.Context, arg GetUserQuestionParams
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
 
 const getUserQuestionByIDs = `-- name: GetUserQuestionByIDs :one
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect FROM user_questions
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option FROM user_questions
 WHERE user_id = $1 AND question_id = $2
 `
 
 type GetUserQuestionByIDsParams struct {
-	UserID     int32
-	QuestionID int32
+	UserID     int32 `json:"user_id"`
+	QuestionID int32 `json:"question_id"`
 }
 
 func (q *Queries) GetUserQuestionByIDs(ctx context.Context, arg GetUserQuestionByIDsParams) (UserQuestion, error) {
@@ -352,12 +365,13 @@ func (q *Queries) GetUserQuestionByIDs(ctx context.Context, arg GetUserQuestionB
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
 
 const getUserQuestions = `-- name: GetUserQuestions :many
-SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+SELECT id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 FROM user_questions
 WHERE user_id = $1
 `
@@ -380,6 +394,7 @@ func (q *Queries) GetUserQuestions(ctx context.Context, userID int32) ([]UserQue
 			&i.TimeTaken,
 			&i.CreatedAt,
 			&i.Incorrect,
+			&i.SelectedOption,
 		); err != nil {
 			return nil, err
 		}
@@ -406,24 +421,26 @@ SELECT
   q.solve_rate,
   q.choices,
   q.correct_answer_index,
-  q.created_at
+  q.created_at,
+  uq.selected_option
 FROM questions q
 JOIN user_questions uq ON q.id = uq.question_id
 WHERE uq.user_id = $1 AND uq.is_solved = TRUE
 `
 
 type GetUserSolvedQuestionsRow struct {
-	ID                 int32
-	SubjectID          sql.NullInt32
-	QuestionText       string
-	DifficultyLevel    sql.NullInt32
-	Explanation        sql.NullString
-	Topic              sql.NullString
-	Subtopic           sql.NullString
-	SolveRate          sql.NullInt32
-	Choices            []string
-	CorrectAnswerIndex sql.NullInt32
-	CreatedAt          sql.NullTime
+	ID                 int32          `json:"id"`
+	SubjectID          sql.NullInt32  `json:"subject_id"`
+	QuestionText       string         `json:"question_text"`
+	DifficultyLevel    sql.NullInt32  `json:"difficulty_level"`
+	Explanation        sql.NullString `json:"explanation"`
+	Topic              sql.NullString `json:"topic"`
+	Subtopic           sql.NullString `json:"subtopic"`
+	SolveRate          sql.NullInt32  `json:"solve_rate"`
+	Choices            []string       `json:"choices"`
+	CorrectAnswerIndex sql.NullInt32  `json:"correct_answer_index"`
+	CreatedAt          sql.NullTime   `json:"created_at"`
+	SelectedOption     sql.NullInt32  `json:"selected_option"`
 }
 
 func (q *Queries) GetUserSolvedQuestions(ctx context.Context, userID int32) ([]GetUserSolvedQuestionsRow, error) {
@@ -447,6 +464,7 @@ func (q *Queries) GetUserSolvedQuestions(ctx context.Context, userID int32) ([]G
 			pq.Array(&i.Choices),
 			&i.CorrectAnswerIndex,
 			&i.CreatedAt,
+			&i.SelectedOption,
 		); err != nil {
 			return nil, err
 		}
@@ -466,16 +484,18 @@ UPDATE user_questions
 SET 
     is_solved = TRUE,
     time_taken = $3,
-    incorrect = $4
+    incorrect = $4,
+    selected_option = $5
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 `
 
 type MarkQuestionSolvedParams struct {
-	UserID     int32
-	QuestionID int32
-	TimeTaken  sql.NullInt32
-	Incorrect  bool
+	UserID         int32         `json:"user_id"`
+	QuestionID     int32         `json:"question_id"`
+	TimeTaken      sql.NullInt32 `json:"time_taken"`
+	Incorrect      bool          `json:"incorrect"`
+	SelectedOption sql.NullInt32 `json:"selected_option"`
 }
 
 func (q *Queries) MarkQuestionSolved(ctx context.Context, arg MarkQuestionSolvedParams) (UserQuestion, error) {
@@ -484,6 +504,7 @@ func (q *Queries) MarkQuestionSolved(ctx context.Context, arg MarkQuestionSolved
 		arg.QuestionID,
 		arg.TimeTaken,
 		arg.Incorrect,
+		arg.SelectedOption,
 	)
 	var i UserQuestion
 	err := row.Scan(
@@ -495,6 +516,7 @@ func (q *Queries) MarkQuestionSolved(ctx context.Context, arg MarkQuestionSolved
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
@@ -503,12 +525,12 @@ const toggleBookmark = `-- name: ToggleBookmark :one
 UPDATE user_questions
 SET is_bookmarked = NOT is_bookmarked
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 `
 
 type ToggleBookmarkParams struct {
-	UserID     int32
-	QuestionID int32
+	UserID     int32 `json:"user_id"`
+	QuestionID int32 `json:"question_id"`
 }
 
 func (q *Queries) ToggleBookmark(ctx context.Context, arg ToggleBookmarkParams) (UserQuestion, error) {
@@ -523,6 +545,7 @@ func (q *Queries) ToggleBookmark(ctx context.Context, arg ToggleBookmarkParams) 
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
@@ -531,12 +554,12 @@ const toggleSolved = `-- name: ToggleSolved :one
 UPDATE user_questions
 SET is_solved = NOT is_solved
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 `
 
 type ToggleSolvedParams struct {
-	UserID     int32
-	QuestionID int32
+	UserID     int32 `json:"user_id"`
+	QuestionID int32 `json:"question_id"`
 }
 
 func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (UserQuestion, error) {
@@ -551,22 +574,24 @@ func (q *Queries) ToggleSolved(ctx context.Context, arg ToggleSolvedParams) (Use
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }
 
 const updateUserQuestion = `-- name: UpdateUserQuestion :exec
 UPDATE user_questions
-SET is_solved = $3, is_bookmarked = $4, incorrect = $5
+SET is_solved = $3, is_bookmarked = $4, incorrect = $5, selected_option = $6
 WHERE user_id = $1 AND question_id = $2
 `
 
 type UpdateUserQuestionParams struct {
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	Incorrect    bool
+	UserID         int32         `json:"user_id"`
+	QuestionID     int32         `json:"question_id"`
+	IsSolved       sql.NullBool  `json:"is_solved"`
+	IsBookmarked   sql.NullBool  `json:"is_bookmarked"`
+	Incorrect      bool          `json:"incorrect"`
+	SelectedOption sql.NullInt32 `json:"selected_option"`
 }
 
 func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestionParams) error {
@@ -576,6 +601,7 @@ func (q *Queries) UpdateUserQuestion(ctx context.Context, arg UpdateUserQuestion
 		arg.IsSolved,
 		arg.IsBookmarked,
 		arg.Incorrect,
+		arg.SelectedOption,
 	)
 	return err
 }
@@ -586,18 +612,20 @@ SET
     is_solved = $3,
     is_bookmarked = $4,
     time_taken = $5,
-    incorrect = $6
+    incorrect = $6,
+    selected_option = $7
 WHERE user_id = $1 AND question_id = $2
-RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect
+RETURNING id, user_id, question_id, is_solved, is_bookmarked, time_taken, created_at, incorrect, selected_option
 `
 
 type UpdateUserQuestionDataParams struct {
-	UserID       int32
-	QuestionID   int32
-	IsSolved     sql.NullBool
-	IsBookmarked sql.NullBool
-	TimeTaken    sql.NullInt32
-	Incorrect    bool
+	UserID         int32         `json:"user_id"`
+	QuestionID     int32         `json:"question_id"`
+	IsSolved       sql.NullBool  `json:"is_solved"`
+	IsBookmarked   sql.NullBool  `json:"is_bookmarked"`
+	TimeTaken      sql.NullInt32 `json:"time_taken"`
+	Incorrect      bool          `json:"incorrect"`
+	SelectedOption sql.NullInt32 `json:"selected_option"`
 }
 
 func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQuestionDataParams) (UserQuestion, error) {
@@ -608,6 +636,7 @@ func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQues
 		arg.IsBookmarked,
 		arg.TimeTaken,
 		arg.Incorrect,
+		arg.SelectedOption,
 	)
 	var i UserQuestion
 	err := row.Scan(
@@ -619,6 +648,7 @@ func (q *Queries) UpdateUserQuestionData(ctx context.Context, arg UpdateUserQues
 		&i.TimeTaken,
 		&i.CreatedAt,
 		&i.Incorrect,
+		&i.SelectedOption,
 	)
 	return i, err
 }

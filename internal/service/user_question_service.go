@@ -258,12 +258,24 @@ func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, user
 				return err
 			}
 
+			// Convert the selected option to sql.NullInt32
+			var selectedOption sql.NullInt32
+			if update.SelectedOption != nil {
+				selectedOption = sql.NullInt32{
+					Int32: int32(*update.SelectedOption),
+					Valid: true,
+				}
+			} else {
+				selectedOption = sql.NullInt32{Valid: false}
+			}
+
 			err = s.db.UpdateUserQuestion(ctx, db.UpdateUserQuestionParams{
-				UserID:       userID,
-				QuestionID:   int32(update.QuestionID),
-				IsSolved:     sql.NullBool{Bool: update.IsSolved, Valid: true},
-				IsBookmarked: userQuestion.IsBookmarked,
-				Incorrect:    update.IsIncorrect,
+				UserID:         userID,
+				QuestionID:     int32(update.QuestionID),
+				IsSolved:       sql.NullBool{Bool: update.IsSolved, Valid: true},
+				IsBookmarked:   userQuestion.IsBookmarked,
+				Incorrect:      update.IsIncorrect,
+				SelectedOption: selectedOption,
 			})
 			if err != nil {
 				log.Printf("Error updating question %d: %v", update.QuestionID, err)
@@ -273,13 +285,26 @@ func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, user
 		} else {
 			// Create new record
 			log.Printf("Question %d does not exist for user %d, creating new record", update.QuestionID, userID)
+
+			// Convert the selected option to sql.NullInt32
+			var selectedOption sql.NullInt32
+			if update.SelectedOption != nil {
+				selectedOption = sql.NullInt32{
+					Int32: int32(*update.SelectedOption),
+					Valid: true,
+				}
+			} else {
+				selectedOption = sql.NullInt32{Valid: false}
+			}
+
 			_, err = s.db.CreateUserQuestion(ctx, db.CreateUserQuestionParams{
-				UserID:       userID,
-				QuestionID:   int32(update.QuestionID),
-				IsSolved:     sql.NullBool{Bool: update.IsSolved, Valid: true},
-				TimeTaken:    sql.NullInt32{Valid: false},
-				Incorrect:    update.IsIncorrect,
-				IsBookmarked: sql.NullBool{Bool: false, Valid: true},
+				UserID:         userID,
+				QuestionID:     int32(update.QuestionID),
+				IsSolved:       sql.NullBool{Bool: update.IsSolved, Valid: true},
+				TimeTaken:      sql.NullInt32{Valid: false},
+				Incorrect:      update.IsIncorrect,
+				IsBookmarked:   sql.NullBool{Bool: false, Valid: true},
+				SelectedOption: selectedOption,
 			})
 			if err != nil {
 				log.Printf("Error creating record for question %d: %v", update.QuestionID, err)
