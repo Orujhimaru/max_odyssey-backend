@@ -232,7 +232,8 @@ func (s *UserQuestionService) BatchUpdateUserQuestions(ctx context.Context, user
 
 	// Process each update individually without a transaction
 	for i, update := range updates {
-		log.Printf("Processing update %d/%d: Question ID %d", i+1, len(updates), update.QuestionID)
+		log.Printf("Processing update %d/%d: Question ID %d, IsSolved: %v, IsIncorrect: %v, IsBookmarked: %v, SelectedOption: %v",
+			i+1, len(updates), update.QuestionID, update.IsSolved, update.IsIncorrect, update.IsBookmarked, update.SelectedOption)
 
 		// Check if the user question already exists
 		exists, err := s.db.CheckUserQuestionExists(ctx, db.CheckUserQuestionExistsParams{
